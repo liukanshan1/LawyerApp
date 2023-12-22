@@ -1,0 +1,149 @@
+/* pages/case_detail/case_detail.wxss */
+@import "/pages/case/case.wxss";
+@import "/pages/homepage/homepage.wxss";
+
+.process_box{
+  width: 702rpx;
+  background-color: white;
+  border-radius: 16rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.process_text{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  width: 640rpx;
+}
+
+.today_agenda{
+  width: 630rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.today_agenda_text_line{
+  display: flex;
+  align-items: center;
+  padding-top: 5rpx;
+  padding-bottom: 10rpx;
+  width: 630rpx;
+  justify-content: space-between;
+  font-size: small;
+  color:#929292;
+}
+
+.task_box_wrapper{
+  width: 620rpx;
+}
+
+.process_map_text_line{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70rpx;
+  width: 630rpx;
+  font-size: small;
+  color:#929292;
+  margin-top: 20rpx;
+}
+
+.top_scroll{
+  padding: 0;
+  width: 630rpx;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+  color: #625E5E;
+}
+
+.next_arrow{
+
+}
+
+.map_item{
+  display: inline-flex;
+}
+
+.process_map_item{
+  border-radius: 14rpx;
+  width: 189rpx;
+  height: 52rpx;
+  text-align: center;
+}
+
+#not_current{
+  background-color: #D9D9D9;
+}
+
+#current{
+  background-color: #FFCCCC;
+}
+
+.file_management{
+  width: 702rpx;
+  background-color: white;
+  border-radius: 16rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.file_management_text{
+  font-size: large;
+  width: 630rpx;
+  height: 80rpx;
+  padding-top: 20rpx;
+}
+
+.file_management_content{
+  width: 630rpx;
+  height: 160rpx;
+}
+
+.project_text_line{
+  display: flex;
+  justify-content: space-between;
+  height: 50rpx;
+  font-size: small;
+  font-weight: 600;
+  color: #929292;
+}
+
+.file_item_line{
+  display: flex;
+  justify-content: space-between;
+  height: 50rpx;
+}
+
+.file_name_text{
+  font-size: small;
+  color:#5977E3;
+
+}
+
+.file_date{
+  font-size:3mm;
+  
+}
+
+.address_image{
+  height: 74rpx;
+  width: 74rpx;
+  border-radius: 37rpx;
+  background-color: teal;
+}
+
+.address_book_item{
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 4mm;
+  width: 80rpx;
+  align-items: center;
+  margin-right: 45rpx;
+}

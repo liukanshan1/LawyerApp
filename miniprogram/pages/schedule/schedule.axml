@@ -1,0 +1,18 @@
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<top_tap></top_tap>
+<view>
+  <view class="top">
+    2023 年 12 月
+  </view>
+  <view class="main">
+    <view class="dayBox" a:for="{{ dateList }}" a:key="index" onTap="gotoDay">
+      <view class="date">
+        <view class="left {{item.date === "12月20日" ? 'leftActive' : ''}}">
+          {{item.date}} <text class="week">{{item.week}}</text>
+        </view>
+        <view class="right">{{item.lunar}}</view>
+      </view>
+      <view class="festival"><text a:if="{{ item.festival }}">{{item.festival}}</text></view>
+    </view>
+  </view>
+</view>

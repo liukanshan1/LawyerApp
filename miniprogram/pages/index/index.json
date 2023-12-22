@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "top_tap":"/components/top_tap/top_tap"
+  },
+  "transparentTitle": "always"
+}

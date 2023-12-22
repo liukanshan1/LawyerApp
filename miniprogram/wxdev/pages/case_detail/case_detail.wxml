@@ -1,0 +1,75 @@
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px"></view>
+<top_tap>新建文件夹</top_tap>
+<view class="outer">
+  <view class="case_item" bindtap="tap_case_item">
+    <view class="case_name">{{this_case.name}}</view>
+    <view class="case_detail_box" wx:for="{{this_case.info_line}}">
+      <view class="info_line">
+        <view class="info_key">{{item.info_name}}</view>
+        <view class="info_value">{{item.value}}</view>
+      </view>
+    </view>
+    <view class="info_detail_hint">查看信息详情</view>
+  </view>
+  <view class="process_box">
+    <view class="process_text"> 进程追踪</view>
+    <view class="today_agenda" bindtap="tap_today_agenda">
+      <view class="today_agenda_text_line">
+        <view class="today_agenda_text">今日进程</view>
+        <view class="arrow"></view>
+      </view>
+      <view class="task_box_wrapper">
+        <view class="task_box">
+          <view class="decorate_vertical_bar"></view>
+          <view class="task_content_line">
+            <view class="task_name">客户预约会议</view>
+            <view class="small_text">
+              <view class="task_time">11：10 a.m.</view>
+              <view class="task_site">suct</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="process_map_box">
+      <view class="process_map_text_line" bindtap="tap_process_trace">
+        <view class="process_map_text">进程追踪导图</view>
+        <view class="arrow"></view>
+      </view>
+      <scroll-view scroll-x="true" class="top_scroll">
+        <view wx:for="{{process_map_item}}" class="map_item">
+          <view class="process_map_item" id="not_current" wx:if="{{index!=current_process_index}}">{{item}}</view>
+          <view class="process_map_item" id="current" wx:if="{{index==current_process_index}}">{{item}}</view>
+          <view class="next_arrow" wx:if="{{index<process_map_item.length-1}}">————></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="file_management">
+    <view class="file_management_text">文档管理</view>
+    <view class="file_management_content">
+      <view class="project_text_line" bindtap="tap_all_file">
+        <view class="project_text">全部文档</view>
+        <view class="arrow"></view>
+      </view>
+      <view class="file_item_box">
+        <view class="file_item_line" wx:for="{{file_item}}" >
+          <view class="file_name_text" bindtap="tap_documnet" data-doc_index="{{index}}">{{item.file_name}}</view>
+          <view class="file_date">{{item.file_date}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="address_book_box">
+      <view class="project_text_line" bindtap="tap_address_book">
+        <view class="project_text">通讯录</view>
+        <view class="arrow"></view>
+      </view>
+      <scroll-view scroll-x="true" class="top_scroll">
+        <view class="address_book_item" wx:for="{{address_item}}" bindtap="tap_user" data-user_index="{{index}}">
+          <image class="address_image" url="{{item.image}}"></image>
+          <view class="address_name">{{item.username}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

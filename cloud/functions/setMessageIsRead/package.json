@@ -1,0 +1,12 @@
+{
+  "name": "setMessageIsRead",
+  "version": "1.0.0",
+  "description": "set message is read",
+  "main": "index.js",
+  "scripts": {},
+  "author": "perkz",
+  "license": "ISC",
+  "dependencies": {
+    "@alipay/faas-server-sdk": "^1.0.0"
+  }
+}

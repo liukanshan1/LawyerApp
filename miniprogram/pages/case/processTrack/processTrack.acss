@@ -1,0 +1,270 @@
+.page {
+  background-color: #FAFAFA;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.top {
+  width: 100%;
+  overflow: hidden;
+}
+
+.head {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px 7%;
+  overflow: hidden;
+}
+
+.tab {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 170px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.tab_text {
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+}
+
+.tab_active {
+  font-weight: bold;
+  background-color: #DFDFDF;
+  border-radius: 20px;
+}
+
+.search {
+  width: 25px;
+  height: 25px !important;
+  margin: 10px;
+}
+
+.insertFile {
+  color: #4F4F4F;
+  margin: 15px 0 25px 20px;
+}
+
+.mainTitle {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  font-size: 14px;
+  font-weight: bold;
+  /* margin: 10px 20px; */
+  padding: 10px 20px;
+  border-top: solid 1px #ccc;
+}
+
+.scrollView {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding: 20px 10px 30px;
+}
+
+.scrollItem {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.scrollColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollColumnItem {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  margin: auto;
+}
+
+.scrollColumnItemLine {
+  width: 2px;
+  height: 10px;
+  background-color: #A5A1A1;
+  margin: auto;
+}
+
+.scrollColumnItemText {
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 6px;
+  background-color: pink;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+.scrollItemText {
+  width: 100px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  padding: 6px;
+}
+
+.next_arrow {
+  white-space: nowrap;
+  margin-top: 3px;
+}
+
+.main {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.tree1 {
+  margin: 15px 0 30px 20px;
+}
+
+.tree2 {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.tree3 {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+.tree3_item {
+  font-size: 12px;
+  margin-left: 30px;
+  margin-top: 15px;
+  color: #5977E3;
+}
+
+.title {
+  display: flex;
+}
+
+.plus {
+  width: 16px;
+  height: 16px !important;
+  margin-right: 3px;
+}
+
+.plus_mini {
+  width: 12px;
+  height: 12px !important;
+  margin-right: 3px;
+  margin-top: 1px;
+}
+
+.title .text_mini {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.title .text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.arrow {
+  width: 8px;
+  height: 8px !important;
+  margin-top: 6px;
+}
+
+.arrow_mini {
+  margin-top: 3px;
+}
+
+.global_plus {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  width: 70px;
+  height: 70px;
+}
+
+.bottom {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  padding: 0 10px;
+  margin-top: 5vw;
+  margin-bottom: 20vw;
+}
+
+.btn {
+  width: 40%;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  background-color: #D9D9D9;
+  border-radius: 17px;
+}
+
+.list {
+  width: 100vw;
+  margin: 20px 5vw;
+}
+.scheduleMsg {
+  box-sizing: border-box;
+  width: 90vw;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+  margin-top: 5vw;
+  padding: 5vw;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  margin-top: 3vw;
+  padding-left: 5vw;
+}
+
+.main::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #757575;
+}
+
+.main .text {
+  font-size: 10px;
+  line-height: 14px;
+  color: #575757;
+  margin-left: 4vw;
+}
+
+.main .icon {
+  position: absolute;
+  left: 5vw;
+  bottom: 0;
+  height: 30px;
+
+}

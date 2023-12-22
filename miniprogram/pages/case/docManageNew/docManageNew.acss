@@ -1,0 +1,9 @@
+.page {
+  width: 100vw;
+  padding: 2vw 5vw;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+}

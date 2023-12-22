@@ -1,0 +1,13 @@
+
+<view class="top_line">
+  <view class="content_line">
+    <view class="title_and_back">
+      <view class="back_button">
+        <view class="back_button_arrow_up"></view>
+        <view class="back_button_arrow_down"></view>
+      </view>
+      <slot class="title"></slot>
+    </view> 
+    <image class="message" src="/image/message.png"></image>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px"></view>
+<top_tap>新建文件夹</top_tap>
+<view class="outer">
+  <view class="title_line">
+    <view class="title_block">
+      <view class="title_bar"></view>
+      <view>今日待办</view>
+    </view>
+  </view>
+  <view class="task_container">
+    <view class="task_left_item">
+      <view class="date_line">2023/10/30 星期一</view>
+      <view class="task_item_container">
+        <view class="task_item">
+          <view class="task_title_line">被指派任务</view>
+          <view class="task_box">
+            <view class="decorate_vertical_bar"></view>
+            <view class="task_content_line">
+              <view class="task_name">客户预约会议</view>
+              <view class="small_text">
+                <view class="task_time">11：10 a.m.</view>
+                <view class="task_site">suct</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="task_item_container">  <!--这里以后可以用循环来做-->
+        <view class="task_item">
+          <view class="task_title_line">被指派任务</view>
+          <view class="task_box">
+            <view class="decorate_vertical_bar"></view>
+            <view class="task_content_line">
+              <view class="task_name">客户预约会议</view>
+              <view class="small_text">
+                <view class="task_time">11：10 a.m.</view>
+                <view class="task_site">suct</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="task_detail" bindtap="check_task_detail">查看任务详细</view>
+    </view>
+  </view>
+  <view class="recent_message">
+    <view class="message_note_box" bindtap="recent_message">
+      <view class="message_note">最近消息</view>
+      <view class="arrow"></view>
+    </view>
+    <view class="gray_separate_line"></view>
+    <view class="detail-box">
+      <view class="message_detail_line">
+        <view class="message_title">案件审核</view>
+        <view class="message_status">当前案件状态更新已审核通过</view>
+      </view>
+      <view class="message_detail_line">
+        <view class="message_title">案件审核</view>
+        <view class="message_status">当前案件状态更新已审核通过</view>
+      </view>
+    </view>
+  </view>
+</view>

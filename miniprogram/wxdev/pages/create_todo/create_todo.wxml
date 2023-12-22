@@ -1,0 +1,10 @@
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px"></view>
+<top_tap>添加日程</top_tap>
+<view class="submit_line">
+  <view class="cancel_botton">取消</view>
+  <view class="confirm_botton">确认</view>
+</view>
+<view class="time_select_line">
+  <view class="time_select_text">开始时间</view>
+  <time_picker data-time="{{start_time}}" data-date="{{start_date}}"></time_picker>
+</view>

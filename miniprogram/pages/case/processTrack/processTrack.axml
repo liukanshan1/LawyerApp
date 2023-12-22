@@ -1,0 +1,129 @@
+<view class="page">
+  <view class="top">
+    <view class="head">
+      <view class="tab">
+        <view
+          class="tab_text {{tab_index === 0 ? 'tab_active':''}}"
+          onTap="changeTab"
+          data-i="{{0}}"
+        >
+          案件进程表
+        </view>
+        <view
+          class="tab_text {{tab_index === 1 ? 'tab_active':''}}"
+          onTap="changeTab"
+          data-i="{{1}}"
+        >
+          日程
+        </view>
+      </view>
+      <image mode="widthFix" src="/images/search-01.png" class="search" />
+    </view>
+  </view>
+  <view class="tab1Page" a:if="{{ tab_index === 0 }}">
+    <view class="mainTitle">
+      <view>完整导图</view>
+      <view style="font-size: 12px; color: #3E6DE7; font-weight: normal;">导出</view>
+    </view>
+    <view class="main">
+      <scroll-view scroll-x="{{true}}" class="scrollView">
+        <view a:for="{{process_map_item}}" class="scrollItem">
+          <view class="scrollColumn">
+            <view class="scrollItemText {{index === current_process_index ? 'current':''}}">
+              {{item}}
+            </view>
+            <view class="scrollColumnItem">
+              <view class="scrollColumnItemLine"></view>
+              <view class="scrollColumnItemText">xxxxx</view>
+            </view>
+            <view class="scrollColumnItem">
+              <view class="scrollColumnItemLine"></view>
+              <view class="scrollColumnItemText">xxx</view>
+            </view>
+          </view>
+          <view a:if="{{index<process_map_item.length-1}}" class="next_arrow">————></view>
+        </view>
+      </scroll-view>
+      <view class="bottom" style="margin-bottom: 50px;">
+        <view class="btn">修改</view>
+        <view class="btn">导出</view>
+      </view>
+    </view>
+    <view class="mainTitle">案件进程表</view>
+    <view class="main">
+      <view class="insertFile">插入文件</view>
+      <view a:for="{{ tree_data }}" a:for-item="item1" class="tree1" a:key="index">
+        <view class="title" onTap="changeTreeState" data-id="{{item1.id}}">
+          <image mode="widthFix" src="/images/Plus.png" class="plus" />
+          <view class="text">{{item1.title}}</view>
+          <image
+            mode="widthFix"
+            src="{{item1.show ? '/images/down.png' : '/images/right.png'}}"
+            class="arrow"
+          />
+        </view>
+        <view
+          a:for="{{ item1.children }}"
+          a:for-item="item2"
+          class="tree2"
+          a:key="index"
+          hidden={{!item1.show}}
+        >
+          <view class="title" onTap="changeTreeState" data-id="{{item2.id}}">
+            <image mode="widthFix" src="/images/Plus.png" class="plus_mini" />
+            <view class="text_mini">{{item2.title}}</view>
+            <image
+              mode="widthFix"
+              src="{{item2.show ? '/images/down.png' : '/images/right.png'}}"
+              class="arrow arrow_mini"
+            />
+          </view>
+          <view
+            a:for="{{ item2.children }}"
+            a:for-item="item3"
+            class="tree3"
+            a:key="index"
+            hidden={{!item2.show}}
+          >
+            <view class="title" onTap="changeTreeState" data-id="{{item3.id}}">
+              <image mode="widthFix" src="/images/Plus.png" class="plus_mini" />
+              <view class="text_mini">{{item3.title}}</view>
+              <image
+                mode="widthFix"
+                src="{{item3.show ? '/images/down.png' : '/images/right.png'}}"
+                class="arrow arrow_mini"
+              />
+            </view>
+            <view
+              a:for="{{ item3.children }}"
+              class="tree3_item"
+              a:key="index"
+              hidden={{!item3.show}}
+            >
+              {{item}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="btn">保存</view>
+        <view class="btn">导出</view>
+      </view>
+    </view>
+  </view>
+  <view class="tab2Page" a:if="{{ tab_index === 1 }}">
+    <view class="list">
+      <view class="scheduleMsg">
+        <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
+        <view class="main">
+          <view style="margin-bottom: 8px;">客户预约会议</view>
+          <view class="text">2023.11.22   11：00 a.m.</view>
+          <view class="text">线上会议号：</view>
+          <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image mode="widthFix" src="/images/Plus.png" class="global_plus" />
+
+</view>

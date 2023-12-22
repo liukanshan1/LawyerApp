@@ -1,0 +1,12 @@
+{
+  "name": "getMessageByCaseId",
+  "version": "1.0.0",
+  "description": "return all message by case_id",
+  "main": "index.js",
+  "scripts": {},
+  "author": "perkz",
+  "license": "ISC",
+  "dependencies": {
+    "@alipay/faas-server-sdk": "^1.0.0"
+  }
+}

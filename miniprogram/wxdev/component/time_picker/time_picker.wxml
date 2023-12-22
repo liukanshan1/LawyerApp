@@ -1,0 +1,4 @@
+<view class="picker_line">
+  <picker mode="date" bindchange="select_date">{{date}}</picker>
+  <picker mode="time" bindchange="select_time">{{time}}</picker>
+</view>

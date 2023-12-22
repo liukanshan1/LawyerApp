@@ -1,0 +1,8 @@
+<view>
+  <div class="head"></div>
+  <div class="info">
+    <div class="name"></div>
+    <div class="msg"></div>
+  </div>
+  <div class="time"></div>
+</view>

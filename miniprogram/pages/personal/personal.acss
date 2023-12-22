@@ -1,0 +1,96 @@
+.card {
+  position: relative;
+  box-sizing: border-box;
+  width: 86%;
+  /* height: ; */
+  background-color: #7A7A7A;
+  border-radius: 10px;
+  padding: 25px 15px 20px;
+  margin: 10px auto;
+}
+.info {
+  display: flex;
+  /* justify-content: space-between; */
+  color: #fff;
+}
+.img {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+  background-color: pink;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+}
+.detail .name {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.line {
+  display: flex;
+  margin-bottom: 10px;
+}
+.line .circle {
+  width: 4vw;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  padding-top: 4vw;
+  /* padding-left: 5vw; */
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.line .text {
+  text-align: center;
+  line-height: 4vw;
+  font-size: 14px;
+  /* text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all; */
+  white-space: nowrap;
+}
+.info .time {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  font-size: 10px;
+  /* background: pink; */
+}
+.sure {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 15px 0;
+}
+.item {
+  display: flex;
+  /* justify-content: space-around; */
+  width: 30%;
+  margin-left: 10px;
+}
+.item .circle {
+  width: 4vw;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  padding-top: 4vw;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.item .text {
+  text-align: center;
+  line-height: 4vw;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}

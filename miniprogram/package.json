@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "antd-mini": "^2.16.0"
+  },
+  "name": "aliproject",
+  "description": "支付宝小程序",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZZJJWarth/aliproject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZZJJWarth/aliproject/issues"
+  },
+  "homepage": "https://github.com/ZZJJWarth/aliproject#readme"
+}

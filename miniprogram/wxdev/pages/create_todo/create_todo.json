@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "top_tap":"/component/top_tap/top_tap",
+    "time_picker":"/component/time_picker/time_picker"
+  }
+}

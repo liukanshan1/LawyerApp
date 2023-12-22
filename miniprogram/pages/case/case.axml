@@ -1,0 +1,27 @@
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<top_tap></top_tap>
+<scroll-view scroll-x="true" class="top_scroll">
+  <view a:for="{{case_type_list}}" class="case_category">{{item}}</view>
+</scroll-view>
+
+<view class="outer">
+  <view class="hint_line">
+    <view class="all_text">全部 ({{case_num}})</view>
+    <view class="select_item">
+      <view>O</view>
+      <view class="select_item_text">筛选项</view>
+    </view>
+  </view>
+  <view class="case_box">
+    <view class="case_item" a:for="{{case_item}}" a:key="name">
+      <view class="case_name">{{item.name}}</view>
+      <view class="case_detail_box" a:for="{{item.info_line}}">
+        <view class="info_line">
+          <view class="info_key">{{item.info_name}}</view>
+          <view class="info_value">{{item.value}}</view>
+        </view>
+      </view>
+      <view class="info_detail_hint">查看信息详情</view>
+    </view>
+  </view>
+</view>

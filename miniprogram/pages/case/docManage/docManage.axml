@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="top">
+    <view class="title">
+      <view class="text">全部文档</view>
+      <image mode="widthFix" src="/images/arrow-left-contained-01.png" class="icon"/>
+    </view>
+    <image mode="widthFix" src="/images/search-01.png" class="search"/>
+  </view>
+  <view class="main">
+    <view class="item" a:for="{{ files }}" a:key="index">
+      <view class="circle"></view>
+      <view class="text">{{item.name}}</view>
+    </view>
+    <view class="item">
+      <image mode="widthFix" src="/images/Plus.png" class="plus"/>
+    </view>
+  </view>
+</view>

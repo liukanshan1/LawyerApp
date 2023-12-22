@@ -1,0 +1,86 @@
+.top_line{
+  background-color: white;
+  /* background-color: pink; */
+  height: 90rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back_button{
+  width: 36rpx;
+  height: 36rpx;
+  border: solid;
+  border-radius: 36rpx;
+  border-width: 7rpx;
+  
+}
+
+.back_button_arrow_up{
+  border: solid;
+  width: 14rpx;
+  height: 0rpx;
+  rotate: -45deg;
+  border-width: 6rpx;
+  border-radius: 10rpx;
+  background-color: black;
+  position: relative;
+  top:9rpx;
+  left: 6rpx;
+}
+
+.back_button_arrow_down{
+  border: solid;
+  width: 14rpx;
+  height: 0rpx;
+  rotate: 45deg;
+  border-width: 6rpx;
+  border-radius: 10rpx;
+  background-color: black;
+  position: relative;
+  top:12rpx;
+  left: 6rpx;
+}
+
+.title_and_back{
+  display: flex;
+  justify-content: space-between;
+  /* width: 240rpx; */
+  width: 100%;
+  font-size: large;
+}
+
+.title_and_back .title {
+  width: 100%;
+  padding-left: 55%;
+  margin-left: 6vw;
+  margin-bottom: 4px;
+}
+
+.content_line{
+  width: 700rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icons {
+  position: relative;
+}
+.icons {
+  margin-right: 20vw;
+  z-index: 10;
+}
+.message{
+  width: 6vw;
+  height: 6vw !important;
+  z-index: 10;
+}
+.ellipse {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.5vw;
+  height: 2.5vw !important;
+}

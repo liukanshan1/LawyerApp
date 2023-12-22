@@ -1,0 +1,88 @@
+/* pages/case/case.wxss */
+.top_scroll{
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  justify-content: space-evenly;
+  overflow: hidden;
+  padding: 20rpx;
+  background-color: white;
+}
+
+.case_category{
+  margin-right: 20rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+}
+
+.case_item{
+  background-color: white;
+  height: 304rpx;
+  width: 702rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+
+.case_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info_line{
+  display: flex;
+  justify-content:space-between;
+  width: 500rpx;
+  font-size: small;
+}
+
+.info_value{
+  width: 200rpx;
+}
+
+.info_key{
+  color:#686868
+}
+
+.info_detail_hint{
+  color:#3980ED;
+  margin-right: 30rpx;
+  font-size: small;
+  align-self: flex-end;
+}
+
+.case_detail_box{
+  height: 40rpx;
+}
+
+.case_name{
+  padding-top: 10rpx;
+  height: 60rpx;
+  justify-self:center;
+  box-sizing: border-box;
+}
+
+.hint_line{
+  display: flex;
+  justify-content: space-between;
+  width: 702rpx;
+  padding-top: 20rpx;
+  font-size: small;
+  color:#676767
+}
+
+.select_item{
+  display: flex;
+}
+
+.outer{
+  display: flex;
+  flex-direction: column;
+  width: 100%rpx;
+  justify-content: center;
+  align-items: center;
+}

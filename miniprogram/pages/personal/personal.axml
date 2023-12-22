@@ -1,0 +1,37 @@
+<view>
+  <view class="card">
+    <view class="info">
+      <view class="img"></view>
+      <view class="detail">
+        <view class="name">{{info.name}}</view>
+        <view class="line">
+          <view class="circle"></view>
+          <view class="text">{{info.address}}</view>
+        </view>
+        <view class="line">
+          <view class="circle"></view>
+          <view class="text">{{info.lawyerOfficeName}}</view>
+        </view>
+        <view class="line">
+          <view class="circle"></view>
+          <view class="text" style="font-size: 12px;">执业证号：{{info.lawyerNum}}</view>
+        </view>
+      </view>
+      <view class="time">活跃时间：  {{info.activeTime}}</view>
+    </view>
+    <view class="sure">
+      <view class="item">
+        <view class="circle"></view>
+        <view class="text">实名认证</view>
+      </view>
+      <view class="item">
+        <view class="circle"></view>
+        <view class="text">执业认证</view>
+      </view>
+      <view class="item">
+        <view class="circle"></view>
+        <view class="text">诚信保障</view>
+      </view>
+    </view>
+  </view>
+</view>

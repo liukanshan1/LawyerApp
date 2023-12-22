@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "top_tap":"/components/top_tap/top_tap",
+    "time_picker":"/components/time_picker/time_picker"
+  },
+  "styleIsolation": "apply-shared",
+  "transparentTitle": "always"
+}

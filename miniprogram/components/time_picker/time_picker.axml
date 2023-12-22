@@ -1,0 +1,18 @@
+<view class="line">
+  <slot class="time_name"></slot>
+  <view class="time_select_box">
+    <image src="/images/time_select.png" class="time_select_image"></image>
+    <view class="time_select">
+      <picker mode="date" onChange="dateChange">
+        <view>{{selectdate}}</view>
+      </picker>
+
+      <picker mode="time" onChange="dateTime">
+        <view>
+          {{selecttime}}
+        </view>
+      </picker>
+    </view>
+    
+  </view>
+</view>

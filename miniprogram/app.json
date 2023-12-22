@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/index/index",
+    "pages/case/case",
+    "pages/schedule/schedule",
+    "pages/personal/personal",
+    "pages/case_detail/case_detail",
+    "pages/createtodo/createtodo",
+    "pages/message/message",
+    "pages/case/processTrack/processTrack",
+    "pages/case/docManage/docManage",
+    "pages/case/addDoc/addDoc",
+    "pages/schedule/scheduleDay/scheduleDay",
+    "pages/case/docManageNew/docManageNew"
+  ],
+  "window": {
+    "defaultTitle": ""
+  },
+  "behavior": {
+    "requestReferrerStrategy": "page",
+    "requestReferrerStyle": "full",
+    "requestDefaultEnableCookie": true,
+    "connectSocketDefaultMultiple": true
+  },
+  "tabBar": {
+    "textColor": "",
+    "selectedColor": "",
+    "backgroundColor": "",
+    "items": [
+      {
+        "pagePath": "pages/homepage/homepage",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/case/case",
+        "name": "案件"
+      },
+      {
+        "pagePath": "pages/schedule/schedule",
+        "name": "日程"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "name": "个人"
+      }
+    ]
+  }
+}

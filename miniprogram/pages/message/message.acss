@@ -1,0 +1,139 @@
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #fff;
+  padding-top: 10px;
+}
+
+.tab {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 220px;
+  height: 40px;
+  background-color: #F7F7F7;
+  border-radius: 20px;
+  padding: 0 5px;
+  margin: auto;
+  margin-bottom: 8vw;
+}
+
+.tab .item {
+  position: relative;
+  box-sizing: border-box;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #626C67;
+  z-index: 2;
+}
+
+.tab_active {
+  font-weight: bold;
+  color: #2B2B2B;
+}
+
+.bg {
+  position: absolute;
+  left: 5%;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #DFDFDF;
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+.list {
+  width: 100vw;
+  margin: 20px 5vw;
+}
+
+.caseItem {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  height: 20vw;
+}
+
+.left {
+  display: flex;
+}
+
+.headImg {
+  width: 13vw;
+  height: 13vw !important;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ccc;
+  flex-shrink: 0;
+  margin-top: 3.5vw;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 85%;
+  padding: 3.5vw;
+}
+
+.middle .content {
+  font-size: 14px;
+  color: #626C67;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+.date {
+  font-size: 12px;
+  color: #CBCBCB;
+  margin-top: 3.5vw;
+}
+
+.scheduleMsg {
+  box-sizing: border-box;
+  width: 90vw;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+  margin-top: 5vw;
+  padding: 5vw;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  margin-top: 3vw;
+  padding-left: 5vw;
+}
+
+.main::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #757575;
+}
+
+.main .text {
+  font-size: 10px;
+  line-height: 14px;
+  color: #575757;
+  margin-left: 4vw;
+}
+
+.main .icon {
+  position: absolute;
+  left: 5vw;
+  bottom: 0;
+  height: 30px;
+
+}

@@ -1,0 +1,14 @@
+<view>
+  <view class="list">
+    <view class="scheduleMsg">
+      <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
+      <view class="main">
+        <view style="margin-bottom: 8px;">客户预约会议</view>
+        <view class="text">2023.11.22   11：00 a.m.</view>
+        <view class="text">线上会议号：</view>
+        <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+      </view>
+    </view>
+  </view>
+  <image mode="widthFix" src="/images/Plus.png" class="global_plus" />
+</view>

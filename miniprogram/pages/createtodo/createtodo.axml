@@ -1,0 +1,72 @@
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px"></view>
+<top_tap></top_tap>
+<view class="outer">
+  <view class="select_time_area">
+    <time_picker name="start">
+      <view>开始时间</view>
+    </time_picker>
+    <time_picker name="end">
+      <view>结束时间</view>
+    </time_picker>
+  </view>
+  <view class="add_label_area">
+    <view class="add_label_title">添加标签</view>
+    <view class="label_list" >
+      <view class="label" a:for="{{label}}" id="{{item.style}}">{{item.name}}</view>
+    </view>
+  </view>
+  <!-- <view class="case_select_area">
+    <view class="case_select_title">所属案件</view>
+    <view class="case_select_box">无</view>
+  </view> -->
+  <picker onChange="remind_method_change" range="{{case_selection}}" value="{{case_index}}">
+    <view  class="detail_picker">
+      <view class="picker_title">所属案件</view>
+      <view class="select_content_box">
+        <view class="picker_indicater">{{case_selection[case_index]}}</view>
+        <view class="arrow"></view>
+      </view>
+    </view>
+  </picker>
+  <view class="custom_content_area">
+    <view class="custom_content_title">自定义内容</view>
+    <textarea class="custom_content_textarea" placeholder="您准备做什么" onInput="content_input"></textarea>
+  </view>
+  <view class="detail_option_area">
+    <picker onChange="repeat_change" range="{{repeat_selection}}" value="{{repeat_index}}">
+      <view  class="detail_picker">
+        <view class="picker_title">重复</view>
+        <view class="select_content_box">
+          <view class="picker_indicater">{{repeat_selection[repeat_index]}}</view>
+          <view class="arrow"></view>
+        </view>
+      </view>
+    </picker>
+    <picker onChange="remind_change" range="{{remind_selection}}" value="{{remind_index}}">
+      <view  class="detail_picker">
+        <view class="picker_title">提醒</view>
+        <view class="select_content_box">
+          <view class="picker_indicater">{{remind_selection[remind_index]}}</view>
+          <view class="arrow"></view> 
+        </view>
+     </view>
+    </picker>
+    <picker onChange="remind_method_change" range="{{remind_method_selection}}" value="{{remind_method_index}}">
+      <view  class="detail_picker">
+        <view class="picker_title">提醒方式</view>
+        <view class="select_content_box">
+          <view class="picker_indicater">{{remind_method_selection[remind_method_index]}}</view>
+          <view class="arrow"></view>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="custom_content_area">
+    <view class="custom_content_title">备注</view>
+    <textarea class="custom_content_textarea" placeholder="请输入备注" onInput="remark_input"></textarea>
+  </view>
+  <view class="button_area">
+    <view class="cancel_button" style="background-color:#DAE9FB;color:#1668E2" onTap="cancel">取消</view>
+    <view class="cancel_button" style="background-color:#FBDADA;color:#E21616" onTap="confirm">确认</view>
+  </view>
+</view>

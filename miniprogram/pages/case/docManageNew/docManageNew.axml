@@ -1,0 +1,6 @@
+<view class="page">
+  <view class="top">
+    <view class="topTitle">全部文档</view>
+    <view class="right">按案件分类 ˅</view>
+  </view>
+</view>
