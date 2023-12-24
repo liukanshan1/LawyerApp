@@ -1,0 +1,53 @@
+.line{
+  display: flex;
+  height: 60rpx;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  /* padding-right: 47rpx;
+  padding-left: 47rpx; */
+  box-sizing: border-box;
+
+}
+.time_select_box{
+  display: flex;
+  height: 52rpx;
+  background-color: white;
+  width: 427rpx;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 10rpx;
+  color:#797B80;
+}
+
+.time_select_image{
+  height: 39rpx;
+  width: 39rpx;
+}
+
+.time_name{
+  font-size: large;
+  font-weight:bolder;
+}
+
+.time_select{
+  display: flex;
+  width: 280rpx;
+  justify-content: space-between;
+}
+
+.time_pick_line{
+  display: flex;
+  justify-content:space-between;
+  width: 680rpx;
+}
+
+.outer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,16 @@
+{
+  "modes": [
+    {
+      "title": "createtodo",
+      "page": "pages/createtodo/createtodo",
+      "launchMode": "common",
+      "pageQuery": ""
+    },
+    {
+      "title": "add_case",
+      "page": "pages/add_case/add_case",
+      "launchMode": "common",
+      "pageQuery": ""
+    }
+  ]
+}

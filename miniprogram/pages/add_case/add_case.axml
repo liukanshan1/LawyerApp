@@ -1,0 +1,14 @@
+<view class="outer">
+  <view class="time_pick_line">
+    <view class="time_title">开始时间</view>
+    <view class="time_select_box">
+      <image src="/images/time_select.png" class="time_select_image"></image>
+      <view class="time_select">
+        <picker mode="date" onChange="dateChange">
+          <view>{{selectdate}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  
+</view>
