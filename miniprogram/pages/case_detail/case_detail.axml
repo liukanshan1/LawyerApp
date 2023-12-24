@@ -2,12 +2,30 @@
 <top_tap></top_tap>
 <view class="outer">
   <view class="case_item" onTap="tap_case_item">
-    <view class="case_name">{{this_case.name}}</view>
-    <view class="case_detail_box"a:for="{{this_case.info_line}}">
-      <view class="info_line">
-        <view class="info_key">{{item.info_name}}</view>
-        <view class="info_value">{{item.value}}</view>
-      </view>
+    <view class="case_name">基本信息</view>
+    <view class="info_line">
+      <view class="info_key">案件是否完结</view>
+      <view class="info_value" style="color: {{case.isDond ? '' : 'red;'}}">{{case.isDone ? '是' : '否'}}</view>
+    </view>
+    <view class="info_line">
+      <view class="info_key">案件编号</view>
+      <view class="info_value">{{case.caseSerialNumber}}</view>
+    </view>
+    <view class="info_line">
+      <view class="info_key">案由</view>
+      <view class="info_value">{{case.caseReason}}</view>
+    </view>
+    <view class="info_line">
+      <view class="info_key">创建时间</view>
+      <view class="info_value">{{case.time}}</view>
+    </view>
+    <view class="info_line">
+      <view class="info_key">被告</view>
+      <view class="info_value">{{case.oppositePartyName}}</view>
+    </view>
+    <view class="info_line">
+      <view class="info_key">原告</view>
+      <view class="info_value"> <text a:for="{{ case.users }}" a:key="index">{{item.name}},</text> </view>
     </view>
     <view class="info_detail_hint">查看信息详情</view>
   </view>
@@ -26,6 +44,7 @@
             <view class="small_text">
               <view class="task_time">11：10 a.m.</view>
               <view class="task_site">suct</view>
+              <image mode="heightFix" src="/images/image 20.png" class="icon"/>
             </view>
           </view>
         </view>
@@ -38,8 +57,8 @@
       </view>
       <scroll-view scroll-x="{{true}}" class="top_scroll_new">
         <view a:for="{{process_map_item}}" class="map_item">
-          <view class="process_map_item {{index === current_process_index ? 'current':''}}">{{item}}</view>
-          <view class="next_arrow" a:if="{{index<process_map_item.length-1}}">————></view>
+          <view class="process_map_item {{index === case.processIds[case.processIds.length - 1] ? 'current':''}}">{{item}}</view>
+          <view class="next_arrow" a:if="{{index < process_map_item.length-1}}">————></view>
         </view>
       </scroll-view>
     </view>

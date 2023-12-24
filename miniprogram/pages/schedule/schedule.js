@@ -32,6 +32,19 @@ Page({
         console.log("success")
       }
     });
+    let id = my.getStorageSync({key: '_id'}).data
+    my.cloudFunction.callFunction({
+      name:"getSchedules",
+      data: {
+        id: id
+      },
+      success: (res) => {
+        console.log('getSchedules', res);
+      },
+      fail: function(res) {
+        console.log('getSchedules', res);
+      }
+    })
   },
   gotoDay(){
     my.navigateTo({

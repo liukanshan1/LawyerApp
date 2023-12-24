@@ -18,34 +18,26 @@
     </view>
     <view class="bg" style="left: {{tab_index === 0 ? '5%' : '50%'}};"></view>
   </view>
+  <view style="text-align:center; margin: 10px auto;">{{msgListClick ? '详情' : ''}}</view>
   <view class="list" a:if="{{ tab_index === 0}}">
-    <view class="caseItem">
+    <view class="caseItem" a:for="{{ msgListClick ? oneCaseMsgs : msgList }}" a:key="index" onTap="getMsgByCaseId" data-i={{index}}>
       <view class="left">
         <image mode="widthFix" src="" class="headImg" />
         <view class="middle">
-          <view>xxx人格纠纷案</view>
-          <view class="content">律师所：当前案件状态更新已审核通过</view>
+          <view>{{item.caseName}}</view>
+          <view class="content">{{item.userName}}: {{item.content}}</view>
         </view>
       </view>
-      <view class="date">12-26</view>
+      <view class="date">{{item.time}}</view>
     </view>
   </view>
   <view class="list" a:if="{{ tab_index === 1 }}">
-    <view class="scheduleMsg">
-      <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
+    <view class="scheduleMsg" a:for="{{ schduleList }}" a:key="index">
+      <view class="hint" style="font-size: 14px; color: #929292;">{{item.description}}</view>
       <view class="main">
-        <view style="margin-bottom: 8px;">客户预约会议</view>
-        <view class="text">2023.11.22   11：00 a.m.</view>
-        <view class="text">线上会议号：</view>
-        <image mode="heightFix" src="/images/image 20.png" class="icon"/>
-      </view>
-    </view>
-    <view class="scheduleMsg">
-      <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
-      <view class="main">
-        <view style="margin-bottom: 8px;">客户预约会议</view>
-        <view class="text">2023.11.22   11：00 a.m.</view>
-        <view class="text">线上会议号：</view>
+        <view style="margin-bottom: 8px;">{{item.title}}</view>
+        <view class="text">{{item.time}}</view>
+        <view class="text">{{item.address}}</view>
         <image mode="heightFix" src="/images/image 20.png" class="icon"/>
       </view>
     </view>

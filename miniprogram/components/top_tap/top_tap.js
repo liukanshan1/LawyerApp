@@ -5,5 +5,12 @@ Component({
   didMount() {},
   didUpdate() {},
   didUnmount() {},
-  methods: {},
+  methods: {
+    toMessage(e){
+      console.log(e, "toMessage");
+      my.navigateTo({
+        url: "/pages/message/message"
+      })
+    }
+  },
 });

@@ -3,16 +3,29 @@ Page({
   data: {
     info: {}
   },
-  onLoad() {
-    // request(GET_USER_INFO, 'GET').then(res=>{
-    //   console.log(res)
-    // })
-    let id = my.getStorageSync({key: 'id'}).data
-    user.getById(id).then(res => {
-      console.log('getById',res);
-      this.setData({
-        info: res.data.data
-      })
+  async onLoad() {
+    // const context = await my.cloud.createCloudContext({
+    //   env: 'env-00jx4obkh2l9'
+    // });
+    // await context.init();
+    // my.cloudFunction = context;
+    my.setStorageSync({key: '_id', data: '658428204950fd82ff91e8d8'})
+    let id = my.getStorageSync({key: '_id'}).data
+    
+    my.cloudFunction.callFunction({
+      name:"me",
+      data: {
+        userId: id
+      },
+      success: (res) => {
+        console.log('me', res);
+        this.setData({
+          info: res.result.data
+        })
+      },
+      fail: function(res) {
+        console.log('fail', res);
+      }
     })
   },
 });

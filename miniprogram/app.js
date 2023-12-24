@@ -37,6 +37,13 @@ App({
     // await context.init();
     // // 设置context的调用方法,my.后面的名称可以自定义
     // my.cloudFunction = context;
+    my.getAuthCode({
+      scopes: 'auth_base', 
+      success:(res) =>{
+      	console.log('auth',res);
+      }
+    })
+    
   },
   onShow(options) {
 

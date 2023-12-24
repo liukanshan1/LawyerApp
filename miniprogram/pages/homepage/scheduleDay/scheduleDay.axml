@@ -1,7 +1,5 @@
 <view>
-  <picker mode="date" onChange="dateChange">
-    <view class="selectDate">请选择日期：{{selectdate}}</view>
-  </picker>
+  <view class="today">{{today}}</view>
   <view class="list">
     <!-- <view class="scheduleMsg">
       <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
