@@ -1,0 +1,49 @@
+{
+  "modes": [
+    {
+      "title": "pages/createtodo/createtodo",
+      "page": "pages/createtodo/createtodo",
+      "launchMode": "common"
+    },
+    {
+      "title": "pages/message/message",
+      "page": "pages/message/message",
+      "launchMode": "common"
+    },
+    {
+      "title": "pages/homepage/homepage",
+      "page": "pages/homepage/homepage",
+      "launchMode": "common"
+    },
+    {
+      "title": "pages/personal/personal",
+      "page": "pages/personal/personal",
+      "launchMode": "common"
+    },
+    {
+      "title": "case/docManageNew/docManageNew",
+      "page": "pages/case/docManageNew/docManageNew",
+      "launchMode": "common"
+    },
+    {
+      "title": "case/docManage/docManage",
+      "page": "pages/case/docManage/docManage",
+      "launchMode": "common"
+    },
+    {
+      "title": "pages/createtodo/createtodo",
+      "page": "pages/createtodo/createtodo",
+      "launchMode": "common"
+    },
+    {
+      "title": "schedule/scheduleDay/scheduleDay",
+      "page": "pages/schedule/scheduleDay/scheduleDay",
+      "launchMode": "common"
+    },
+    {
+      "title": "pages/case/case",
+      "page": "pages/case/case",
+      "launchMode": "common"
+    }
+  ]
+}

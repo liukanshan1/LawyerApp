@@ -1,5 +1,5 @@
-<view class="status-box status-white-noback" style="height:{{page_top_height}}px"></view>
-<top_tap></top_tap>
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<top_tap ></top_tap>
 <view class="outer">
   <view class="title_line">
     <view class="title_block">
@@ -9,32 +9,21 @@
   </view>
   <view class="task_container">
     <view class="task_left_item">
-      <view class="date_line">2023/10/30 星期一</view>
-      <view class="task_item_container">
+      <view class="date_line">{{today}}</view>
+      <view class="task_item_container" a:for="{{ tasklist }}" a:key="index" a:if="{{ index < 2 }}">  <!--这里以后可以用循环来做-->
         <view class="task_item">
-          <view class="task_title_line">被指派任务</view>
+          <view class="task_title_line">{{item.description}}</view>
           <view class="task_box">
             <view class="decorate_vertical_bar"></view>
             <view class="task_content_line">
-              <view class="task_name">客户预约会议</view>
-              <view class="small_text">
-                <view class="task_time">11：10 a.m.</view>
-                <view class="task_site">suct</view>
+              <view class="task_title_new">
+                <view class="caseTitle">{{item.caseTitle}}</view>
+                <view class="scheduleTitle">{{item.title}}</view>
               </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="task_item_container">  <!--这里以后可以用循环来做-->
-        <view class="task_item">
-          <view class="task_title_line">被指派任务</view>
-          <view class="task_box">
-            <view class="decorate_vertical_bar"></view>
-            <view class="task_content_line">
-              <view class="task_name">客户预约会议</view>
               <view class="small_text">
-                <view class="task_time">11：10 a.m.</view>
-                <view class="task_site">suct</view>
+                <view class="task_time">{{item.time}}</view>
+                <view class="task_site">{{item.address}}</view>
+                <image mode="heightFix" src="/images/image 20.png" class="icon"/>
               </view>
             </view>
           </view>
@@ -52,13 +41,9 @@
     </view>
     <view class="gray_separate_line"></view>
     <view class="detail-box">
-      <view class="message_detail_line">
-        <view class="message_title">案件审核</view>
-        <view class="message_status">当前案件状态更新已审核通过</view>
-      </view>
-      <view class="message_detail_line">
-        <view class="message_title">案件审核</view>
-        <view class="message_status">当前案件状态更新已审核通过</view>
+      <view class="message_detail_line" a:for="{{ msgList }}" a:key="index" a:if="{{ index < 3 }}">
+        <view class="message_title">{{item.caseName}}</view>
+        <view class="message_status">{{item.content}}</view>
       </view>
     </view>
   </view>

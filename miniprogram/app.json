@@ -12,7 +12,8 @@
     "pages/case/docManage/docManage",
     "pages/case/addDoc/addDoc",
     "pages/schedule/scheduleDay/scheduleDay",
-    "pages/case/docManageNew/docManageNew"
+    "pages/case/docManageNew/docManageNew",
+    "pages/homepage/scheduleDay/scheduleDay"
   ],
   "window": {
     "defaultTitle": ""
@@ -37,7 +38,7 @@
         "name": "案件"
       },
       {
-        "pagePath": "pages/schedule/schedule",
+        "pagePath": "pages/schedule/scheduleDay/scheduleDay",
         "name": "日程"
       },
       {

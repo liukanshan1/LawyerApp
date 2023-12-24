@@ -1,20 +1,15 @@
 Page({
   data: {
-    selectdate: "2023-12-23",
+    today: "2023-12-23",
     selectdateTimestamp: 1699833600000,
     list: []
   },
-  async onLoad() {
+  onLoad(e) {
+    console.log('e', e);
     this.setData({
-      // selectdate: this.formatDate(1699833600000, false)
-      selectdate: this.formatDate(new Date().getTime(), false) // 正式使用
+      selectdateTimestamp: parseInt(e.todayTimestampZero),
+      today: e.today
     })
-    const context = await my.cloud.createCloudContext({
-      env: 'env-00jx4obkh2l9'
-    });
-    await context.init();
-    my.cloudFunction = context;
-    my.setStorageSync({key: '_id', data: '658428204950fd82ff91e8d8'})
     this.getList()
   },
   formatDate(time, flag){
@@ -42,16 +37,14 @@ Page({
     this.getList()
   },
   getList(){
+    console.log(this.data.selectdateTimestamp, this.data.selectdateTimestamp + 86399000);
     let id = my.getStorageSync({key: '_id'}).data
     my.cloudFunction.callFunction({
       name:"getSchedules",
       data: { 
-        // userId: "658428204950fd82ff91e8d8",
-        // start: 1699833600000,
-        // end: 1699833600123 
         userId: id,
         start: this.data.selectdateTimestamp,
-        end: this.data.selectdateTimestamp + 86399000 // 第一天23点59分59秒
+        end: this.data.selectdateTimestamp + 86399000 // 今天23点59分59秒
       },
       success: (res) => {
         console.log('日程', res);
