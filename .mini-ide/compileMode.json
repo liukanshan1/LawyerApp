@@ -1,9 +1,16 @@
 {
   "modes": [
     {
+      "title": "createtodo",
+      "page": "pages/createtodo/createtodo",
+      "launchMode": "common",
+      "pageQuery": ""
+    },
+    {
       "title": "pages/createtodo/createtodo",
       "page": "pages/createtodo/createtodo",
-      "launchMode": "common"
+      "launchMode": "common",
+      "pageQuery": ""
     },
     {
       "title": "pages/message/message",
@@ -46,6 +53,16 @@
       "launchMode": "common"
     },
     {
+      "title": "add",
+      "page": "pages/add_case/add_case",
+      "launchMode": "common",
+      "pageQuery": ""
+    },
+    {
+      "title": "detail",
+      "page": "pages/case_detail/case_detail",
+      "launchMode": "common",
+      "pageQuery": ""
       "title": "case/addCusProcess/addCusProcess",
       "page": "pages/case/addCusProcess/addCusProcess",
       "launchMode": "common"
