@@ -45,12 +45,12 @@ Page({
     })
     
     
-    my.setStorage({
-      key:"myId",
-      data:{
-        id:"658584160f8bdfbed7423e86"
-      }
-    })
+    // my.setStorage({
+    //   key:"myId",
+    //   data:{
+    //     id:"658584160f8bdfbed7423e86"
+    //   }
+    // })
     // console.log(my.getStorage("myId"))
     // my.cloudFunction.callFunction({
     //   name: "getUserByName",
@@ -102,14 +102,15 @@ Page({
   },
 
   getMyId(){
+    return my.getStorageSync({key: "_id"}).data
     return new Promise(
       (resolve,reject)=>{
         my.getStorage({
-          key:"myId",
+          key:"_id",
           success(e){
             console.log(e)
             // userId.push(e.data.id)
-            resolve(e.data.id)
+            resolve(e.data)
           },
           fail(e){
             console.log("fail")
@@ -121,7 +122,7 @@ Page({
   },
   async confirm(e) {
     let userId=[];
-    let myId=await this.getMyId()
+    let myId=this.getMyId()
     let opname=this.data.opposite_name.join('、')
     let form={
       isDone:0,
@@ -204,6 +205,7 @@ Page({
             createTime:new Date(this.data.selectdate).getTime(),
             isPlaintiff:form.isPlaintiff,
             oppositePartyName:form.oppositePartyName,
+            processIds:[],
           },
           success:function(res){
             console.log(res)
