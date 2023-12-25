@@ -82,10 +82,10 @@ Page({
             })
             this.getNextProcessById()
             my.hideLoading()
-            console.log('案件byidsss', res);
+            console.log('案件进程', res);
           },
           fail: function (res) {
-            console.log('案件byidsss', res);
+            console.log('案件进程', res);
           }
         })
       },

@@ -1,4 +1,4 @@
-<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<!-- <view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
 <top_tap></top_tap>
 <view>
   <view class="top">
@@ -15,4 +15,4 @@
       <view class="festival"><text a:if="{{ item.festival }}">{{item.festival}}</text></view>
     </view>
   </view>
-</view>
+</view> -->

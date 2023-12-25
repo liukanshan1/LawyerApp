@@ -114,10 +114,10 @@
           </view>
         </view>
       </view>
-      <view class="bottom">
+      <!-- <view class="bottom">
         <view class="btn">保存</view>
         <view class="btn">导出</view>
-      </view>
+      </view> -->
     </view>
   </view>
   <view a:if="{{ tab_index === 1 }}" class="tab2Page">
