@@ -1,17 +1,10 @@
-<view>
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<top_tap title="日程"></top_tap>
+<view class="page">
   <picker mode="date" onChange="dateChange">
     <view class="selectDate">请选择日期：{{selectdate}}</view>
   </picker>
   <view class="list">
-    <!-- <view class="scheduleMsg">
-      <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
-      <view class="main">
-        <view style="margin-bottom: 8px;">客户预约会议</view>
-        <view class="text">2023.11.22   11：00 a.m.</view>
-        <view class="text">线上会议号：</view>
-        <image mode="heightFix" src="/images/image 20.png" class="icon"/>
-      </view>
-    </view> -->
     <view class="scheduleMsg" a:for="{{ list }}" a:key="index">
       <view class="hint" style="font-size: 14px; color: #929292;">{{item.description}}</view>
       <view class="main">

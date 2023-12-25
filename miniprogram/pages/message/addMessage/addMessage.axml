@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="top">
+    <view class="label">消息：</view>
+    <input placeholder="请输入内容" onInput="inputContent"/>
+  </view>
+  <view class="btns">
+    <view class="btn cancel" onTap="cancel">取消</view>
+    <view class="btn confirm" onTap="addCusProcess">发送</view>
+  </view>
+</view>

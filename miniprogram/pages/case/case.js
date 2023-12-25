@@ -31,9 +31,6 @@ Page({
       this.setData({
         page_top_height:height
       })
-      // request(GET_CASE_LIST,'GET',[]).then(res=>{
-      //   console.log(res)
-      // })
       my.hideBackHome({
         success:res=>{
           console.log("success")
@@ -44,13 +41,14 @@ Page({
         frontColor: '#000000' // 设置文字及状态栏电量、日期等文字颜色
       })
 
-      const context = await my.cloud.createCloudContext({
-        env: 'env-00jx4obkh2l9'
-      });
-      await context.init();
-      my.cloudFunction = context;
-      my.setStorageSync({key: '_id', data: '658428204950fd82ff91e8d8'})
-      
+      // const context = await my.cloud.createCloudContext({
+      //   env: 'env-00jx4obkh2l9'
+      // });
+      // await context.init();
+      // my.cloudFunction = context;
+      // my.setStorageSync({key: '_id', data: '658428204950fd82ff91e8d8'})
+    },
+    onShow(){
       this.getCases()
     },
     changeTab(e){

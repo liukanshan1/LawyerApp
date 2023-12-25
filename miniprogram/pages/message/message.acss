@@ -3,21 +3,31 @@
   min-height: 100vh;
   background-color: #fff;
   padding-top: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
+}
+
+.tabBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  background-color: #fff;
+  z-index: 999;
 }
 
 .tab {
   box-sizing: border-box;
   display: flex;
-  position: relative;
+  position: fixed;
+  left: calc(50vw - 110px);
+  top: 10px;
   justify-content: space-between;
   width: 220px;
   height: 40px;
   background-color: #F7F7F7;
   border-radius: 20px;
   padding: 0 5px;
-  margin: auto;
-  margin-bottom: 8vw;
 }
 
 .tab .item {
@@ -50,7 +60,7 @@
 
 .list {
   width: 100vw;
-  margin: 20px 5vw;
+  margin: 80px 5vw;
 }
 
 .caseItem {
@@ -137,4 +147,30 @@
   bottom: 0;
   height: 30px;
 
+}
+
+.bottom {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  height: 70px;
+  background-color: #fff;
+  left: 5vw;
+  bottom: 0px;
+  padding-top: 10px;
+}
+
+.bottom input {
+  width: 60vw;
+  background-color: rgb(245, 244, 244);
+}
+.bottom .sendBtn {
+  width: 20vw;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(211, 206, 206);
+  margin-top: 2px;
 }

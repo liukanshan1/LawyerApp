@@ -47,9 +47,9 @@ Page({
     })
   },
   gotoDay(){
-    my.navigateTo({
-      url: "/pages/schedule/scheduleDay/scheduleDay"
-    })
+    // my.navigateTo({
+    //   url: "/pages/schedule/scheduleDay/scheduleDay"
+    // })
   }
 })
 

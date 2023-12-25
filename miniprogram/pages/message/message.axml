@@ -1,45 +1,64 @@
 <view class="page">
-  <view class="tab">
-    <view
-      class="item {{tab_index === 0 ? 'tab_active':''}}"
-      style="padding-left: 5%;"
-      onTap="changeTab"
-      data-i="{{0}}"
-    >
-      案件消息
+  <view class="tabBg">
+    <view class="tab">
+      <view
+        class="item {{tab_index === 0 ? 'tab_active':''}}"
+        style="padding-left: 5%;"
+        onTap="changeTab"
+        data-i="{{0}}"
+      >
+        案件消息
+      </view>
+      <view
+        class="item {{tab_index === 1 ? 'tab_active':''}}"
+        style="padding-right: 5%;"
+        onTap="changeTab"
+        data-i="{{1}}"
+      >
+        日程消息
+      </view>
+      <view class="bg" style="left: {{tab_index === 0 ? '5%' : '50%'}};"></view>
     </view>
-    <view
-      class="item {{tab_index === 1 ? 'tab_active':''}}"
-      style="padding-right: 5%;"
-      onTap="changeTab"
-      data-i="{{1}}"
-    >
-      日程消息
+    <view style="position: fixed; left: 50%; transform: translateX(-50%); top: 60px;">
+      {{msgListClick ? msgList[caseIndex].caseName : ''}}
     </view>
-    <view class="bg" style="left: {{tab_index === 0 ? '5%' : '50%'}};"></view>
   </view>
-  <view style="text-align:center; margin: 10px auto;">{{msgListClick ? '详情' : ''}}</view>
-  <view class="list" a:if="{{ tab_index === 0}}">
-    <view class="caseItem" a:for="{{ msgListClick ? oneCaseMsgs : msgList }}" a:key="index" onTap="getMsgByCaseId" data-i={{index}}>
+  <view a:if="{{ tab_index === 0}}" class="list">
+    <view
+      a:for="{{ msgListClick ? oneCaseMsgs : msgList }}"
+      class="caseItem"
+      a:key="index"
+      onTap="getMsgByCaseId"
+      data-i={{index}}
+      data-flag={{true}}
+    >
       <view class="left">
         <image mode="widthFix" src="" class="headImg" />
         <view class="middle">
-          <view>{{item.caseName}}</view>
-          <view class="content">{{item.userName}}: {{item.content}}</view>
+          <view>{{ msgListClick ? item.userName : item.caseName}}</view>
+          <view class="content">
+            {{msgListClick ? '' : item.userName + ": "}}{{item.content}}
+          </view>
         </view>
       </view>
       <view class="date">{{item.time}}</view>
     </view>
   </view>
-  <view class="list" a:if="{{ tab_index === 1 }}">
-    <view class="scheduleMsg" a:for="{{ schduleList }}" a:key="index">
-      <view class="hint" style="font-size: 14px; color: #929292;">{{item.description}}</view>
+  <view a:if="{{ tab_index === 1 }}" class="list">
+    <view a:for="{{ schduleList }}" class="scheduleMsg" a:key="index">
+      <view class="hint" style="font-size: 14px; color: #929292;">
+        {{item.description}}
+      </view>
       <view class="main">
         <view style="margin-bottom: 8px;">{{item.title}}</view>
         <view class="text">{{item.time}}</view>
         <view class="text">{{item.address}}</view>
-        <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+        <image mode="heightFix" src="/images/image 20.png" class="icon" />
       </view>
     </view>
+  </view>
+  <view a:if="{{ tab_index === 0 && msgListClick }}" class="bottom">
+    <input placeholder="请输入内容" onInput="inputContent" />
+    <view class="sendBtn" onTap="sendMsg">发送</view>
   </view>
 </view>

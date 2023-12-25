@@ -1,7 +1,5 @@
-<view class="status-box status-white-noback" style="height:{{page_top_height}}px"></view>
-<top_tap></top_tap>
 <view class="outer">
-  <view class="case_item" onTap="tap_case_item">
+  <view class="case_item">
     <view class="case_name">基本信息</view>
     <view class="info_line">
       <view class="info_key">案件是否完结</view>
@@ -19,19 +17,35 @@
       <view class="info_key">创建时间</view>
       <view class="info_value">{{case.time}}</view>
     </view>
-    <view class="info_line">
-      <view class="info_key">被告</view>
-      <view class="info_value">{{case.oppositePartyName}}</view>
+    <view a:if="{{ case.isPlaintiff }}">
+      <view class="info_line">
+        <view class="info_key">被告</view>
+        <view class="info_value">{{case.oppositePartyName}}</view>
+      </view>
+      <view class="info_line">
+        <view class="info_key">原告</view>
+        <view class="info_value">{{case.customers}}</view>
+      </view>
+    </view>
+    <view a:if="{{ !case.isPlaintiff }}">
+      <view class="info_line">
+        <view class="info_key">被告</view>
+        <view class="info_value">{{case.customers}}</view>
+      </view>
+      <view class="info_line">
+        <view class="info_key">原告</view>
+        <view class="info_value">{{case.oppositePartyName}}</view>
+      </view>
     </view>
     <view class="info_line">
-      <view class="info_key">原告</view>
-      <view class="info_value"> <text a:for="{{ case.users }}" a:key="index">{{item.name}},</text> </view>
+      <view class="info_key">委托律师</view>
+      <view class="info_value">{{case.lawyers}}</view>
     </view>
-    <view class="info_detail_hint">查看信息详情</view>
+    <!-- <view class="info_detail_hint">查看信息详情</view> -->
   </view>
-  <view class="process_box">
+  <view class="process_box" >
     <view class="process_text"> 进程追踪</view>
-    <view class="today_agenda" onTap="tap_today_agenda">
+    <view class="today_agenda" catchTap="tap_today_agenda">
       <view class="today_agenda_text_line">
         <view class="today_agenda_text">今日进程</view>
         <view class="arrow"></view>
@@ -51,14 +65,22 @@
       </view>
     </view>
     <view class="process_map_box">
-      <view class="process_map_text_line" onTap="tap_process_trace">
+      <view class="process_map_text_line" catchTap="tap_process_trace">
         <view class="process_map_text">进程追踪导图</view>
         <view class="arrow"></view>
       </view>
       <scroll-view scroll-x="{{true}}" class="top_scroll_new">
         <view a:for="{{process_map_item}}" class="map_item">
-          <view class="process_map_item {{index === case.processIds[case.processIds.length - 1] ? 'current':''}}">{{item}}</view>
-          <view class="next_arrow" a:if="{{index < process_map_item.length-1}}">————></view>
+          <view class="process_map_item {{index < process_map_item.length ? 'current':''}}">{{item.processName}}</view>
+          <view class="next_arrow" a:if="{{ index < process_map_item.length -1 || nextProcessList.length !== 0 }}">————></view>
+        </view>
+        <view class="map_item" a:if="{{ nextProcessList.length !== 0 }}">
+          <!-- <view class="process_map_item">待定</view> -->
+          <picker class="process_map_item" onChange="nextChange" range="{{nextProcessList}}" range-key="processName" value="{{nextProcessIndex}}">
+            <view class="detail_picker">
+              <view class="process_map_item">待定</view>
+            </view>
+          </picker>
         </view>
       </scroll-view>
     </view>

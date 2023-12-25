@@ -44,6 +44,11 @@
       "title": "pages/case/case",
       "page": "pages/case/case",
       "launchMode": "common"
+    },
+    {
+      "title": "case/addCusProcess/addCusProcess",
+      "page": "pages/case/addCusProcess/addCusProcess",
+      "launchMode": "common"
     }
   ]
 }

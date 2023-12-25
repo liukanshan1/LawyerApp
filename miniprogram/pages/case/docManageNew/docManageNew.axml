@@ -3,7 +3,7 @@
     <view class="topTitle">全部文档</view>
     <!-- <view class="right">按案件分类 ˅</view> -->
   </view>
-  <view class="case">
+  <view class="case" >
     <view class="title">人格纠纷案</view>
     <view class="right">></view>
   </view>

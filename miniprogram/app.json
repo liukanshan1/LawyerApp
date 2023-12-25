@@ -13,7 +13,9 @@
     "pages/case/addDoc/addDoc",
     "pages/schedule/scheduleDay/scheduleDay",
     "pages/case/docManageNew/docManageNew",
-    "pages/homepage/scheduleDay/scheduleDay"
+    "pages/homepage/scheduleDay/scheduleDay",
+    "pages/case/addCusProcess/addCusProcess",
+    "pages/message/addMessage/addMessage"
   ],
   "window": {
     "defaultTitle": ""
