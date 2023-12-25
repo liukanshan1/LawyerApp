@@ -84,6 +84,7 @@ Page({
     return new Date(format).getTime() - 28800000
   },
   getTaskList(){
+    my.showLoading()
     let id = my.getStorageSync({key: '_id'}).data
     console.log(id, this.data.todayTimestampZero,this.data.todayTimestampZero+86399000);
     my.cloudFunction.callFunction({
@@ -102,6 +103,7 @@ Page({
         this.setData({
           tasklist: res.result.data
         })
+        my.hideLoading()
       },
       fail: function(res) {
         console.log('日程', res);
@@ -109,6 +111,7 @@ Page({
     })
   },
   getNewestMes(){
+    my.showLoading()
     let id = my.getStorageSync({key: '_id'}).data
     my.cloudFunction.callFunction({
       name: "getNewestMes",
@@ -121,6 +124,7 @@ Page({
         this.setData({
           msgList: res.result
         })
+        my.hideLoading()
       },
       fail: function (res) {
         console.log('getNewestMes fail', res);
