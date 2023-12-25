@@ -127,6 +127,7 @@ Page({
     })
   },
   setTime1(time, name) {
+    console.log('start', time);
     this.setData({
       start_time: time
     })
