@@ -49,11 +49,25 @@
   color: #929292;
   padding-left: 5rpx;
 }
-
+.task_title_new {
+  display: flex;
+}
+.task_title_new .caseTitle {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 5px;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.task_title_new .scheduleTitle {
+  padding-bottom: 3px;
+}
 .task_box{
   display: flex;
-  width: 226rpx;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -62,8 +76,22 @@
   flex-direction: column;
   justify-content: space-between;
   height: 90rpx;
+  margin-left: 5vw;
 }
+.small_text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 15px;
+}
+.small_text .icon {
+  position: absolute;
+  left: -15px;
+  top: 0;
+  height: 100%;
 
+}
 .task_time{
   font-size: xx-small;
   height: 20rpx;
@@ -81,10 +109,9 @@
 
 .decorate_vertical_bar{
   height: 105rpx;
-  width: 8rpx;
+  width: 3px;
   background-color: #757575;
-  border-width: 5rpx;
-  border-radius: 5rpx;
+  flex-shrink: 0;
 }
 
 .title_bar{
@@ -166,14 +193,24 @@
   background-color: #D9D9D9;
   border-radius: 21rpx;
   text-align: center;
-  width: 130rpx;
-  height: 42rpx;
-  font-size: small;
-  
+  max-width: 200rpx;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .message_status{
-  font-size: small;
+  font-size: 12px;
   color:#929292;
-  width: 490rpx;
+  width: 450rpx;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
 }

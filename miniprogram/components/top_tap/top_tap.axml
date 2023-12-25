@@ -1,12 +1,7 @@
 <view class="top_line">
-  <view class="content_line">
-    <view class="title_and_back">
-      <!-- <slot class="title"></slot> -->
-      <view class="title">标题</view>
-    </view>
-    <view class="icons">
-      <image class="message" mode="widthFix" src="/images/Icon.png"></image>
-      <image mode="widthFix" src="/images/Ellipse 3.png" class="ellipse"/>
-    </view>
+  <view class="title">标题</view>
+  <view class="icons" onTap="toMessage" data-id="1">
+    <image class="message" mode="widthFix" src="/images/Icon.png"></image>
+    <image mode="widthFix" src="/images/Ellipse 3.png" class="ellipse"/>
   </view>
 </view>

@@ -1,31 +1,37 @@
 Page({
   data: {
-    page_top_height:0,
-    label:[{name:"开会",style:"label_style1"},{name:"开会",style:"label_style2"},{name:"开会",style:"label_style3"}],
-    repeat_selection:["从不","一直重复"],
-    repeat_index:0,
-    remind_selection:["5分钟前","10分钟前"],
-    remind_index:0,
-    remind_method_selection:["通知提醒","短信提醒"],
-    remind_method_index:0,
-    case_selection:["案件1","案件2"],
-    case_index:0,
-    content_value:"",
-    remark_value:"",
-    start_time:"",
-    start_date:"",
-    end_time:"",
-    end_date:"",
+    page_top_height: 0,
+    label: [{
+      name: "会议",
+      style: "label_style1"
+    }, {
+      name: "开庭",
+      style: "label_style2"
+    }, {
+      name: "自定义",
+      style: "label_style3"
+    }],
+    label_index: 0,
+    caseList: [],
+    caseIndex: 0,
+    attendUserList: [],
+    attendedUserIndexs: [],
+    attendedUserIds: [], // 只用于表单提交
+    address_value: "",
+    content_value: "",
+    remark_value: "",
+    start_time: "08:00",
+    start_date: "",
   },
   onLoad() {
-    const app=getApp()
-    const height=app.globalData.page_top_height
+    const app = getApp()
+    const height = app.globalData.page_top_height
     console.log(height)
     this.setData({
-      page_top_height:height
+      page_top_height: height
     })
     my.hideBackHome({
-      success:res=>{
+      success: res => {
         console.log("success")
       }
     });
@@ -33,68 +39,140 @@ Page({
       backgroundColor: '#FFFFFF', // 想使用frontColor 这个字段必填
       frontColor: '#000000' // 设置文字及状态栏电量、日期等文字颜色
     })
-  },
-  repeat_change(e){
-    console.log(e)
     this.setData({
-      repeat_index:e.detail.value
+      start_date: this.initDate()
+    })
+    let id = my.getStorageSync({
+      key: "_id"
+    }).data
+    my.cloudFunction.callFunction({
+      name: "getCases",
+      data: {
+        userId: id
+      },
+      success: (res) => {
+        console.log('getCases', res);
+        this.setData({
+          caseList: res.result.data
+        })
+        if (res.result.data.length !== 0) this.getUsernamesByIds(this.data.caseList[this.data.caseIndex].userIds)
+      },
+      fail: function (res) {
+        console.log('getCases', res);
+      }
     })
   },
-  remind_change(e){
-    console.log(e)
-    this.setData({
-      remind_index:e.detail.value
+  getUsernamesByIds(ids) {
+    my.cloudFunction.callFunction({
+      name: "getUsernamesByIds",
+      data: {
+        ids: ids
+      },
+      success: (res) => {
+        console.log('getUsernamesByIds', res);
+        res.result.data.map(item => {
+          item.name = item.name ? item.name : item.nickname
+        })
+        this.setData({
+          attendUserList: res.result.data
+        })
+      },
+      fail: function (res) {
+        console.log('getUsernamesByIds', res);
+      }
     })
   },
-  remind_method_change(e){
-    console.log(e)
+  caseChange(e) {
     this.setData({
-      remind_method_index:e.detail.value
+      caseIndex: e.detail.value,
+      attendedUserIndexs: [],
+      attendedUserIds: []
+    })
+    this.getUsernamesByIds(this.data.caseList[this.data.caseIndex].userIds)
+  },
+  changeLabel(e) {
+    this.setData({
+      label_index: e.currentTarget.dataset.i
     })
   },
-  content_input(e){
-    // console.log(e.detail)
+  attendUserChange(e) {
+    if (this.data.attendedUserIndexs.indexOf(e.detail.value) !== -1) return
+    let temp = this.data.attendedUserIndexs
+    temp.push(e.detail.value)
+    let tempIds = this.data.attendedUserIds
+    tempIds.push(this.data.attendUserList[e.detail.value]._id)
     this.setData({
-      content_value:e.detail.value
+      attendedUserIndexs: temp,
+      attendedUserIds: tempIds
     })
   },
-  remark_input(e){
-    // console.log(e.detail)
+  address_input(e) {
     this.setData({
-      remark_value:e.detail.value
+      address_value: e.detail.value
     })
   },
-  setDate1(date,name){
-    if(name=="start"){
-      this.setData({
-        start_date:date
-      })
-    }else if(name=="end"){
-      this.setData({
-        end_date:date
-      })
-    }else{
-      console.log("incorrect name")
-    }    
+  content_input(e) {
+    this.setData({
+      content_value: e.detail.value
+    })
   },
-  setTime1(time,name){
-    if(name=="start"){
-      this.setData({
-        start_time:time
-      })
-    }else if(name=="end"){
-      this.setData({
-        end_time:time
-      })
-    }else{
-      console.log("incorrect name")
-    }    
+  remark_input(e) {
+    this.setData({
+      remark_value: e.detail.value
+    })
   },
-  cancel(e){
+  setDate1(date, name) {
+    this.setData({
+      start_date: date
+    })
+  },
+  setTime1(time, name) {
+    this.setData({
+      start_time: time
+    })
+  },
+  cancel(e) {
     console.log("cancel")
   },
-  confirm(e){
-    console.log("confirm")
+  initDate(){
+    let date = new Date();
+    let YY = date.getFullYear();
+    let MM = (date.getMonth() + 1 < 10 ? '0'+(date.getMonth() + 1) : date.getMonth() + 1);
+    let DD = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate());
+    
+    return YY + '-' + MM + '-' + DD
+  },
+  confirm(e) {
+    if(this.data.attendedUserIds.length === 0 || this.data.content_value === "" || this.data.address_value === "" || this.data.remark_value === "") {
+      my.showModal({
+        title: "提示",
+        content: "信息未填写完整！"
+      })
+      return
+    }
+    let time = new Date(this.data.start_date + " " + this.data.start_time).getTime()
+    console.log('time', time);
+    // return
+    my.cloudFunction.callFunction({
+      name: "addSchedule",
+      data: {
+        caseId: this.data.caseList[this.data.caseIndex]._id,
+        caseTitle: this.data.caseList[this.data.caseIndex].title,
+        userIds: this.data.attendedUserIds,
+        title: this.data.content_value,
+        address: this.data.address_value,
+        time: time,
+        description:this.data.remark_value,
+        type: this.data.label[this.data.label_index].name
+      },
+      success: (res) => {
+        console.log('addSchedule', res);
+        my.navigateBack();
+      },
+      fail: function (res) {
+        console.log('addSchedule fail', res);
+      }
+    })
+    
   }
-
 });

@@ -4,7 +4,7 @@
   box-sizing: border-box;
   padding-right: 47rpx;
   padding-left: 47rpx;
-
+  padding-bottom: 100px;
 }
 
 .select_time_area{
@@ -16,7 +16,11 @@
   padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
+.address {
+  display: flex;
+  justify-content: space-between;
 
+}
 .label{
   width: 164rpx;
   height: 46rpx;
@@ -29,6 +33,7 @@
   display: flex;
   height: 100rpx;
   align-items: center;
+  line-height: 40rpx;
 
 }
 
@@ -69,7 +74,7 @@
 
 .picker_indicater{
   text-align: right;
-  width: 200rpx;
+  /* width: 200rpx; */
   margin-right: 30rpx;
   color:#797B80;
 }
@@ -102,6 +107,10 @@
   background-color: #FAE6ED;
 }
 
+.label_styleActive {
+  border: 1px solid rgb(15, 175, 234);
+}
+
 .cancel_button{
   width: 289rpx;
   height: 70rpx;
@@ -113,5 +122,15 @@
 .button_area{
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
+.attendUser {
+  box-sizing: border-box;
+  width: 656rpx;
+  height: 100px;
+  box-shadow: 0 1px 10px rgba(0,0,0,.1);
+  border-radius: 16rpx;
+  padding:20rpx;
+  background-color: rgb(230, 227, 227);
+}

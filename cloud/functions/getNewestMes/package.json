@@ -1,0 +1,12 @@
+{
+  "name": "getNewestMes",
+  "version": "1.0.0",
+  "description": "return newest messages by user id",
+  "main": "index.js",
+  "scripts": {},
+  "author": "perkz",
+  "license": "ISC",
+  "dependencies": {
+    "@alipay/faas-server-sdk": "^1.0.0"
+  }
+}
