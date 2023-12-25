@@ -29,14 +29,24 @@
   </view>
   <view class="area_reason_area">
     <view class="area_reason_title">当事人</view>
-    <input class="input_area" onInput="name_input" onFocus="name_focus" onBlur="name_blur"></input>
+    <input class="input_area" onInput="name_input" onFocus="name_focus"></input>
   </view>
   <view class="name_list" a:if="{{ name_focus }}">
-    <view a:for="{{ name_items }}" class="item_line">
-      <view>
-        {{item}}
+    <scroll-view scroll-y="{{true}}">
+      <view class="item_line" onTap="name_blur">关闭</view>
+      <view a:for="{{ name_items }}" a:if="{{ !exist_item[item.id]||!exist_item[item.id].exist }}" class="item_line" onTap="select_items" data-i="{{index}}">
+        <view>
+          {{item.name}}
+        </view>
       </view>
-    </view>
+    </scroll-view>
+  </view>
+  <view class="area_reason_area">
+    <scroll-view scroll-x="{{true}}" class="party_scroll">
+      <view a:for="{{exist_item}}" a:if="{{ exist_item[item.id].exist }}" class="display_party" onTap="cancel_item" data-i="{{item}}">
+        <view class="display_text">{{item.name}}</view>
+      </view>
+    </scroll-view>
   </view>
   <view class="area_reason_area">
     <picker onChange="roleChange" range="{{role}}" range-key="title" value="{{roleIndex}}">
@@ -49,7 +59,7 @@
       </view>
     </picker>
   </view>
-  <view class="area_reason_area">
+  <!-- <view class="area_reason_area">
     <picker onChange="processChange" range="{{process}}" range-key="title" value="{{processIndex}}">
       <view class="detail_picker">
         <view class="picker_title">案件进程</view>
@@ -59,6 +69,18 @@
         </view>
       </view>
     </picker>
+  </view> -->
+  <view class="area_reason_area">
+    <view>对方当事人</view>
+    <input class="input_area" onInput="opposite_input" value="{{opposite_input_temp}}"></input>
+    <view onTap="add_opposite">添加</view>
+  </view>
+  <view class="area_reason_area">
+    <scroll-view scroll-x="{{true}}" class="party_scroll">
+      <view a:for="{{opposite_name}}" class="display_party" onTap="cancel_opposite_item" data-i="{{index}}">
+        <view class="display_text">{{item}}</view>
+      </view>
+    </scroll-view>
   </view>
   <view class="custom_content_area">
     <view class="custom_content_title">案件备注</view>

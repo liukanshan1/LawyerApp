@@ -163,7 +163,7 @@
 }
 
 .cancel_button{
-  margin-top: 300rpx;
+  margin-top: 100rpx;
   width: 289rpx;
   height: 70rpx;
   text-align: center;
@@ -190,6 +190,7 @@
   flex-direction: column;
   box-sizing: border-box;
   padding:20rpx ;
+  text-align: center;
 }
 
 .item_line{
@@ -199,5 +200,32 @@
   border-radius: 10rpx;
   margin-bottom: 10rpx;
   line-height: 60rpx;
-  padding: 10rpx;
+  /* padding: 10rpx; */
+}
+
+.display_party{
+  display: inline-flex;
+  /* width: 140rpx; */
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #c9c9c9;
+  border-radius: 50rpx;
+  margin-right: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  
+}
+
+.party_scroll{
+  width: 680rpx;
+  white-space: nowrap;
+}
+
+.display_text{
+  text-align: center;
+  /* width: 200rpx; */
+}
+
+.input_area{
+  width: 360rpx;
 }
