@@ -7,6 +7,10 @@ Page({
     msgList: []
   },
   async onLoad() {
+    my.setStorageSync({
+      key:"_id",
+      data:"658584160f8bdfbed7423e86"
+    })
     my.getAuthCode({
       scopes: 'auth_user',
       success: (res) => {

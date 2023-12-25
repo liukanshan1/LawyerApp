@@ -59,13 +59,22 @@
       "pageQuery": ""
     },
     {
+      "title": "case/addCusProcess/addCusProcess",
+      "page": "pages/case/addCusProcess/addCusProcess",
+      "launchMode": "common",
+      "pageQuery": ""
+    },
+    {
       "title": "detail",
       "page": "pages/case_detail/case_detail",
       "launchMode": "common",
       "pageQuery": ""
-      "title": "case/addCusProcess/addCusProcess",
-      "page": "pages/case/addCusProcess/addCusProcess",
-      "launchMode": "common"
+    },
+    {
+      "title": "casedetail",
+      "page": "pages/case_detail/case_detail",
+      "launchMode": "common",
+      "pageQuery": ""
     }
   ]
 }

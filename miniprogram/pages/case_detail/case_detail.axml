@@ -47,17 +47,17 @@
     <view class="process_text"> 进程追踪</view>
     <view class="today_agenda" catchTap="tap_today_agenda">
       <view class="today_agenda_text_line">
-        <view class="today_agenda_text">今日进程</view>
+        <view class="today_agenda_text">最近日程</view>
         <view class="arrow"></view>
       </view>
       <view class="task_box_wrapper">
-        <view class="task_box">
+        <view class="task_box" a:for="{{ list }}">
           <view class="decorate_vertical_bar"></view>
-          <view class="task_content_line">
-            <view class="task_name">客户预约会议</view>
+          <view class="task_content_line" >
+            <view class="task_name">{{item.title}}</view>
             <view class="small_text">
-              <view class="task_time">11：10 a.m.</view>
-              <view class="task_site">suct</view>
+              <view class="task_time">{{item.time}}</view>
+              <view class="task_site">{{item.address}}</view>
               <image mode="heightFix" src="/images/image 20.png" class="icon"/>
             </view>
           </view>
