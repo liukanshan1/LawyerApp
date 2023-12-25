@@ -34,18 +34,26 @@
     "items": [
       {
         "pagePath": "pages/homepage/homepage",
+        "icon": "images/1.png",
+        "activeIcon": "images/1.png",
         "name": "首页"
       },
       {
         "pagePath": "pages/case/case",
+        "icon": "images/2.png",
+        "activeIcon": "images/2.png",
         "name": "案件"
       },
       {
         "pagePath": "pages/schedule/scheduleDay/scheduleDay",
+        "icon": "images/3.png",
+        "activeIcon": "images/3.png",
         "name": "日程"
       },
       {
         "pagePath": "pages/personal/personal",
+        "icon": "images/4.png",
+        "activeIcon": "images/4.png",
         "name": "个人"
       }
     ]

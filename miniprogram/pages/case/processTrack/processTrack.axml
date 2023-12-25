@@ -133,6 +133,6 @@
       </view>
     </view>
   </view>
-  <image mode="widthFix" src="/images/Plus.png" class="global_plus" />
+  <!-- <image mode="widthFix" src="/images/Plus.png" class="global_plus" /> -->
 
 </view>

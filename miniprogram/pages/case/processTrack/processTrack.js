@@ -69,15 +69,20 @@ Page({
         children: []
       }
     ],
-    schduleList: []
+    schduleList: [],
+    caseId: ""
   },
   onLoad(e) {
     console.log('load',e);
     this.setData({
-      tab_index: e.tabIndex
+      tab_index: parseInt(e.tabIndex),
+      caseId: e.caseId
     })
     my.showLoading();
     this.getCaseById(e.caseId)
+  },
+  onShow(){
+    this.getCaseById(this.data.caseId)
   },
   changeTab(e) {
     this.setData({
