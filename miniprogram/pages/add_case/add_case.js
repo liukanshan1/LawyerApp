@@ -33,11 +33,11 @@ Page({
     query_content:"",
   },
   async onLoad() {
-    const context = await my.cloud.createCloudContext({
-      env: 'env-00jx4obkh2l9'
-    });
-    await context.init();
-    my.cloudFunction = context;
+    // const context = await my.cloud.createCloudContext({
+    //   env: 'env-00jx4obkh2l9'
+    // });
+    // await context.init();
+    // my.cloudFunction = context;
     let date=new Date()
     let today=date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()
     this.setData({
@@ -98,9 +98,7 @@ Page({
     })
   },
   cancel(e) {
-    let id={id:"1"}
-    this.getMyId(id)
-    console.log(id.id)
+    my.navigateBack();
   },
 
   getMyId(){
@@ -226,9 +224,10 @@ Page({
               duration:"1000",
               success:function(e){
     
-                my.redirectTo({
-                  url:"/pages/homepage/homepage"
-                })
+                // my.redirectTo({
+                //   url:"/pages/homepage/homepage"
+                // })
+                my.navigateBack()
               }
             })
         },
