@@ -36,7 +36,7 @@ Page({
     my.cloudFunction.callFunction({
       name: "getCaseById",
       data: {
-        id: caseId
+        caseId: caseId
       },
       success: (res) => {
         console.log('案件byid', res);
@@ -69,7 +69,8 @@ Page({
   },
   getNextProcessById(){
     let fatherId = -1
-    if(this.data.process_map_item.length !== 0) fatherId = this.data.process_map_item.at(-1).id
+    // if(this.data.process_map_item.length !== 0) fatherId = this.data.process_map_item.at(-1).id
+    if(this.data.process_map_item.length !== 0) fatherId = this.data.process_map_item[this.data.process_map_item.length - 1].id
     console.log('fatherId', fatherId);
     my.cloudFunction.callFunction({
       name: "getNextProcessById",
@@ -122,7 +123,7 @@ Page({
 
   tap_process_trace(e) {
     my.navigateTo({
-      url: `/pages/case/processTrack/processTrack?caseId=${this.data.case._id}&tabIndex=${1}`
+      url: `/pages/case/processTrack/processTrack?caseId=${this.data.case._id}&tabIndex=${0}`
     })
   },
 

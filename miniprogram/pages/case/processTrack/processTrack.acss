@@ -61,7 +61,7 @@
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   /* margin: 10px 20px; */
   padding: 10px 20px;
@@ -163,20 +163,20 @@
 }
 
 .plus {
-  width: 16px;
-  height: 16px !important;
+  width: 20px;
+  height: 20px !important;
   margin-right: 3px;
 }
 
 .plus_mini {
-  width: 12px;
-  height: 12px !important;
+  width: 16px;
+  height: 16px !important;
   margin-right: 3px;
   margin-top: 1px;
 }
 
 .title .text_mini {
-  font-size: 12px;
+  font-size: 14px;
   margin-right: 10px;
 }
 

@@ -44,9 +44,10 @@ Page({
       title: "提示",
       content: "添加成功",
       complete:()=>{
-        my.navigateTo({
-          url: `/pages/case/processTrack/processTrack?caseId=${this.data.caseId}`
-        })
+        // my.navigateTo({
+        //   url: `/pages/case/processTrack/processTrack?caseId=${this.data.caseId}`
+        // })
+        my.navigateBack()
       }
     })
   }
