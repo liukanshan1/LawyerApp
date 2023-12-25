@@ -90,13 +90,9 @@
   text-align: center;
   background-color: #D9D9D9;
   padding: 0 10px;
-  /* margin-left: 20px; */
 }
-/* .next_arrow {
-  padding-right: 10px;
-} */
 .current {
-  background-color: #FFCCCC;
+  background-color: #D4F7C8;
 }
 
 .file_management{

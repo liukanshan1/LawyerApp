@@ -1,5 +1,5 @@
 <view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
-<top_tap></top_tap>
+<top_tap title="案件"></top_tap>
 <scroll-view scroll-x="true" class="top_scroll">
   <view a:for="{{case_type_list}}" class="case_category {{tab_index === index ? 'case_category_active': ''}}" onTap="changeTab" data-i={{index}}>{{item}}</view>
 </scroll-view>

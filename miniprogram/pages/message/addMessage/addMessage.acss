@@ -1,0 +1,40 @@
+.page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+.top {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 5vw;
+}
+.top .label {
+  height: 25px;
+  line-height: 25px;
+}
+input {
+  width: 70vw;
+  height: 25px;
+  line-height: 25px;
+  margin-right: 10vw;
+}
+.btns {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  left: 5vw;
+  bottom: 80px;
+}
+.btn {
+  width: 35vw;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 30px;
+}
+.cancel {
+  background-color: rgb(248, 155, 155);
+}
+.confirm {
+  background-color: rgb(156, 204, 158);
+}

@@ -20,42 +20,36 @@
       <image mode="widthFix" src="/images/search-01.png" class="search" />
     </view>
   </view>
-  <view class="tab1Page" a:if="{{ tab_index === 0 }}">
-    <view class="mainTitle">
-      <view>完整导图</view>
-      <view style="font-size: 12px; color: #3E6DE7; font-weight: normal;">导出</view>
-    </view>
-    <view class="main">
-      <scroll-view scroll-x="{{true}}" class="scrollView">
-        <view a:for="{{process_map_item}}" class="scrollItem">
-          <view class="scrollColumn">
-            <view class="scrollItemText {{index === current_process_index ? 'current':''}}">
-              {{item}}
-            </view>
-            <view class="scrollColumnItem">
-              <view class="scrollColumnItemLine"></view>
-              <view class="scrollColumnItemText">xxxxx</view>
-            </view>
-            <view class="scrollColumnItem">
-              <view class="scrollColumnItemLine"></view>
-              <view class="scrollColumnItemText">xxx</view>
-            </view>
-          </view>
-          <view a:if="{{index<process_map_item.length-1}}" class="next_arrow">————></view>
-        </view>
-      </scroll-view>
-      <view class="bottom" style="margin-bottom: 50px;">
-        <view class="btn">修改</view>
-        <view class="btn">导出</view>
-      </view>
-    </view>
+  <view a:if="{{ tab_index === 0 }}" class="tab1Page">
+    <!--<view class="mainTitle"><view>完整导图</view><view style="font-size: 12px; color: #3E6DE7; font-weight: normal;">导出</view></view><view class="main"><scroll-view scroll-x="{{true}}" class="scrollView"><view a:for="{{process_map_item}}" class="scrollItem"><view class="scrollColumn"><view class="scrollItemText {{index === current_process_index ? 'current':''}}">
+              {{item}}</view><view class="scrollColumnItem"><view class="scrollColumnItemLine"></view><view class="scrollColumnItemText">xxxxx</view></view><view class="scrollColumnItem"><view class="scrollColumnItemLine"></view><view class="scrollColumnItemText">xxx</view></view></view><view a:if="{{index<process_map_item.length-1}}" class="next_arrow">————></view></view></scroll-view><view class="bottom" style="margin-bottom: 50px;"><view class="btn">修改</view><view class="btn">导出</view></view></view> -->
     <view class="mainTitle">案件进程表</view>
     <view class="main">
-      <view class="insertFile">插入文件</view>
-      <view a:for="{{ tree_data }}" a:for-item="item1" class="tree1" a:key="index">
-        <view class="title" onTap="changeTreeState" data-id="{{item1.id}}">
-          <image mode="widthFix" src="/images/Plus.png" class="plus" />
-          <view class="text">{{item1.title}}</view>
+      <view
+        a:for="{{ tree_data }}"
+        a:for-index="index1"
+        a:for-item="item1"
+        class="tree1"
+        a:key="index"
+      >
+        <view class="title">
+          <image
+            mode="widthFix"
+            src="/images/Plus.png"
+            class="plus"
+            onTap="addCusProcess"
+            data-fatherId="{{-1}}"
+            data-i="{{index1}}"
+          />
+          <!--<view class="text" onTap="getCusProcess" data-i={{index1}} data-processId={{item1.id}}>{{item1.processName}}</view> -->
+          <view
+            class="text"
+            onTap="changeTreeState"
+            data-flag="{{true}}"
+            data-index="{{index1}}"
+          >
+            {{item1.processName}}
+          </view>
           <image
             mode="widthFix"
             src="{{item1.show ? '/images/down.png' : '/images/right.png'}}"
@@ -69,9 +63,23 @@
           a:key="index"
           hidden={{!item1.show}}
         >
-          <view class="title" onTap="changeTreeState" data-id="{{item2.id}}">
-            <image mode="widthFix" src="/images/Plus.png" class="plus_mini" />
-            <view class="text_mini">{{item2.title}}</view>
+          <view class="title">
+            <image
+              mode="widthFix"
+              src="/images/Plus.png"
+              class="plus_mini"
+              onTap="addCusProcess"
+              data-fatherId="{{item2._id}}"
+              data-i="{{index1}}"
+            />
+            <view
+              class="text_mini"
+              onTap="changeTreeState"
+              data-id="{{item2._id}}"
+              data-processIndex="{{index1}}"
+            >
+              {{item2.name}}
+            </view>
             <image
               mode="widthFix"
               src="{{item2.show ? '/images/down.png' : '/images/right.png'}}"
@@ -85,9 +93,10 @@
             a:key="index"
             hidden={{!item2.show}}
           >
-            <view class="title" onTap="changeTreeState" data-id="{{item3.id}}">
+            <view class="title">
               <image mode="widthFix" src="/images/Plus.png" class="plus_mini" />
-              <view class="text_mini">{{item3.title}}</view>
+              <!--<view class="text_mini" onTap="changeTreeState" data-id="{{item3._id}}">{{item3.name}}</view> -->
+              <view class="text_mini">{{item3.name}}</view>
               <image
                 mode="widthFix"
                 src="{{item3.show ? '/images/down.png' : '/images/right.png'}}"
@@ -111,15 +120,15 @@
       </view>
     </view>
   </view>
-  <view class="tab2Page" a:if="{{ tab_index === 1 }}">
+  <view a:if="{{ tab_index === 1 }}" class="tab2Page">
     <view class="list">
-      <view class="scheduleMsg">
-        <view class="hint" style="font-size: 14px; color: #929292;">被指派任务</view>
-        <view class="main">
-          <view style="margin-bottom: 8px;">客户预约会议</view>
-          <view class="text">2023.11.22   11：00 a.m.</view>
-          <view class="text">线上会议号：</view>
-          <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+      <view class="scheduleMsg" a:for="{{ schduleList }}" a:key="index">
+        <view class="hint" style="font-size: 14px; color: #929292;">{{item.description}}</view>
+        <view class="main1">
+          <view style="margin-bottom: 8px;">{{item.title}}</view>
+          <view class="textMain">{{item.time}}</view>
+          <view class="textMain">{{item.address}}</view>
+          <image mode="heightFix" src="/images/image 20.png" class="icon" />
         </view>
       </view>
     </view>
