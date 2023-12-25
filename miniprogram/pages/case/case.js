@@ -95,5 +95,10 @@ Page({
       my.navigateTo({
         url: `/pages/case_detail/case_detail?caseId=${this.data.caseList[index]._id}`
       })
+    },
+    goAddCase(e){
+      my.navigateTo({
+        url:"/pages/add_case/add_case"
+      })
     }
   })

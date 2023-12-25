@@ -29,7 +29,8 @@ Page({
     exist_item:{},
     party:[],
     opposite_input_temp:"",
-    opposite_name:[]
+    opposite_name:[],
+    query_content:"",
   },
   async onLoad() {
     const context = await my.cloud.createCloudContext({
@@ -247,10 +248,15 @@ Page({
   name_blur(e){
     
     this.setData({
-      name_focus:false
+      name_focus:false,
+      query_content:""
+
     })
   },
   select_items(e){
+    this.setData({
+      query_content:""
+    })
     console.log(e.currentTarget.dataset.i)
     let index=e.currentTarget.dataset.i
     let data=this.data
@@ -301,11 +307,16 @@ Page({
   },
   name_input(e){
     console.log(e.detail.value)
+    this.setData({
+      query_content:e.detail.value
+    })
     if(e.detail.value==""){
       this.setData({
         name_focus:false,
         name_items:[],
+        
       })
+
       return
     }
     this.setData({
