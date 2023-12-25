@@ -27,20 +27,20 @@ Page({
     my.showLoading()
     console.log(e)
     this.getCaseById(e.caseId)
-    let id = my.getStorageSync({key: '_id'}).data
+    // let id = my.getStorageSync({key: '_id'}).data
     my.cloudFunction.callFunction({
-      name:"getSchedules",
+      name:"getScheduleByCaseId",
       data: { 
-        userId: id,
-        start: this.data.selectdateTimestamp,
-        end: this.data.selectdateTimestamp + 86399000 // 今天23点59分59秒
+        caseId: e.caseId,
+        // start: this.data.selectdateTimestamp,
+        // end: this.data.selectdateTimestamp + 86399000 // 今天23点59分59秒
       },
       success: (res) => {
-        console.log('日程', res);
-        res.result.data.map(item => { 
-          item.time = this.formatDate(item.time, true)
-        })
-        console.log(res.result.data);
+        // console.log('日程', res);
+        // res.result.data.map(item => { 
+        //   item.time = this.formatDate(item.time, true)
+        // })
+        // console.log(res.result.data);
         this.setData({
           list: [res.result.data[0]]
         })
