@@ -26,15 +26,21 @@ Page({
       backgroundColor: '#FFFFFF', // 想使用frontColor 这个字段必填
       frontColor: '#000000' // 设置文字及状态栏电量、日期等文字颜色
     })
+    my.showLoading()
     const context = await my.cloud.createCloudContext({
       env: 'env-00jx4obkh2l9'
     });
     await context.init();
     my.cloudFunction = context;
-    
+    my.hideLoading()
     this.getTaskList()
     this.getNewestMes()
     
+  },
+  onShow(){
+    if(my.cloudFunction === undefined) return
+    this.getTaskList()
+    this.getNewestMes()
   },
   check_task_detail(){
     console.log("查看任务详细")

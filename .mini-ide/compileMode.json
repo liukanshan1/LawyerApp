@@ -63,6 +63,9 @@
       "page": "pages/case_detail/case_detail",
       "launchMode": "common",
       "pageQuery": ""
+      "title": "case/addCusProcess/addCusProcess",
+      "page": "pages/case/addCusProcess/addCusProcess",
+      "launchMode": "common"
     }
   ]
 }

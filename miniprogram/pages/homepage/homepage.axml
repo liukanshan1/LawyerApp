@@ -1,5 +1,5 @@
 <view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
-<top_tap ></top_tap>
+<top_tap title="首页"></top_tap>
 <view class="outer">
   <view class="title_line">
     <view class="title_block">

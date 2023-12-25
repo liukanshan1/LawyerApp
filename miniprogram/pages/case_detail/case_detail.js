@@ -2,6 +2,8 @@ Page({
   data: {
     case:{},
     process_map_item: ["审理法院","拟定法院文书","客户盖章确认","第一次洽谈","第二次洽谈"],
+    nextProcessList: [],
+    nextProcessIndex: 0,
     file_item: [{
       file_name: "死刑通知书.docx",
       file_date: "2023.10.31"
@@ -15,20 +17,10 @@ Page({
     }, {
       image: "",
       username: "warth"
-    }],
-    page_top_height: 0,
+    }]
   },
   onLoad(e) {
-    const app = getApp()
-    const height = app.globalData.page_top_height
-    console.log(height)
-    this.setData({
-      page_top_height: height
-    })
-    my.setNavigationBar({
-      backgroundColor: '#FFFFFF', // 想使用frontColor 这个字段必填
-      frontColor: '#000000' // 设置文字及状态栏电量、日期等文字颜色
-    })
+    my.showLoading()
     this.getCaseById(e.caseId)
   },
   formatDate(time){
@@ -52,22 +44,86 @@ Page({
         this.setData({
           case: res.result.data
         })
+        my.cloudFunction.callFunction({
+          name: "getProcessesByIds",
+          data: {
+            ids: this.data.case.processIds
+          },
+          success: (res) => {
+            this.setData({
+              process_map_item: res.result.data
+            })
+            this.getNextProcessById()
+            my.hideLoading()
+            console.log('案件byidsss', res);
+          },
+          fail: function (res) {
+            console.log('案件byidsss', res);
+          }
+        })
       },
       fail: function (res) {
         console.log('案件byid', res);
       }
     })
   },
-  tap_case_item(e) {
-    console.log("案件信息详细点击")
+  getNextProcessById(){
+    let fatherId = -1
+    if(this.data.process_map_item.length !== 0) fatherId = this.data.process_map_item.at(-1).id
+    console.log('fatherId', fatherId);
+    my.cloudFunction.callFunction({
+      name: "getNextProcessById",
+      data: {
+        fatherId: fatherId
+      },
+      success: (res) => {
+        console.log('getNextProcessById', res);
+        this.setData({
+          nextProcessList: res.result.data
+        })
+      },
+      fail: function (res) {
+        console.log('getNextProcessById', res);
+      }
+    })
+  },
+  nextChange(e){
+    console.log(e);
+    let temp = this.data.process_map_item
+    temp.push(this.data.nextProcessList[e.detail.value])
+    this.setData({
+      process_map_item: temp,
+      nextProcessIndex: e.detail.value
+    })
+    this.updateProcessIdsByCaseId()
+    this.getNextProcessById()
+  },
+  updateProcessIdsByCaseId(){
+    my.cloudFunction.callFunction({
+      name: "updateProcessIdsByCaseId",
+      data: {
+        caseId: this.data.case._id,
+        processId: this.data.nextProcessList[this.data.nextProcessIndex].id,
+      },
+      success: (res) => {
+        console.log('updateProcessIdsByCaseId', res);
+      },
+      fail: function (res) {
+        console.log('updateProcessIdsByCaseId', res);
+      }
+    })
   },
 
   tap_today_agenda(e) {
-    console.log("今日日程点击")
+    my.navigateTo({
+      url: `/pages/case/processTrack/processTrack?caseId=${this.data.case._id}&tabIndex=${1}`
+    })
   },
 
   tap_process_trace(e) {
-    console.log("进程追踪导图点击")
+    my.navigateTo({
+      url: `/pages/case/processTrack/processTrack?caseId=${this.data.case._id}&tabIndex=${1}`
+    })
   },
 
   tap_all_file(e) {

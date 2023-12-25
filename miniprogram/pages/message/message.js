@@ -5,39 +5,35 @@ Page({
     msgList: [],
     oneCaseMsgs: [],
     msgListClick: false,
-    schduleList: []
+    schduleList: [],
+    content: "",
+    caseIndex: -1
   },
   onLoad() {
-    my.cloudFunction.callFunction({
-      name:"me",
-      success:function(res){
-        console.log('me', res);
-      },
-      fail: function(res) {
-        console.log('fail', res);
-      }
-    })
+    my.showLoading()
     this.getNewestMes()
     this.getScheduleList()
   },
-  changeTab(e){
+  changeTab(e) {
     let index = e.currentTarget.dataset.i
-    if(this.data.tab_index === index) return
+    if (this.data.tab_index === index) return
     this.setData({
       tab_index: index,
       msgListClick: index === 1 ? false : this.data.msgListClick
     })
   },
-  formatDate(time){
+  formatDate(time) {
     let date = new Date(time);
     let YY = date.getFullYear();
-    let MM = (date.getMonth() + 1 < 10 ? '0'+(date.getMonth() + 1) : date.getMonth() + 1);
-    let DD = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate());
-    
+    let MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    let DD = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate());
+
     return YY + '-' + MM + '-' + DD
   },
-  getNewestMes(){
-    let id = my.getStorageSync({key: '_id'}).data
+  getNewestMes() {
+    let id = my.getStorageSync({
+      key: '_id'
+    }).data
     my.cloudFunction.callFunction({
       name: "getNewestMes",
       data: {
@@ -52,18 +48,23 @@ Page({
         this.setData({
           msgList: res.result
         })
+        my.hideLoading()
       },
       fail: function (res) {
         console.log('getNewestMes fail', res);
       }
     })
   },
-  getMsgByCaseId(e){
-    if(this.data.msgListClick) return;
+  getMsgByCaseId(e) {
+    if (this.data.msgListClick && e.currentTarget.dataset.flag) return;
     this.setData({
-      msgListClick: true
+      msgListClick: true,
+      caseIndex: e.currentTarget.dataset.i
     })
-    let userId = my.getStorageSync({key: '_id'}).data
+    let userId = my.getStorageSync({
+      key: '_id'
+    }).data
+    my.showLoading()
     my.cloudFunction.callFunction({
       name: "getMessageByCaseId",
       data: {
@@ -79,24 +80,27 @@ Page({
         this.setData({
           oneCaseMsgs: res.result
         })
+        my.hideLoading()
       },
       fail: function (res) {
         console.log('getMessageByCaseId fail', res);
       }
     })
   },
-  getScheduleList(){
-    let id = my.getStorageSync({key: '_id'}).data
+  getScheduleList() {
+    let id = my.getStorageSync({
+      key: '_id'
+    }).data
     my.cloudFunction.callFunction({
-      name:"getSchedules",
-      data: { 
+      name: "getSchedules",
+      data: {
         userId: id,
         start: new Date('1970-01-01').getTime(),
         end: new Date('2100-01-01').getTime()
       },
       success: (res) => {
         console.log('日程', res);
-        res.result.data.map(item => { 
+        res.result.data.map(item => {
           item.time = this.formatDate(item.time, true)
         })
         console.log(res.result.data);
@@ -104,9 +108,71 @@ Page({
           schduleList: res.result.data
         })
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log('日程', res);
       }
     })
   },
+  inputContent(e) {
+    this.setData({
+      content: e.detail.value
+    })
+  },
+  sendMsg() {
+    if (this.data.content.trim() === "") my.showModal({
+      title: "请输入消息内容"
+    });
+    else {
+      my.showLoading()
+      my.cloudFunction.callFunction({
+        name: "getCaseById",
+        data: {
+          id: this.data.msgList[this.data.caseIndex]._id
+        },
+        success: (res) => {
+          console.log('案件byid', res);
+          this.addMessage(res.result.data.userIds)
+        },
+        fail: function (res) {
+          console.log('案件byid', res);
+        }
+      })
+    }
+  },
+  addMessage(userIds) {
+    console.log("参数", userIds, this.data.msgList[this.data.caseIndex].caseId, this.data.content);
+    my.cloudFunction.callFunction({
+      name: "addMessage",
+      data: {
+        userIds: userIds,
+        caseId: this.data.msgList[this.data.caseIndex].caseId,
+        content: this.data.content
+      },
+      success: (res) => {
+        console.log('addMessage', res);
+        my.hideLoading()
+        my.showModal({
+          title: "提示",
+          content: "发送成功",
+          complete: () => {
+            // my.navigateTo({
+            //   url: "/pages/message/message"
+            // })
+            console.log('complete', this);
+            this.getMsgByCaseId({
+              currentTarget: {
+                dataset: {
+                  i: this.data.caseIndex,
+                  flag: false
+                }
+              }
+            })
+          }
+        })
+      },
+      fail: function (res) {
+        console.log('addMessage', res);
+      }
+    })
+  }
 });

@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
-  "styleIsolation": "apply-shared"
+  "usingComponents": {
+    "top_tap":"../../../components//top_tap/top_tap"
+  },
+  "styleIsolation": "apply-shared",
+  "transparentTitle": "always"
 }

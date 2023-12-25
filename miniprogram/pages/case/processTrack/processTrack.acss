@@ -197,7 +197,7 @@
 }
 
 .global_plus {
-  position: absolute;
+  position: fixed;
   right: 20px;
   bottom: 60px;
   width: 70px;
@@ -238,13 +238,13 @@
   overflow: hidden;
 }
 
-.main {
+.main1 {
   position: relative;
   margin-top: 3vw;
   padding-left: 5vw;
 }
 
-.main::after {
+.main1::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -254,14 +254,14 @@
   background: #757575;
 }
 
-.main .text {
+.main1 .textMain {
   font-size: 10px;
   line-height: 14px;
   color: #575757;
   margin-left: 4vw;
 }
 
-.main .icon {
+.main1 .icon {
   position: absolute;
   left: 5vw;
   bottom: 0;
