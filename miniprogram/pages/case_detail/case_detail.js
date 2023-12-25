@@ -4,24 +4,51 @@ Page({
     process_map_item: ["审理法院","拟定法院文书","客户盖章确认","第一次洽谈","第二次洽谈"],
     nextProcessList: [],
     nextProcessIndex: 0,
-    file_item: [{
-      file_name: "死刑通知书.docx",
-      file_date: "2023.10.31"
-    }, {
-      file_name: "死刑通知书.docx",
-      file_date: "2023.10.31"
-    }],
-    address_item: [{
-      image: "",
-      username: "warth"
-    }, {
-      image: "",
-      username: "warth"
-    }]
+    file_item: [
+    //   {
+    //   file_name: "死刑通知书.docx",
+    //   file_date: "2023.10.31"
+    // }, {
+    //   file_name: "死刑通知书.docx",
+    //   file_date: "2023.10.31"
+    // }
+  ],
+    address_item: [
+    //   {
+    //   image: "",
+    //   username: "warth"
+    // }, {
+    //   image: "",
+    //   username: "warth"
+    // }
+    ]
   },
   onLoad(e) {
     my.showLoading()
+    console.log(e)
     this.getCaseById(e.caseId)
+    let id = my.getStorageSync({key: '_id'}).data
+    my.cloudFunction.callFunction({
+      name:"getSchedules",
+      data: { 
+        userId: id,
+        start: this.data.selectdateTimestamp,
+        end: this.data.selectdateTimestamp + 86399000 // 今天23点59分59秒
+      },
+      success: (res) => {
+        console.log('日程', res);
+        res.result.data.map(item => { 
+          item.time = this.formatDate(item.time, true)
+        })
+        console.log(res.result.data);
+        this.setData({
+          list: [res.result.data[0]]
+        })
+      },
+      fail: function(res) {
+        console.log('日程', res);
+      }
+    })
   },
   formatDate(time){
     let date = new Date(time);

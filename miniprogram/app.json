@@ -13,6 +13,7 @@
     "pages/case/addDoc/addDoc",
     "pages/schedule/scheduleDay/scheduleDay",
     "pages/case/docManageNew/docManageNew",
+    "pages/add_case/add_case",
     "pages/homepage/scheduleDay/scheduleDay",
     "pages/case/addCusProcess/addCusProcess",
     "pages/message/addMessage/addMessage"

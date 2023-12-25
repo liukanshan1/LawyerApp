@@ -33,6 +33,7 @@
   display: flex;
   height: 100rpx;
   align-items: center;
+  line-height: 40rpx;
 
 }
 

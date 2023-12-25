@@ -1,0 +1,106 @@
+<view class="outer">
+  <view class="time_pick_line">
+    <view class="time_title">开始时间</view>
+    <view class="time_select_box">
+      <image src="/images/time_select.png" class="time_select_image"></image>
+      <view class="time_select">
+        <picker mode="date" onChange="dateChange">
+          <view>{{selectdate}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="add_label_area">
+    <view class="add_label_title">添加标签</view>
+    <view class="label_list">
+      <view
+        a:for="{{label}}"
+        class="label {{label_index === index ? 'label_styleActive' : ''}}"
+        id="{{item.style}}"
+        onTap="changeLabel"
+        data-i={{index}}
+      >{{item.name}}
+      </view>
+    </view>
+  </view>
+  <view class="area_reason_area">
+    <view class="area_reason_title">案由</view>
+    <input class="input_area" onInput="reason_input" placeholder="请输入案由"></input>
+  </view>
+  <view class="area_reason_area">
+    <view class="area_reason_title">当事人</view>
+    <input class="input_area" onInput="name_input" onFocus="name_focus" value="{{query_content}}" placeholder="搜索用户"></input>
+  </view>
+  <view class="name_list" a:if="{{ name_focus }}">
+    <scroll-view scroll-y="{{true}}">
+      <view class="item_line" onTap="name_blur">关闭</view>
+      <view a:for="{{ name_items }}" a:if="{{ !exist_item[item.id]||!exist_item[item.id].exist }}" class="item_line" onTap="select_items" data-i="{{index}}">
+        <view>
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="area_reason_area">
+    <scroll-view scroll-x="{{true}}" class="party_scroll">
+      <view a:for="{{exist_item}}" a:if="{{ exist_item[item.id].exist }}" class="display_party" onTap="cancel_item" data-i="{{item}}">
+        <view class="display_text">{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="area_reason_area">
+    <picker onChange="roleChange" range="{{role}}" range-key="title" value="{{roleIndex}}">
+      <view class="detail_picker">
+        <view class="picker_title">身份</view>
+        <view class="select_content_box">
+          <view class="picker_indicater">{{role[roleIndex]}}</view>
+          <view class="arrow"></view>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <!-- <view class="area_reason_area">
+    <picker onChange="processChange" range="{{process}}" range-key="title" value="{{processIndex}}">
+      <view class="detail_picker">
+        <view class="picker_title">案件进程</view>
+        <view class="select_content_box">
+          <view class="picker_indicater">{{process[processIndex]}}</view>
+          <view class="arrow"></view>
+        </view>
+      </view>
+    </picker>
+  </view> -->
+  <view class="area_reason_area">
+    <view>对方当事人</view>
+    <input class="input_area" onInput="opposite_input" value="{{opposite_input_temp}}"></input>
+    <view onTap="add_opposite">添加</view>
+  </view>
+  <view class="area_reason_area">
+    <scroll-view scroll-x="{{true}}" class="party_scroll">
+      <view a:for="{{opposite_name}}" class="display_party" onTap="cancel_opposite_item" data-i="{{index}}">
+        <view class="display_text">{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="custom_content_area">
+    <view class="custom_content_title">案件备注</view>
+    <textarea class="custom_content_textarea" placeholder="请填写案件的基本情况以及注意事项" onInput="remark_input">
+    </textarea>
+  </view>
+  <view class="button_area">
+    <view
+      class="cancel_button"
+      style="background-color:#DAE9FB;color:#1668E2"
+      onTap="cancel"
+    >
+      取消
+    </view>
+    <view
+      class="cancel_button"
+      style="background-color:#FBDADA;color:#E21616"
+      onTap="confirm"
+    >
+      确认
+    </view>
+  </view>
+</view>

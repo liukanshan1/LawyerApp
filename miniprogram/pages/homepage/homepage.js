@@ -7,6 +7,16 @@ Page({
     msgList: []
   },
   async onLoad() {
+    my.setStorageSync({
+      key:"_id",
+      data:"658584160f8bdfbed7423e86"
+    })
+    my.getAuthCode({
+      scopes: 'auth_user',
+      success: (res) => {
+        console.log('code', res);
+      }
+    });
     const app=getApp()
     const height=app.globalData.page_top_height
     console.log(height)
@@ -29,12 +39,7 @@ Page({
     my.hideLoading()
     this.getTaskList()
     this.getNewestMes()
-    // my.getAuthCode({
-    //   scopes: 'auth_user',
-    //   success: (res) => {
-    //     console.log('code', res);
-    //   }
-    // });
+    
   },
   onShow(){
     if(my.cloudFunction === undefined) return

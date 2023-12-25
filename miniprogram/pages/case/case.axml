@@ -7,10 +7,10 @@
 <view class="outer">
   <view class="hint_line">
     <view class="all_text">全部 ({{caseList.length}})</view>
-    <view class="select_item">
+    <!-- <view class="select_item">
       <view>O</view>
       <view class="select_item_text">筛选项</view>
-    </view>
+    </view> -->
   </view>
   <view class="case_box">
     <!-- <view class="case_item" a:for="{{case_item}}" a:key="name">
@@ -46,3 +46,4 @@
     </view>
   </view>
 </view>
+<image src="/images/Plus.png" class="add_image" onTap="goAddCase"></image>

@@ -93,3 +93,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.add_image{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right:100rpx;
+  bottom: 150rpx;
+}
