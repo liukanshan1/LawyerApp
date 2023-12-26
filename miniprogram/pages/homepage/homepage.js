@@ -5,19 +5,10 @@ Page({
     today: "",
     tasklist: [],
     msgList: [],
-    // canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
+    canIUseAuthButton: my.canIUse('button.open-type.getAuthorize'),
+    showMask: true
   },
   async onLoad() {
-    my.setStorageSync({
-      key:"_id",
-      data:"658584160f8bdfbed7423e86"
-    })
-    my.getAuthCode({
-      scopes: 'auth_user',
-      success: (res) => {
-        console.log('code', res);
-      }
-    });
     const app=getApp()
     const height=app.globalData.page_top_height
     console.log(height)
@@ -38,14 +29,35 @@ Page({
     await context.init();
     my.cloudFunction = context;
     my.hideLoading()
-    this.getTaskList()
-    this.getNewestMes()
-    
+    this.createUser()
   },
   onShow(){
     if(my.cloudFunction === undefined) return
     this.getTaskList()
     this.getNewestMes()
+  },
+  createUser(){
+    my.getAuthCode({
+      scopes: 'auth_base', 
+      success:(res) =>{
+      	console.log('code',res);
+        my.cloudFunction.callFunction({
+          name:"createUser",
+          data: { 
+            authCode: res.authCode
+          },
+          success: (res) => {
+            console.log('createUser', res);
+            my.setStorageSync({key:"_id", data: "658428204950fd82ff91e8d8"})
+            this.getTaskList()
+            this.getNewestMes()
+          },
+          fail: function(res) {
+            console.log('createUser', res);
+          }
+        })
+      }
+    })
   },
   check_task_detail(){
     console.log("查看任务详细")
@@ -131,16 +143,5 @@ Page({
         console.log('getNewestMes fail', res);
       }
     })
-  },
-  // getOpenUserInfo(){
-  //   my.getOpenUserInfo({
-  //     success:(res) => {
-  //       let userInfo = JSON.parse(res.response).response
-  //       console.log('userInfo', userInfo);
-  //     },
-  //     fail: (res) => {
-  //       console.log("userInfo fail", res);
-  //     }
-  //   })
-  // }
+  }
 });

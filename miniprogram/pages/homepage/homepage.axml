@@ -63,20 +63,4 @@
       </view>
     </view>
   </view>
-  <!-- <button
-    open-type="getAuthorize"
-    scope="userInfo"
-    onGetAuthorize="getOpenUserInfo"
-    onError="handleAuthError"
-  >
-    会员基础信息授权
-  </button>
-  <button
-    open-type="getAuthorize"
-    scope="phoneNumber"
-    onGetAuthorize="getPhoneNumber"
-    onError="handleAuthError"
-  >
-    授权手机号
-  </button> -->
 </view>

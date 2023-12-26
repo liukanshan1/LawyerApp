@@ -75,6 +75,12 @@
       "page": "pages/case_detail/case_detail",
       "launchMode": "common",
       "pageQuery": ""
+    },
+    {
+      "title": "edit",
+      "page": "pages/personal/edit/edit",
+      "launchMode": "common",
+      "pageQuery": ""
     }
   ]
 }

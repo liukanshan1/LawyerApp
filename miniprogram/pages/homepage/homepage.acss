@@ -35,7 +35,7 @@
   flex-direction: column;
   height: 150rpx;
   justify-content: space-between;
-  width: 200rpx;
+  /* width: 200rpx; */
 }
 
 .task_item_container{
