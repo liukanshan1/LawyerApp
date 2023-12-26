@@ -6,23 +6,6 @@ Page({
     processLabels: ["诉前保全","起诉","等待法院受理","受理","驳回起诉","审理","撤诉","庭前准备"],
     tab_index: 0,
     caseList: []
-    // case_num:2,
-    // case_item:[{
-    //   name:"xxx人格纠纷案",
-    //   info_line:[{info_name:"案件是否完结",value:"否"},
-    //              {info_name:"案件编号",value:"20210517"},
-    //              {info_name:"案由",value:"人格权纠纷"},
-    //              {info_name:"创建时间",value:"2023.10.30"},
-    //              {info_name:"案件类型",value:"诉讼案"}]
-    // },
-    // {
-    //   name:"xxx人格纠纷案",
-    //   info_line:[{info_name:"案件是否完结",value:"否"},
-    //              {info_name:"案件编号",value:"20210517"},
-    //              {info_name:"案由",value:"人格权纠纷"},
-    //              {info_name:"创建时间",value:"2023.10.30"},
-    //              {info_name:"案件类型",value:"诉讼案"}]
-    // }],
     },
     async onLoad() {
       const app=getApp()
@@ -69,14 +52,18 @@ Page({
     },
     getProcesses(){
       my.cloudFunction.callFunction({
-        //name:"getProcesses",
+        name:"getProcesses",
         data:{
           type: this.data.tab_index
         },
         success: (res)=>{
-            console.log("获取进程",res)
+            console.log("获取进程全表",res)
+            let temp = []
             res.result.data.forEach(item=>{
-              this.data.processLabels.push(item.processName)
+              temp.push(item.processName)
+            })
+            this.setData({
+              processLabels: temp
             })
         }
       })
