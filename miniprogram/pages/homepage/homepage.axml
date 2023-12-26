@@ -1,4 +1,5 @@
-<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;">
+</view>
 <top_tap title="首页"></top_tap>
 <view class="outer">
   <view class="title_line">
@@ -10,7 +11,13 @@
   <view class="task_container">
     <view class="task_left_item">
       <view class="date_line">{{today}}</view>
-      <view class="task_item_container" a:for="{{ tasklist }}" a:key="index" a:if="{{ index < 2 }}">  <!--这里以后可以用循环来做-->
+      <view
+        a:for="{{ tasklist }}"
+        a:if="{{ index < 2 }}"
+        class="task_item_container"
+        a:key="index"
+      >
+        <!--这里以后可以用循环来做-->
         <view class="task_item">
           <view class="task_title_line">{{item.description}}</view>
           <view class="task_box">
@@ -23,7 +30,11 @@
               <view class="small_text">
                 <view class="task_time">{{item.time}}</view>
                 <view class="task_site">{{item.address}}</view>
-                <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+                <image
+                  mode="heightFix"
+                  src="/images/image 20.png"
+                  class="icon"
+                />
               </view>
             </view>
           </view>
@@ -41,10 +52,31 @@
     </view>
     <view class="gray_separate_line"></view>
     <view class="detail-box">
-      <view class="message_detail_line" a:for="{{ msgList }}" a:key="index" a:if="{{ index < 3 }}">
+      <view
+        a:for="{{ msgList }}"
+        a:if="{{ index < 3 }}"
+        class="message_detail_line"
+        a:key="index"
+      >
         <view class="message_title">{{item.caseName}}</view>
         <view class="message_status">{{item.content}}</view>
       </view>
     </view>
   </view>
+  <!-- <button
+    open-type="getAuthorize"
+    scope="userInfo"
+    onGetAuthorize="getOpenUserInfo"
+    onError="handleAuthError"
+  >
+    会员基础信息授权
+  </button>
+  <button
+    open-type="getAuthorize"
+    scope="phoneNumber"
+    onGetAuthorize="getPhoneNumber"
+    onError="handleAuthError"
+  >
+    授权手机号
+  </button> -->
 </view>
