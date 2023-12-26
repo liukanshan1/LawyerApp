@@ -4,7 +4,8 @@ Page({
     todayTimestampZero: 0,
     today: "",
     tasklist: [],
-    msgList: []
+    msgList: [],
+    // canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
   },
   async onLoad() {
     my.setStorageSync({
@@ -130,5 +131,16 @@ Page({
         console.log('getNewestMes fail', res);
       }
     })
-  }
+  },
+  // getOpenUserInfo(){
+  //   my.getOpenUserInfo({
+  //     success:(res) => {
+  //       let userInfo = JSON.parse(res.response).response
+  //       console.log('userInfo', userInfo);
+  //     },
+  //     fail: (res) => {
+  //       console.log("userInfo fail", res);
+  //     }
+  //   })
+  // }
 });

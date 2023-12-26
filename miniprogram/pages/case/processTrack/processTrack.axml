@@ -17,7 +17,7 @@
           日程
         </view>
       </view>
-      <image mode="widthFix" src="/images/search-01.png" class="search" />
+      <!-- <image mode="widthFix" src="/images/search-01.png" class="search" /> -->
     </view>
   </view>
   <view a:if="{{ tab_index === 0 }}" class="tab1Page">
