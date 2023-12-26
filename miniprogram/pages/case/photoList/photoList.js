@@ -112,7 +112,7 @@ download_photo(path){
   },
   addDoc(e){
     my.navigateTo({
-      url:"/pages/case/addDoc/addDoc?caseId="+this.data.caseId+"&dirId+"+this.data.dirId
+      url:"/pages/case/addDoc/addDoc?caseId="+this.data.caseId+"&dirId="+this.data.dirId
     })
   }
 });
