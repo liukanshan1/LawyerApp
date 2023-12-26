@@ -2,7 +2,7 @@
 <top_tap title="个人"></top_tap>
 <view>
   <view class="card">
-    <view class="info">
+    <view class="info" onTap="editInfo">
       <view class="img"></view>
       <view class="detail">
         <view class="name">{{info.name}}</view>
