@@ -20,12 +20,18 @@
   background-color: pink;
   flex-shrink: 0;
   margin-right: 10px;
+  overflow: hidden;
+}
+.img image {
+  width: 13vw;
+  height: 13vw;
+  /* border-radius: 50%; */
 }
 .detail {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60%;
+  /* width: 60%; */
 }
 .detail .name {
   margin-bottom: 20px;

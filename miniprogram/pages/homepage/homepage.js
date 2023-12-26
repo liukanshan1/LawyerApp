@@ -28,7 +28,6 @@ Page({
     });
     await context.init();
     my.cloudFunction = context;
-    my.hideLoading()
     this.createUser()
   },
   onShow(){
@@ -48,7 +47,10 @@ Page({
           },
           success: (res) => {
             console.log('createUser', res);
-            my.setStorageSync({key:"_id", data: "658428204950fd82ff91e8d8"})
+            // my.setStorageSync({key:"_id", data: "658428204950fd82ff91e8d8"}) // 客户
+            // my.setStorageSync({key:"_id", data: "658584160f8bdfbed7423e86"}) // 律师
+            
+            my.setStorageSync({key:"_id", data: res.result.data}) // 正式使用
             this.getTaskList()
             this.getNewestMes()
           },

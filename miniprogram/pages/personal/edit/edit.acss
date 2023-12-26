@@ -29,6 +29,11 @@
   background-color: #fff;
   border-radius: 5px;
 }
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+}
 .btns {
   position: fixed;
   display: flex;
