@@ -1,32 +1,54 @@
-<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
+<view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;">
+</view>
 <top_tap title="个人"></top_tap>
 <view>
   <view class="card">
     <view class="info" onTap="editInfo">
-      <view class="img"></view>
-      <view class="detail">
-        <view class="name">{{info.name}}</view>
-        <view class="line">
-          <view class="circle"></view>
-          <view class="text">{{info.address}}</view>
+      <view class="img">
+        <image mode="heightFix" src="{{info.avatar}}" />
+      </view>
+      <view a:if="{{ info.isLawyer }}">
+        <view class="detail">
+          <view class="name">{{info.name}}</view>
+          <view class="line">
+            <view class="circle"></view>
+            <view class="text">地址：{{info.address}}</view>
+          </view>
+          <view class="line">
+            <view class="circle"></view>
+            <view class="text">事务所：{{info.lawyerOfficeName}}</view>
+          </view>
+          <view class="line">
+            <view class="circle"></view>
+            <view class="text" style="font-size: 12px;">执业证号：{{info.lawyerNum}}</view>
+          </view>
         </view>
-        <view class="line">
-          <view class="circle"></view>
-          <view class="text">{{info.lawyerOfficeName}}</view>
-        </view>
-        <view class="line">
-          <view class="circle"></view>
-          <view class="text" style="font-size: 12px;">执业证号：{{info.lawyerNum}}</view>
+        <view class="time">活跃时间：  {{info.activeTime}}</view>
+      </view>
+      <view a:if="{{ !info.isLawyer }}">
+        <view class="detail">
+          <view class="name">{{info.name}}</view>
+          <view class="line">
+            <view class="circle"></view>
+            <view class="text">地址：{{info.address}}</view>
+          </view>
+          <view class="line">
+            <view class="circle"></view>
+            <view class="text">职业：{{info.career}}</view>
+          </view>
+          <view class="line">
+            <view class="circle"></view>
+            <view class="text" style="font-size: 12px;">电话：{{info.telephone}}</view>
+          </view>
         </view>
       </view>
-      <view class="time">活跃时间：  {{info.activeTime}}</view>
     </view>
     <view class="sure">
       <view class="item">
         <view class="circle"></view>
         <view class="text">实名认证</view>
       </view>
-      <view class="item">
+      <view class="item" a:if="{{ isLawyer }}">
         <view class="circle"></view>
         <view class="text">执业认证</view>
       </view>

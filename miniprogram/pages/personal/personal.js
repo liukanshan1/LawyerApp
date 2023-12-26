@@ -43,7 +43,7 @@ Page({
   },
   editInfo(){
     my.navigateTo({
-      url:"/pages/personal/edit/edit"
+      url:`/pages/personal/edit/edit?isLawyer=${this.data.info.isLawyer ? 1 : 0}`
     })
   }
 });

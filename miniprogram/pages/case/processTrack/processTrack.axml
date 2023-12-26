@@ -97,20 +97,20 @@
               <image mode="widthFix" src="/images/Plus.png" class="plus_mini" />
               <!--<view class="text_mini" onTap="changeTreeState" data-id="{{item3._id}}">{{item3.name}}</view> -->
               <view class="text_mini">{{item3.name}}</view>
-              <image
+              <!-- <image
                 mode="widthFix"
                 src="{{item3.show ? '/images/down.png' : '/images/right.png'}}"
                 class="arrow arrow_mini"
-              />
+              /> -->
             </view>
-            <view
+            <!-- <view
               a:for="{{ item3.children }}"
               class="tree3_item"
               a:key="index"
               hidden={{!item3.show}}
             >
               {{item}}
-            </view>
+            </view> -->
           </view>
         </view>
       </view>

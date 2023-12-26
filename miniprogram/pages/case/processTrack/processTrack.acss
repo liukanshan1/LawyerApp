@@ -177,12 +177,12 @@
 }
 
 .title .text_mini {
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 10px;
 }
 
 .title .text {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   margin-right: 10px;
 }
