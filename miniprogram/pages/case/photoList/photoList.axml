@@ -1,19 +1,19 @@
 <view class="page">
-  <view a:for="{{ list }}" class="big_line">
+  <view class="big_line">
     <view class="top">
       <view class="title">
-        <view class="text" >{{item.stage}}</view>
+        <view class="text" >图片</view>
         <image mode="widthFix" src="/images/arrow-left-contained-01.png" class="icon"/>
       </view>
       <!-- <image mode="widthFix" src="/images/search-01.png" class="search"/> -->
     </view>
     <view class="main">
-      <view class="item" a:for="{{ item.list }}" a:key="index" onTap="selectDir" data-id="{{item.id}}">
+      <view class="item" a:for="{{list}}" a:key="index" onTap="selectPhoto" data-path="{{item.path}}" data-index="{{index}}">
         <view class="circle"></view>
-        <view class="text">{{item.directory_content}}</view>
+        <view class="text">{{item.photoName}}</view>
       </view>
       <view class="item">
-        <!-- <image mode="widthFix" src="/images/Plus.png" class="plus"/> -->
+        <image mode="widthFix" src="/images/Plus.png" class="plus" onTap="addDoc"/>
       </view>
     </view>
   </view>

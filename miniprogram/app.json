@@ -17,7 +17,8 @@
     "pages/homepage/scheduleDay/scheduleDay",
     "pages/case/addCusProcess/addCusProcess",
     "pages/message/addMessage/addMessage",
-    "pages/personal/edit/edit"
+    "pages/personal/edit/edit",
+    "pages/case/photoList/photoList"
   ],
   "window": {
     "defaultTitle": ""
