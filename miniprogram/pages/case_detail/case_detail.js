@@ -156,6 +156,9 @@ Page({
 
   tap_all_file(e) {
     console.log("全部文档点击")
+    my.navigateTo({
+      url:"/pages/case/docManage/docManage?caseId="+this.data.case._id
+    })
   },
 
   tap_documnet(e) {

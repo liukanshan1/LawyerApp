@@ -101,28 +101,9 @@ Page({
     my.navigateBack();
   },
 
-  getMyId(){
-    return my.getStorageSync({key: "_id"}).data
-    return new Promise(
-      (resolve,reject)=>{
-        my.getStorage({
-          key:"_id",
-          success(e){
-            console.log(e)
-            // userId.push(e.data.id)
-            resolve(e.data)
-          },
-          fail(e){
-            console.log("fail")
-          }
-        })
-      }
-    )
-    
-  },
   async confirm(e) {
     let userId=[];
-    let myId=this.getMyId()
+    let myId=my.getStorageSync({key: "_id"}).data
     let opname=this.data.opposite_name.join('、')
     let form={
       isDone:0,

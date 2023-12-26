@@ -85,21 +85,21 @@
       </scroll-view>
     </view>
   </view>
-  <!-- <view class="file_management">
-    <view class="file_management_text">文档管理</view>
+  <view class="file_management">
+    <view class="file_management_text">案件图片管理</view>
     <view class="file_management_content">
       <view class="project_text_line" onTap="tap_all_file">
-        <view class="project_text">全部文档</view>
+        <view class="project_text">已上传图片数：{{case.photoCount}}</view>
         <view class="arrow"></view>
       </view>
-      <view class="file_item_box">
+      <!-- <view class="file_item_box">
         <view class="file_item_line" a:for="{{file_item}}" >
           <view class="file_name_text" onTap="tap_documnet" data-doc_index="{{index}}">{{item.file_name}}</view>
           <view class="file_date">{{item.file_date}}</view>
         </view>
-      </view>
+      </view> -->
     </view>
-    <view class="address_book_box">
+    <!-- <view class="address_book_box">
       <view class="project_text_line" onTap="tap_address_book">
         <view class="project_text">通讯录</view>
         <view class="arrow"></view>
@@ -110,6 +110,6 @@
           <view class="address_name">{{item.username}}</view>
         </view>
       </scroll-view>
-    </view>
-  </view> -->
+    </view> -->
+  </view>
 </view>
