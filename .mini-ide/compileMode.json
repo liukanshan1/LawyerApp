@@ -81,6 +81,27 @@
       "page": "pages/personal/edit/edit",
       "launchMode": "common",
       "pageQuery": ""
+    },
+    {
+      "title": "case/addDoc/addDoc",
+      "page": "pages/case/addDoc/addDoc",
+      "launchMode": "common"
+    },
+    {
+      "title": "case/docManage/docManage",
+      "page": "pages/case/docManage/docManage",
+      "launchMode": "common"
+    },
+    {
+      "title": "case/docManageNew/docManageNew",
+      "page": "pages/case/docManageNew/docManageNew",
+      "launchMode": "common"
+    },
+    {
+      "title": "photoList",
+      "page": "pages/case/photoList/photoList",
+      "launchMode": "common",
+      "pageQuery": ""
     }
   ]
 }
