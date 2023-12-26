@@ -5,26 +5,37 @@ Page({
     lawyerOfficeName: "",
     lawyerNum: "",
     startTime: "08:00",
-    endTime: "18:00"
+    endTime: "18:00",
+    telephone: "",
+    gender: "男",
+    genderItems: [
+      { name: '男', value: '男', checked: true},
+      { name: '女', value: '女'}
+    ],
+    career: "",
+    isLawyer: false
   },
-  onLoad() {
+  onLoad(e) {
+    this.setData({
+      isLawyer: e.isLawyer === "0" ? false : true
+    })
   },
-  inputName(e){
+  inputName(e) {
     this.setData({
       name: e.detail.value
     })
   },
-  inputAddress(e){
+  inputAddress(e) {
     this.setData({
       address: e.detail.value
     })
   },
-  inputLawyerOfficeName(e){
+  inputLawyerOfficeName(e) {
     this.setData({
       lawyerOfficeName: e.detail.value
     })
   },
-  inputLawyerNum(e){
+  inputLawyerNum(e) {
     this.setData({
       lawyerNum: e.detail.value
     })
@@ -39,23 +50,53 @@ Page({
       endTime: e.detail.value
     })
   },
-  cancel(){
+  inputTelephone(e){
+    this.setData({
+      telephone: e.detail.value
+    })
+  },
+  inputCareer(e){
+    this.setData({
+      career: e.detail.value
+    })
+  },
+  genderChange(e){
+    console.log(e.detail.value);
+    this.setData({
+      gender: e.detail.value
+    })
+  },
+  cancel() {
     my.navigateBack()
   },
-  save(){
-    let id = my.getStorageSync({key: "_id"}).data
-    my.cloudFunction.callFunction({
-      name:"updateUserInfo",
-      data: {
+  save() {
+    let id = my.getStorageSync({
+      key: "_id"
+    }).data
+    let requestData = {}
+    if (this.data.isLawyer) {
+      requestData = {
         id: id,
         name: this.data.name,
-        // avatar: "",
         address: this.data.address,
         nickName: this.data.name,
         lawyerOfficeName: this.data.lawyerOfficeName,
         lawyerNum: this.data.lawyerNum,
         activeTime: `${this.data.startTime}-${this.data.endTime}`
-      },
+      }
+    } else {
+      requestData = {
+        id: id,
+        name: this.data.name,
+        address: this.data.address,
+        telephone: this.data.telephone,
+        gender: this.data.gender,
+        career: this.data.career
+      }
+    }
+    my.cloudFunction.callFunction({
+      name: "updateUserInfo",
+      data: requestData,
       success: (res) => {
         console.log('me', res);
         this.setData({
@@ -64,7 +105,7 @@ Page({
         my.hideLoading()
         my.navigateBack()
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log('fail', res);
       }
     })
