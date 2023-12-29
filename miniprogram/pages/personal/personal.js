@@ -62,5 +62,10 @@ Page({
         console.log('updateUserInfo', res);
       }
     })
-  }
+  },
+  toDoc(e){
+    my.navigateTo({
+      url:"/pages/case/docManage/docManage"   //
+    })
+  },
 });

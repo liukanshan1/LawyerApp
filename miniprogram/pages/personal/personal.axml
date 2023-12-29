@@ -58,5 +58,10 @@
       </view>
     </view>
   </view>
+  <view class="toDoc" onTap="toDoc">
+    <view>
+      我的文档
+    </view>
+  </view>
   <view class="changeRole" onTap="changeRole">切换角色</view>
 </view>

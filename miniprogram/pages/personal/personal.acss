@@ -114,3 +114,13 @@
   border-radius: 15px;
   margin-top: 20px;
 }
+
+.toDoc{
+  margin-top: 50rpx;
+  width: 85vw;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #c6c6c6;
+  border-radius: 20rpx;
+}
