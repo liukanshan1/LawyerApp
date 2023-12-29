@@ -45,5 +45,22 @@ Page({
     my.navigateTo({
       url:`/pages/personal/edit/edit?isLawyer=${this.data.info.isLawyer ? 1 : 0}`
     })
+  },
+  changeRole(){
+    let id = my.getStorageSync({key: "_id"}).data
+    my.cloudFunction.callFunction({
+      name: "updateUserInfo",
+      data: {
+        id: id,
+        isLawyer: !this.data.info.isLawyer
+      },
+      success: (res) => {
+        console.log('updateUserInfo', res);
+        this.getInfo()
+      },
+      fail: function (res) {
+        console.log('updateUserInfo', res);
+      }
+    })
   }
 });
