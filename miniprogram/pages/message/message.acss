@@ -41,19 +41,19 @@
   z-index: 2;
 }
 
-.tab_active {
+.tab .tab_active {
   font-weight: bold;
-  color: #2B2B2B;
+  color: #fff;
 }
 
 .bg {
   position: absolute;
-  left: 5%;
+  left: 5.5%;
   top: 0;
   width: 45%;
   height: 100%;
   border-radius: 20px;
-  background-color: #DFDFDF;
+  background-color: #012D58;
   z-index: 1;
   transition: all 0.5s;
 }
@@ -77,9 +77,12 @@
 .headImg {
   width: 13vw;
   height: 13vw !important;
+  text-align: center;
+  line-height: 13vw;
+  color: #fff;
   border-radius: 50%;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #E0BF8C;
   flex-shrink: 0;
   margin-top: 3.5vw;
 }

@@ -18,19 +18,22 @@
   display: inline-block;
 }
 .case_category_active {
-  border-bottom: 2px solid #000;
+  color: #012D58;
+  border-bottom: 2px solid #012D58;
 }
-
+.all_text {
+  color: #012D58;
+}
 .case_item{
   background-color: white;
-  height: 304rpx;
-  width: 702rpx;
-  border-radius: 16rpx;
+  width: 88vw;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  padding-left: 40rpx;
   box-sizing: border-box;
   margin-top: 30rpx;
+  padding: 15px;
 }
 
 .case_box{
@@ -42,23 +45,25 @@
 .info_line{
   display: flex;
   justify-content:space-between;
-  width: 500rpx;
+  width: 450rpx;
   font-size: small;
   margin: 3px 0;
 }
 
 .info_value{
   width: 200rpx;
+  font-size: 12px;
 }
 
 .info_key{
+  font-size: 12px;
   color:#686868
 }
 
 .info_detail_hint{
-  color:#3980ED;
+  color:#012D58;
   margin-right: 30rpx;
-  font-size: small;
+  font-size: 12px;
   align-self: flex-end;
 }
 
@@ -67,8 +72,8 @@
 }
 
 .case_name{
-  padding-top: 10rpx;
   height: 60rpx;
+
   justify-self:center;
   box-sizing: border-box;
 }
@@ -95,9 +100,12 @@
 }
 
 .add_image{
-  width: 100rpx;
-  height: 100rpx;
+  width: 55px;
+  height: 55px;
   position: fixed;
-  right:100rpx;
-  bottom: 150rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+  width: 55px;
+  height: 55px;
 }

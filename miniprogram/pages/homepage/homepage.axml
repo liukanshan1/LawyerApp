@@ -42,7 +42,7 @@
       </view>
     </view>
     <view>
-      <view class="task_detail" onTap="check_task_detail">查看任务详细</view>
+      <view class="task_detail" onTap="check_task_detail">查看任务详情</view>
     </view>
   </view>
   <view class="recent_message">
