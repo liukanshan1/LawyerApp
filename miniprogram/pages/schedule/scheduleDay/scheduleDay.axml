@@ -6,7 +6,7 @@
   </picker>
   <view class="list">
     <view class="scheduleMsg" a:for="{{ list }}" a:key="index">
-      <view class="hint" style="font-size: 14px; color: #929292;">{{item.description}}</view>
+      <view class="hint" style="font-size: 14px; color: #012D58;">{{item.description}}</view>
       <view class="main">
         <view style="margin-bottom: 8px;">{{item.title}}</view>
         <view class="text">{{item.time}}</view>
