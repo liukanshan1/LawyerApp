@@ -105,6 +105,7 @@
 }
 
 .file_management{
+  box-sizing: border-box;
   width: 88vw;
   background-color: white;
   border-radius: 16rpx;
@@ -114,7 +115,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 15px;
+  padding:0 15px;
 }
 
 .file_management_text{
