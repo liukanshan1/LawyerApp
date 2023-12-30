@@ -65,7 +65,7 @@ Page({
   },
   toDoc(e){
     my.navigateTo({
-      url:"/pages/case/docManage/docManage"   //
+      url:"/pages/case/docManageNew/docManageNew"   //
     })
   },
 });
