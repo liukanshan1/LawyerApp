@@ -68,7 +68,7 @@
 }
 
 .plus {
-  width: 75%;
+  width: 70%;
   aspect-ratio: 1;
   margin: 12%;
 }

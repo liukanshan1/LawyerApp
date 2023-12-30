@@ -33,7 +33,8 @@
       data-flag={{true}}
     >
       <view class="left">
-        <image mode="widthFix" src="" class="headImg" />
+        <view class="headImg">{{ msgListClick ? item.userName[0] : item.caseName[0]}}</view>
+        <!-- <image mode="widthFix" src="" class="headImg" /> -->
         <view class="middle">
           <view>{{ msgListClick ? item.userName : item.caseName}}</view>
           <view class="content">

@@ -4,11 +4,10 @@
 .card {
   position: relative;
   box-sizing: border-box;
-  /* width: 86%; */
   width: 85vw;
-  background-color: #7A7A7A;
+  background-color: #012D58;
   border-radius: 10px;
-  padding: 25px 15px 20px;
+  padding: 20px 15px 15px;
 }
 .info {
   display: flex;
@@ -36,7 +35,7 @@
   /* width: 60%; */
 }
 .detail .name {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 18px;
 }
 .line {
@@ -45,11 +44,15 @@
 }
 .line .circle {
   width: 4vw;
-  background-color: #D9D9D9;
+  height: 4vw;
+  /* background-color: #D9D9D9; */
   border-radius: 50%;
-  padding-top: 4vw;
-  /* padding-left: 5vw; */
   margin-right: 5px;
+  flex-shrink: 0;
+}
+.line .circle image {
+  width: 4vw !important;
+  /* height: 4vw !important; */
   flex-shrink: 0;
 }
 .line .text {
@@ -73,11 +76,11 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: #fff;
+  background-color: #E0BF8C;
   border-radius: 10px;
   margin: auto;
   margin-top: 10px;
-  padding: 15px 0;
+  padding: 13px 0;
 }
 .item {
   display: flex;
@@ -87,10 +90,15 @@
 }
 .item .circle {
   width: 4vw;
-  background-color: #D9D9D9;
+  height: 4vw;
+  /* background-color: #D9D9D9; */
   border-radius: 50%;
-  padding-top: 4vw;
   margin-right: 5px;
+  flex-shrink: 0;
+}
+.item .circle image {
+  width: 4vw !important;
+  /* height: 4vw !important; */
   flex-shrink: 0;
 }
 .item .text {

@@ -45,7 +45,6 @@
       <view class="picker_title">日程参数人员</view>
       <view class="select_content_box">
         <view class="picker_indicater">添加</view>
-        <view class="arrow"></view>
       </view>
     </view>
   </picker>
@@ -62,14 +61,14 @@
   <view class="button_area">
     <view
       class="cancel_button"
-      style="background-color:#DAE9FB;color:#1668E2"
+      style="background-color:#012D58;"
       onTap="cancel"
     >
       取消
     </view>
     <view
       class="cancel_button"
-      style="background-color:#FBDADA;color:#E21616"
+      style="background-color:#E0BF8C;"
       onTap="confirm"
     >
       确认

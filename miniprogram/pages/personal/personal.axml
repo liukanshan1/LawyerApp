@@ -5,21 +5,27 @@
   <view class="card">
     <view class="info" onTap="editInfo">
       <view class="img">
-        <image mode="heightFix" src="{{info.avatar ? info.avatar : 'https://tfs.alipayobjects.com/images/partner/ATiY7hRLspVacAAAAAAAAAAAAADtl2AA'}}" />
+        <image mode="widthFix" src="{{info.avatar ? info.avatar : 'https://tfs.alipayobjects.com/images/partner/ATiY7hRLspVacAAAAAAAAAAAAADtl2AA'}}" />
       </view>
       <view a:if="{{ info.isLawyer }}">
         <view class="detail">
           <view class="name">{{info.name===""?info.nickName:info.name}}</view>
           <view class="line">
-            <view class="circle"></view>
+            <view class="circle">
+              <image mode="widthFix" src="/images/address.png" />
+            </view>
             <view class="text">地址：{{info.address ? info.address : '待填写'}}</view>
           </view>
           <view class="line">
-            <view class="circle"></view>
-            <view class="text">事务所：{{info.lawyerOfficeName ? info.lawyerOfficeName : '待填写'}}</view>
+            <view class="circle">
+              <image mode="widthFix" src="/images/bank.png" />
+            </view>
+            <view class="text" style="font-size: 12px;">事务所：{{info.lawyerOfficeName ? info.lawyerOfficeName : '待填写'}}</view>
           </view>
           <view class="line">
-            <view class="circle"></view>
+            <view class="circle">
+              <image mode="widthFix" src="/images/num.png" />
+            </view>
             <view class="text" style="font-size: 12px;">执业证号：{{info.lawyerNum === -1 ? "待填写" : info.lawyerNum}}</view>
           </view>
         </view>
@@ -29,15 +35,21 @@
         <view class="detail">
           <view class="name">{{info.name==""?info.nickName:info.name}}</view>
           <view class="line">
-            <view class="circle"></view>
+            <view class="circle">
+              <image mode="widthFix" src="/images/address.png" />
+            </view>
             <view class="text">地址：{{info.address ? info.address : "待填写"}}</view>
           </view>
           <view class="line">
-            <view class="circle"></view>
-            <view class="text">职业：{{info.career ? info.career : "待填写"}}</view>
+            <view class="circle">
+              <image mode="widthFix" src="/images/bank.png" />
+            </view>
+            <view class="text" style="font-size: 12px;">职业：{{info.career ? info.career : "待填写"}}</view>
           </view>
           <view class="line">
-            <view class="circle"></view>
+            <view class="circle">
+              <image mode="widthFix" src="/images/num.png" />
+            </view>
             <view class="text" style="font-size: 12px;">电话：{{info.telephone ? info.telephone : "待填写"}}</view>
           </view>
         </view>
@@ -45,15 +57,21 @@
     </view>
     <view class="sure">
       <view class="item">
-        <view class="circle"></view>
+        <view class="circle">
+          <image mode="widthFix" src="/images/person.png" />
+        </view>
         <view class="text">实名认证</view>
       </view>
-      <view class="item" a:if="{{ isLawyer }}">
-        <view class="circle"></view>
+      <view class="item" a:if="{{ info.isLawyer }}">
+        <view class="circle">
+          <image mode="widthFix" style="width: 3.5vw !important;" src="/images/true.png" />
+        </view>
         <view class="text">执业认证</view>
       </view>
       <view class="item">
-        <view class="circle"></view>
+        <view class="circle">
+          <image mode="widthFix" src="/images/time.png" />
+        </view>
         <view class="text">诚信保障</view>
       </view>
     </view>

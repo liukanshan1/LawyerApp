@@ -7,6 +7,7 @@
 }
 .case_item {
   height: 220px;
+  border-radius: 16rpx !important;
 }
 .small_text .icon {
   position: absolute;
@@ -15,42 +16,49 @@
   height: 100%;
 }
 .process_box{
-  width: 702rpx;
+  box-sizing: border-box;
+  width: 88vw;
   background-color: white;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
   border-radius: 16rpx;
   margin-top: 30rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 15px;
 }
 
 .process_text{
-  padding-top: 10rpx;
+  padding-top: 10px;
   padding-bottom: 10rpx;
-  width: 640rpx;
+  /* width: 640rpx; */
 }
 
 .today_agenda{
-  width: 630rpx;
+  /* width: 630rpx; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .today_agenda_text_line{
   display: flex;
   align-items: center;
   padding-top: 5rpx;
   padding-bottom: 10rpx;
-  width: 630rpx;
+  /* width: 630rpx; */
+  width: 100%;
   justify-content: space-between;
   font-size: small;
   color:#929292;
 }
-
+.today_agenda_text {
+  color: #012D58;
+}
 .task_box_wrapper{
-  width: 620rpx;
+  /* width: 620rpx; */
+  width: 100%;
 }
 
 .process_map_text_line{
@@ -88,15 +96,16 @@
   height: 25px;
   line-height: 25px;
   text-align: center;
-  background-color: #D9D9D9;
+  color: #fff;
+  background-color: #012D58;
   padding: 0 10px;
 }
 .current {
-  background-color: #D4F7C8;
+  background-color: #E0BF8C;
 }
 
 .file_management{
-  width: 702rpx;
+  width: 88vw;
   background-color: white;
   border-radius: 16rpx;
   margin-top: 30rpx;
@@ -104,17 +113,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 15px;
 }
 
 .file_management_text{
   font-size: large;
-  width: 630rpx;
+  /* width: 630rpx; */
+  width: 100%;
   height: 80rpx;
   padding-top: 20rpx;
 }
 
 .file_management_content{
-  width: 630rpx;
+  /* width: 630rpx; */
+  width: 100%;
   height: 160rpx;
 }
 
@@ -158,4 +170,7 @@
   width: 80rpx;
   align-items: center;
   margin-right: 45rpx;
+}
+.process_map_box {
+  width: 100% !important;
 }
