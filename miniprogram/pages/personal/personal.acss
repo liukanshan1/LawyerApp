@@ -110,7 +110,7 @@
   word-break: break-all;
   white-space: nowrap;
 }
-.changeRole {
+/* .changeRole {
   width: 85vw;
   height: 50px;
   line-height: 50px;
@@ -121,6 +121,19 @@
   text-align: center;
   border-radius: 15px;
   margin-top: 20px;
+} */
+.changeRole {
+  position: fixed;
+  bottom: 45px;
+  width: 85vw;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #012D58;
+  text-align: center;
+  border-radius: 15px;
 }
 
 .toDoc{
@@ -129,6 +142,7 @@
   text-align: center;
   height: 80rpx;
   line-height: 80rpx;
-  background-color: #c6c6c6;
+  /* background-color: #c6c6c6; */
+  background-color:#c6c6c6;
   border-radius: 20rpx;
 }

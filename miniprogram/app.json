@@ -31,31 +31,31 @@
   },
   "tabBar": {
     "textColor": "",
-    "selectedColor": "",
+    "selectedColor": "#012D58",
     "backgroundColor": "",
     "items": [
       {
         "pagePath": "pages/homepage/homepage",
         "icon": "images/首页-fill.png",
-        "activeIcon": "images/首页-fill-蓝.png",
+        "activeIcon": "images/首页-fill-深蓝.png",
         "name": "首页"
       },
       {
         "pagePath": "pages/case/case",
         "icon": "images/案件.png",
-        "activeIcon": "images/案件-蓝.png",
+        "activeIcon": "images/案件-深蓝.png",
         "name": "案件"
       },
       {
         "pagePath": "pages/schedule/scheduleDay/scheduleDay",
         "icon": "images/日程.png",
-        "activeIcon": "images/日程-蓝.png",
+        "activeIcon": "images/日程-深蓝.png",
         "name": "日程"
       },
       {
         "pagePath": "pages/personal/personal",
         "icon": "images/个人.png",
-        "activeIcon": "images/个人-蓝.png",
+        "activeIcon": "images/个人-深蓝.png",
         "name": "个人"
       }
     ]
