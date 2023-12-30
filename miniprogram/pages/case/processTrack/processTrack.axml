@@ -94,7 +94,7 @@
             hidden={{!item2.show}}
           >
             <view class="title3">
-              <image mode="widthFix" src="/images/Plus.png" class="plus_mini" />
+              <!-- <image mode="widthFix" src="/images/Plus.png" class="plus_mini" /> -->
               <!--<view class="text_mini" onTap="changeTreeState" data-id="{{item3._id}}">{{item3.name}}</view> -->
               <view class="text_mini">{{item3.name}}</view>
               <!-- <image

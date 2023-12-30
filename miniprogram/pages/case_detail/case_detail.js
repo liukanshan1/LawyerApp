@@ -40,10 +40,12 @@ Page({
         // res.result.data.map(item => { 
         //   item.time = this.formatDate(item.time, true)
         // })
-        // console.log(res.result.data);
-        this.setData({
-          list: [res.result.data[0]]
-        })
+        console.log('日程',res.result)
+        if(res.result.data.length>0){
+          this.setData({
+            list: [res.result.data[0]]
+          })
+        }
       },
       fail: function(res) {
         console.log('日程', res);

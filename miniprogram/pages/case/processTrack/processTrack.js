@@ -126,7 +126,7 @@ Page({
     my.cloudFunction.callFunction({
       name: "getCaseById",
       data: {
-        id: caseId
+        caseId: caseId
       },
       success: (res) => {
         console.log('案件byid', res);

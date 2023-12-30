@@ -44,7 +44,7 @@
     <!-- <view class="info_detail_hint">查看信息详情</view> -->
   </view>
   <view class="process_box" >
-    <view class="process_text"> 进程追踪</view>
+    <view class="process_text">案件安排</view>
     <view class="today_agenda" catchTap="tap_today_agenda">
       <view class="today_agenda_text_line">
         <view class="today_agenda_text">最近日程</view>

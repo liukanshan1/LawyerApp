@@ -1,7 +1,7 @@
 <view class="page">
   <view class="top">
-    <view class="label">进程：</view>
-    <input placeholder="请输入进程" onInput="inputProcess"/>
+    <view class="label">子流程：</view>
+    <input placeholder="请输入子流程标题" onInput="inputProcess"/>
   </view>
   <view class="btns">
     <view class="btn cancel" onTap="cancel">取消</view>

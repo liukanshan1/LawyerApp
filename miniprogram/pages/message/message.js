@@ -43,7 +43,7 @@ Page({
       success: (res) => {
         console.log('getNewestMes', res);
         res.result.map(item => {
-          item.time = this.formatDate(parseInt(item.sendTime))
+          item.time = this.formatDate(item.sendTime)
         })
         this.setData({
           msgList: res.result

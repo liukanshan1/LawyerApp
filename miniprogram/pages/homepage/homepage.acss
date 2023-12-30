@@ -148,7 +148,9 @@
 }
 
 .recent_message{
-  width: 100%;
+  box-sizing: border-box;
+  border-radius: 30.7rpx;
+  width: 690rpx;
   background-color: white;
   margin-top: 40rpx;
   display: flex;
