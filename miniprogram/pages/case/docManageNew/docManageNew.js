@@ -2,14 +2,14 @@ Page({
   data: {
     list:[]
   },
-  async onLoad() {
+  async onLoad(e) {
+    console.log(e)
     const context = await my.cloud.createCloudContext({
       env: 'env-00jx4obkh2l9'
     });
     await context.init();
     my.cloudFunction = context;
-    my.setStorageSync({key: '_id', data: '658428204950fd82ff91e8d8'})
-    let id=my.getStorageSync({key:'_id'}).data
+    let id = e.userId
     // this.getCases()
     let that=this
     console.log(id)

@@ -64,8 +64,9 @@ Page({
     })
   },
   toDoc(e){
+    let id = my.getStorageSync({key: "_id"}).data
     my.navigateTo({
-      url:"/pages/case/docManageNew/docManageNew"   //
+      url:"/pages/case/docManageNew/docManageNew?userId="+id   //
     })
   },
 });
