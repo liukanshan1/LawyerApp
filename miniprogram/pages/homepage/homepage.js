@@ -36,6 +36,13 @@ Page({
     this.getNewestMes()
   },
   createUser(){
+    let id = my.getStorageSync({key:"_id"}).data;
+    console.log(id)
+    if(id!==null) {
+      this.getTaskList()
+      this.getNewestMes()
+      return
+    }
     my.getAuthCode({
       scopes: 'auth_base', 
       success:(res) =>{
