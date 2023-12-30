@@ -30,7 +30,7 @@
     <view class="detail_picker">
       <view class="picker_title">所属案件</view>
       <view class="select_content_box">
-        <view class="picker_indicater">{{caseList[caseIndex].title}}</view>
+        <view class="picker_indicater_new">{{caseList[caseIndex].title}}</view>
         <view class="arrow"></view>
       </view>
     </view>

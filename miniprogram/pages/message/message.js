@@ -124,10 +124,11 @@ Page({
     });
     else {
       my.showLoading()
+      console.log(this.data.msgList[this.data.caseIndex].caseId)
       my.cloudFunction.callFunction({
         name: "getCaseById",
         data: {
-          id: this.data.msgList[this.data.caseIndex]._id
+          caseId: this.data.msgList[this.data.caseIndex].caseId
         },
         success: (res) => {
           console.log('案件byid', res);

@@ -1,5 +1,5 @@
 /* @import "/pages/homepage/homepage.acss"; */
-.outer{
+.outer {
   width: 100%;
   box-sizing: border-box;
   padding-right: 47rpx;
@@ -7,7 +7,7 @@
   padding-bottom: 100px;
 }
 
-.select_time_area{
+.select_time_area {
   height: 180rpx;
   display: flex;
   flex-direction: column;
@@ -16,12 +16,14 @@
   padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
+
 .address {
   display: flex;
   justify-content: space-between;
 
 }
-.label{
+
+.label {
   width: 164rpx;
   height: 46rpx;
   text-align: center;
@@ -29,7 +31,7 @@
   margin-right: 35rpx;
 }
 
-.label_list{
+.label_list {
   display: flex;
   height: 100rpx;
   align-items: center;
@@ -37,76 +39,84 @@
 
 }
 
-.case_select_area{
+.case_select_area {
   display: flex;
   height: 100rpx;
   align-items: center;
   justify-content: space-between;
 }
 
-.custom_content_title{
+.custom_content_title {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
 
-.custom_content_textarea{
-  box-shadow: 0 1px 10px rgba(0,0,0,.1);
+.custom_content_textarea {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
   font-size: 14px;
   height: 200rpx;
   border-radius: 16rpx;
-  padding:20rpx;
+  padding: 20rpx;
   margin-bottom: 20rpx;
 }
 
-.detail_picker{
+.detail_picker {
   display: flex;
   width: inherit;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   height: 60rpx;
   margin-bottom: 5px;
 }
 
-.select_content_box{
+.select_content_box {
   /* width: 180rpx; */
   display: flex;
   align-items: center;
 }
 
-.picker_indicater{
+.picker_indicater_new {
+  text-align: right;
+  height: 25px;
+  margin-right: 30rpx;
+}
+
+.picker_indicater {
   text-align: right;
   width: 100px;
   height: 25px;
+  border-radius: 12.5px;
+  text-align: center;
   line-height: 25px;
   margin-right: 30rpx;
-  color:#fff;
+  color: #fff;
   background-color: #E0BF8C;
 }
 
-.arrow{
+.arrow {
   border-right: solid;
   border-top: solid;
   border-color: #c9c9c9;
-  rotate:45deg;
+  rotate: 45deg;
   height: 15rpx;
   width: 15rpx;
 }
 
-.detail_option_area{
+.detail_option_area {
   margin-bottom: 30rpx;
 }
 
-#label_style1{
+#label_style1 {
   color: #1668E2;
   background-color: #DAE9FB;
 }
 
-#label_style2{
-  color:#0E5B48;
+#label_style2 {
+  color: #0E5B48;
   background-color: #DBF4DE;
 }
 
-#label_style3{
+#label_style3 {
   color: #E2162E;
   background-color: #FAE6ED;
 }
@@ -115,7 +125,7 @@
   border: 1px solid rgb(15, 175, 234);
 }
 
-.cancel_button{
+.cancel_button {
   width: 289rpx;
   height: 70rpx;
   text-align: center;
@@ -124,7 +134,7 @@
   line-height: 70rpx;
 }
 
-.button_area{
+.button_area {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
@@ -134,8 +144,8 @@
   box-sizing: border-box;
   width: 656rpx;
   height: 100px;
-  box-shadow: 0 1px 10px rgba(0,0,0,.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
   border-radius: 16rpx;
-  padding:20rpx;
+  padding: 20rpx;
   background-color: rgb(238 238 238);
 }
