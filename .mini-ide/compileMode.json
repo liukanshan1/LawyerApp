@@ -102,6 +102,12 @@
       "page": "pages/case/photoList/photoList",
       "launchMode": "common",
       "pageQuery": ""
+    },
+    {
+      "title": "case/processTrack/processTrack",
+      "page": "pages/case/processTrack/processTrack",
+      "launchMode": "common",
+      "pageQuery": "caseId=undefined&tabIndex=0"
     }
   ]
 }

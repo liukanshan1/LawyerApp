@@ -90,14 +90,14 @@
   <view class="button_area">
     <view
       class="cancel_button"
-      style="background-color:#DAE9FB;color:#1668E2"
+      style="background-color:#012D58;color:white"
       onTap="cancel"
     >
       取消
     </view>
     <view
       class="cancel_button"
-      style="background-color:#FBDADA;color:#E21616"
+      style="background-color:#E0BF8C;color:white"
       onTap="confirm"
     >
       确认

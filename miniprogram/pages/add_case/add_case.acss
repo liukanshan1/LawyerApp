@@ -129,7 +129,7 @@
 }
 
 .select_content_box{
-  width:100rpx;
+  width:4.0rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -172,7 +172,13 @@
 }
 
 .picker_indicater{
-  color:#797B80
+  width: 3.6rem;
+  color:#797B80;
+  background-color: white;
+  border-radius: 10rpx;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
 }
 
 .name_list{

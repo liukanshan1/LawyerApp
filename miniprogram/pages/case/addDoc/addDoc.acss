@@ -38,8 +38,8 @@
   text-align: center;
   color: #fff;
   border-radius: 5vw;
-  background-color: #56575C;
+  background-color: #E0BF8C;
 }
 .cancel {
-  background-color: #888888;
+  background-color: #012D58;
 }

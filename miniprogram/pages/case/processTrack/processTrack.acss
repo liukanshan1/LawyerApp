@@ -41,9 +41,11 @@
 }
 
 .tab_active {
+  /* 1,45,88 */
   font-weight: bold;
-  background-color: #DFDFDF;
+  background-color: #012D58;
   border-radius: 20px;
+  color:white;
 }
 
 .search {
@@ -66,7 +68,9 @@
   font-weight: bold;
   /* margin: 10px 20px; */
   padding: 10px 20px;
-  border-top: solid 1px #ccc;
+  /* border-top: solid 1px #ccc; */
+  color: #012D58;
+  height: 120rpx;
 }
 
 .scrollView {
@@ -134,22 +138,25 @@
 }
 
 .main {
-  background-color: #fff;
+  background-color: #f8f8f8;
   overflow: hidden;
 }
 
 .tree1 {
-  margin: 15px 0 30px 20px;
+  /* margin: 15px 0 30px 20px; */
+  margin-bottom: 15px;
 }
 
 .tree2 {
-  margin-left: 20px;
-  margin-top: 15px;
+
+  /* margin-left: 20px; */
+  margin-top: 5px;
 }
 
 .tree3 {
-  margin-left: 30px;
-  margin-top: 15px;
+  /* margin-left: 30px; */
+  /* padding-left: 30px; */
+  margin-top: 5px;
 }
 
 .tree3_item {
@@ -161,7 +168,48 @@
 
 .title {
   display: flex;
+  width: 750rpx;
+  height: 0.8rem;
+  box-sizing: border-box;
+  /* margin-left: 20rpx; */
+  line-height: 0.8rem;
+  align-items: center;
+  background-color: #f0f0f0;
+  /* justify-content: center; */
+  padding-left: 0.4rem;
+  /* margin-bottom: 15px; */
 }
+
+.title2{
+  display: flex;
+  width: 750rpx;
+  height: 0.8rem;
+  box-sizing: border-box;
+  /* margin-left: 20rpx; */
+  line-height: 0.8rem;
+  align-items: center;                                                              
+  background-color: white;
+  /* justify-content: center; */
+  padding-left: 1.0rem;
+  /* padding-left: 20px; */
+  /* margin-bottom: 15px; */
+}
+
+.title3{
+  display: flex;
+  width: 750rpx;
+  height: 0.8rem;
+  box-sizing: border-box;
+  /* margin-left: 20rpx; */
+  line-height: 0.8rem;
+  align-items: center;
+  background-color: white;
+  /* justify-content: center; */
+  padding-left: 1.8rem;
+  /* padding-left: 20px; */
+  /* margin-bottom: 15px; */
+}
+
 
 .plus {
   width: 20px;
@@ -172,8 +220,8 @@
 .plus_mini {
   width: 16px;
   height: 16px !important;
-  margin-right: 3px;
-  margin-top: 1px;
+  /* margin-right: 3px; */
+  /* margin-top: 32rpx; */
 }
 
 .title .text_mini {
@@ -190,11 +238,12 @@
 .arrow {
   width: 8px;
   height: 8px !important;
-  margin-top: 6px;
+  /* margin-top: 6px; */
 }
 
 .arrow_mini {
-  margin-top: 3px;
+  /* margin-top: 3px; */
+  justify-self:flex-end;
 }
 
 .global_plus {
@@ -252,7 +301,8 @@
   content: "";
   width: 3px;
   height: 100%;
-  background: #757575;
+  background: #E0BF8C;
+  /* 224,191,140 */
 }
 
 .main1 .textMain {
