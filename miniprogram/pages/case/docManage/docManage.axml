@@ -9,7 +9,7 @@
     </view>
     <view class="main">
       <view class="item" a:for="{{ item.list }}" a:key="index" onTap="selectDir" data-id="{{item.id}}">
-        <image class="circle" src="/images/doc.PNG"></image>
+        <image class="circle" src="/images/doc.png"></image>
         <view class="text">{{item.directory_content}}</view>
       </view>
       <view class="item">

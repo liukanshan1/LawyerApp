@@ -9,7 +9,7 @@
     </view>
     <view class="main">
       <view class="item" a:for="{{list}}" a:key="index" onTap="selectPhoto" data-path="{{item.path}}" data-index="{{index}}">
-        <view class="circle"></view>
+        <image mode="widthFix"class="circle" src="/images/图片.png"></image>
         <view class="text">{{item.photoName}}</view>
       </view>
       <view class="item">
