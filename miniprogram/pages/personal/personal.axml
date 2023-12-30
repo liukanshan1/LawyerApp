@@ -5,7 +5,7 @@
   <view class="card">
     <view class="info" onTap="editInfo">
       <view class="img">
-        <image mode="widthFix" src="{{info.avatar ? info.avatar : 'https://tfs.alipayobjects.com/images/partner/ATiY7hRLspVacAAAAAAAAAAAAADtl2AA'}}" />
+        <image mode="widthFix" src="{{info.avatar}}" />
       </view>
       <view a:if="{{ info.isLawyer }}">
         <view class="detail">
