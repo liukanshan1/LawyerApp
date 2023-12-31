@@ -272,13 +272,25 @@ Page({
     })
   },
   add_opposite(e){
-    let temp=this.data.opposite_input_temp
-    let name_list=this.data.opposite_name
-    name_list.push(temp)
-    this.setData({
-      opposite_name:name_list,
-      opposite_input_temp:""
+    
+    my.prompt({
+      message:'对方当事人名字',
+      placeholder:'请输入',
+      okButtonText:"添加",
+      cancelButtonText:'取消',
+      success:(res)=>{
+        let temp=res.inputValue;
+        if(temp.trim().length==0) return;
+        let name_list=this.data.opposite_name
+        name_list.push(temp)
+        this.setData({
+          opposite_name:name_list,
+          opposite_input_temp:""
+        })
+      }
     })
+  
+    
   },
   cancel_opposite_item(e){
     let name_list=this.data.opposite_name

@@ -104,7 +104,7 @@
 .area_reason_area{
   width: 680rpx;
   display: flex;
-  height: 80rpx;
+  height: 70rpx;
   line-height: 80rpx;
   justify-content: space-between;
   align-items: center;
@@ -159,9 +159,16 @@
   width: 680rpx;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 60px;
 }
-
+.add_button{
+  width: 170rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  line-height: 50rpx;
+  background-color: #e0bf8c;
+  color: white;
+}
 .cancel_button{
   margin-top: 100rpx;
   width: 289rpx;

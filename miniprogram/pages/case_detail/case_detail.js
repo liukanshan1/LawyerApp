@@ -155,7 +155,6 @@ Page({
       url: `/pages/case/processTrack/processTrack?caseId=${this.data.case._id}&tabIndex=${0}`
     })
   },
-
   tap_all_file(e) {
     console.log("全部文档点击")
     my.navigateTo({

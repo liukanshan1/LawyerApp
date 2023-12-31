@@ -72,8 +72,8 @@
   </view> -->
   <view class="area_reason_area">
     <view>对方当事人</view>
-    <input class="input_area" onInput="opposite_input" value="{{opposite_input_temp}}"></input>
-    <view onTap="add_opposite">添加</view>
+    <!-- <input class="input_area" onInput="opposite_input" value="{{opposite_input_temp}}"></input> -->
+    <view class="add_button" onTap="add_opposite">添加</view>
   </view>
   <view class="area_reason_area">
     <scroll-view scroll-x="{{true}}" class="party_scroll">
