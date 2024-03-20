@@ -1,0 +1,12 @@
+{
+    "name": "uploadFile",
+    "version": "1.0.0",
+    "description": "upload file",
+    "main": "index.js",
+    "scripts": {},
+    "author": "perkz",
+    "license": "ISC",
+    "dependencies": {
+      "@alipay/faas-server-sdk": "^1.0.0"
+    }
+  }

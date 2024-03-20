@@ -53,7 +53,7 @@ Page({
       success: (res) => {
         console.log('getCases', res);
         this.setData({
-          caseList: res.result.data
+          caseList: [...res.result.data, "无"]
         })
         if (res.result.data.length !== 0) this.getUsernamesByIds(this.data.caseList[this.data.caseIndex].userIds)
       },

@@ -73,7 +73,7 @@ Page({
     caseId: ""
   },
   onLoad(e) {
-    console.log('load',e);
+    console.log('load', e);
     this.setData({
       tab_index: parseInt(e.tabIndex),
       caseId: e.caseId
@@ -81,7 +81,7 @@ Page({
     my.showLoading();
     this.getCaseById(e.caseId)
   },
-  onShow(){
+  onShow() {
     this.getCaseById(this.data.caseId)
   },
   changeTab(e) {
@@ -151,7 +151,9 @@ Page({
             this.data.tree_data.forEach((item, i) => {
               promiseArr.push(this.getCusProcess(item.id, i))
             })
-            Promise.all(promiseArr).then(res => {my.hideLoading()})
+            Promise.all(promiseArr).then(res => {
+              my.hideLoading()
+            })
             console.log('getProcessesByIds', res);
           },
           fail: function (res) {
@@ -198,28 +200,64 @@ Page({
       }
     })
   },
-  addCusProcess(e){
+  addCusProcess(e) {
     let fatherId = e.currentTarget.dataset.fatherId
     let caseId = this.data.case._id
     let processId = this.data.tree_data[e.currentTarget.dataset.i].id
-    my.navigateTo({
-      url: `/pages/case/addCusProcess/addCusProcess?processId=${processId}&caseId=${caseId}&fatherId=${fatherId}`
+    my.prompt({
+      message: '新增子进程',
+      placeholder: '请输入',
+      okButtonText: "添加",
+      cancelButtonText: '取消',
+      success: (res) => {
+        let input = res.inputValue
+        if (input === "" || input === undefined) my.showModal({
+          title: "请填写进程名称"
+        });
+        let id = my.getStorageSync({key: "_id"}).data
+        my.cloudFunction.callFunction({
+          name: "addCusProcess",
+          data: {
+            name: input.trim(),
+            processId: processId,
+            userId: id,
+            fatherId: fatherId,
+            caseId: caseId,
+          },
+          success: (res) => {
+            console.log('addCusProcess', res);
+            my.showLoading();
+            this.getCaseById(this.data.caseId)
+          },
+          fail: function (res) {
+            console.log('addCusProcess', res);
+          }
+        })
+      },
+      fail: (err)=>{
+        console.log(err)
+      }
     })
+    // my.navigateTo({
+    //   url: `/pages/case/addCusProcess/addCusProcess?processId=${processId}&caseId=${caseId}&fatherId=${fatherId}`
+    // })
   },
-  formatDate(time){
+  formatDate(time) {
     let date = new Date(time);
     let YY = date.getFullYear();
-    let MM = (date.getMonth() + 1 < 10 ? '0'+(date.getMonth() + 1) : date.getMonth() + 1);
-    let DD = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate());
-    
+    let MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    let DD = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate());
+
     return YY + '-' + MM + '-' + DD
   },
-  getScheduleList(){
-    let id = my.getStorageSync({key: '_id'}).data
+  getScheduleList() {
+    let id = my.getStorageSync({
+      key: '_id'
+    }).data
     my.cloudFunction.callFunction({
       // name:"getSchedules",
-      name:"getScheduleByCaseId",
-      data: { 
+      name: "getScheduleByCaseId",
+      data: {
         // userId: id,
         // start: new Date('1970-01-01').getTime(),
         // end: new Date('2100-01-01').getTime()
@@ -227,7 +265,7 @@ Page({
       },
       success: (res) => {
         console.log('日程', res);
-        res.result.data.map(item => { 
+        res.result.data.map(item => {
           item.time = this.formatDate(item.time)
         })
         console.log(res.result.data);
@@ -235,7 +273,7 @@ Page({
           schduleList: res.result.data
         })
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log('日程', res);
       }
     })

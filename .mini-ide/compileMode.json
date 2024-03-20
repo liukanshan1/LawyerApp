@@ -108,6 +108,32 @@
       "page": "pages/case/processTrack/processTrack",
       "launchMode": "common",
       "pageQuery": "caseId=undefined&tabIndex=0"
+    },
+    {
+      "title": "personal/edit/edit",
+      "page": "pages/personal/edit/edit",
+      "launchMode": "common",
+      "pageQuery": ""
+    },
+    {
+      "title": "pages/case_detail/case_detail",
+      "page": "pages/case_detail/case_detail",
+      "launchMode": "common"
+    },
+    {
+      "title": "schedule/scheduleDay/scheduleDay",
+      "page": "pages/schedule/scheduleDay/scheduleDay",
+      "launchMode": "common"
+    },
+    {
+      "title": "pages/createtodo/createtodo",
+      "page": "pages/createtodo/createtodo",
+      "launchMode": "common"
+    },
+    {
+      "title": "schedule/scheduleDay/scheduleDay",
+      "page": "pages/schedule/scheduleDay/scheduleDay",
+      "launchMode": "common"
     }
   ]
 }

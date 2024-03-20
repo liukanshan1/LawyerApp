@@ -86,7 +86,7 @@
     </view>
   </view>
   <view class="file_management">
-    <view class="file_management_text">案件图片管理</view>
+    <view class="file_management_text">证据管理</view>
     <view class="file_management_content">
       <view class="project_text_line" onTap="tap_all_file">
         <view class="project_text">已上传图片数：{{case.photoCount}}</view>

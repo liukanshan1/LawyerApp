@@ -31,7 +31,7 @@ Page({
   dateChange(e){
     console.log(e.detail);
     this.setData({
-      selectdate: e.detail.value,
+      today: e.detail.value,
       selectdateTimestamp: new Date(e.detail.value).getTime()
     })
     this.getList()
