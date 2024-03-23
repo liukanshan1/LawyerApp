@@ -1,7 +1,7 @@
 <view class="status-box status-white-noback" style="height:{{page_top_height}}px; background-color: #fff;"></view>
 <top_tap title="日程"></top_tap>
 <view class="page">
-  <picker mode="date" onChange="dateChange">
+  <picker mode="date" onChange="dateChange" fields="month">
     <view class="selectDate">请选择日期：{{selectdate}}</view>
   </picker>
   <view class="list">

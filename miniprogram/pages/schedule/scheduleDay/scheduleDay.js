@@ -1,7 +1,7 @@
 Page({
   data: {
     page_top_height: 0,
-    selectdate: "2023-12-23",
+    selectdate: "2023-12",
     selectdateTimestamp: 1699833600000,
     list: []
   },
@@ -17,10 +17,13 @@ Page({
       backgroundColor: '#FFFFFF', // 想使用frontColor 这个字段必填
       frontColor: '#000000' // 设置文字及状态栏电量、日期等文字颜色
     })
-    let now = this.formatDate(new Date().getTime(), false)
+    // let now = this.formatDate(new Date().getTime(), false)
+    let year=new Date().getFullYear();
+    let month=new Date().getMonth()+1;
+    let now=year+"-"+month;
     this.setData({
       selectdate: now, // 正式使用
-      selectdateTimestamp: new Date(now).getTime() - 28800000
+      selectdateTimestamp: new Date(now).getTime()
     })
     // const context = await my.cloud.createCloudContext({
     //   env: 'env-00jx4obkh2l9'
@@ -52,22 +55,35 @@ Page({
     console.log(e.detail);
     this.setData({
       selectdate: e.detail.value,
-      selectdateTimestamp: new Date(e.detail.value).getTime() - 28800000
+      selectdateTimestamp: new Date(e.detail.value).getTime()
     })
     this.getList()
   },
   getList(){
     let id = my.getStorageSync({key: '_id'}).data
     console.log("参数", id, this.data.selectdateTimestamp, this.data.selectdateTimestamp + 86399000);
+    let src_date=new Date(this.data.selectdateTimestamp);
+    console.log(new Date(this.data.selectdateTimestamp))
+    let month=src_date.getMonth()+1;
+    let year=src_date.getFullYear();
+    if (month>=12){
+        year+=1;
+        month%=12;
+    }
+    console.log(month)
+    console.log(year)
+    let str=year+"-"+(month+1);
+    console.log(str)
+    let dst_data=new Date(str)-new Date(2880000);
+    console.log(id)
+    console.log(this.data.selectdateTimestamp)
+    console.log(new Date(dst_data).getTime())
     my.cloudFunction.callFunction({
       name:"getSchedules",
       data: { 
-        // userId: "658428204950fd82ff91e8d8",
-        // start: 1699833600000,
-        // end: 1699833600123 
         userId: id,
         start: this.data.selectdateTimestamp,
-        end: this.data.selectdateTimestamp + 86399000 // 第一天23点59分59秒
+        end: dst_data // 第一天23点59分59秒
       },
       success: (res) => {
         console.log('日程', res);
