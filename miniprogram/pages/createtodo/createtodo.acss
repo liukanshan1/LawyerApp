@@ -107,18 +107,27 @@
 }
 
 #label_style1 {
-  color: #1668E2;
-  background-color: #DAE9FB;
+  /* color: #1668E2; */
+  color: white;
+  /* background-color: #DAE9FB; */
+  background-color: #012D58;
+  border-color: #012D58;
 }
 
 #label_style2 {
-  color: #0E5B48;
-  background-color: #DBF4DE;
+  /* color: #0E5B48;
+  background-color: #DBF4DE; */
+  color: white;
+  background-color: #012D58;
+  border-color: #012D58;
 }
 
 #label_style3 {
-  color: #E2162E;
-  background-color: #FAE6ED;
+  /* color: #E2162E;
+  background-color: #FAE6ED; */
+  color: white;
+  background-color: #012D58;
+  border-color: #012D58;
 }
 
 .label_styleActive {
