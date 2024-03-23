@@ -35,26 +35,26 @@
     "items": [
       {
         "pagePath": "pages/homepage/homepage",
-        "icon": "images/首页-fill.png",
-        "activeIcon": "images/首页-fill-深蓝.png",
+        "icon": "images/Home.png",
+        "activeIcon": "images/Home_b.png",
         "name": "首页"
       },
       {
         "pagePath": "pages/case/case",
-        "icon": "images/案件.png",
-        "activeIcon": "images/案件-深蓝.png",
+        "icon": "images/file-branch.png",
+        "activeIcon": "images/file-branch_b.png",
         "name": "案件"
       },
       {
         "pagePath": "pages/schedule/scheduleDay/scheduleDay",
-        "icon": "images/日程.png",
-        "activeIcon": "images/日程-深蓝.png",
+        "icon": "images/Vector.png",
+        "activeIcon": "images/Vector_b.png",
         "name": "日程"
       },
       {
         "pagePath": "pages/personal/personal",
-        "icon": "images/个人.png",
-        "activeIcon": "images/个人-深蓝.png",
+        "icon": "images/person1.png",
+        "activeIcon": "images/person1_b.png",
         "name": "个人"
       }
     ]
