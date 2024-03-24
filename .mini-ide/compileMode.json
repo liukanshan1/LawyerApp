@@ -134,6 +134,12 @@
       "title": "schedule/scheduleDay/scheduleDay",
       "page": "pages/schedule/scheduleDay/scheduleDay",
       "launchMode": "common"
+    },
+    {
+      "title": "pages/add_case/add_case",
+      "page": "pages/add_case/add_case",
+      "launchMode": "common",
+      "pageQuery": ""
     }
   ]
 }
