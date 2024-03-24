@@ -11,7 +11,7 @@
     </view>
   </view>
   <view class="add_label_area">
-    <view class="add_label_title">添加标签</view>
+    <view class="add_label_title">案件类型</view>
     <view class="label_list">
       <view
         a:for="{{label}}"
