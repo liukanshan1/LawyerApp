@@ -1,7 +1,7 @@
 var msg = require('../utils/msg')
 Page({
   data: {
-    tab_index: 0,
+    tab_index: 1,
     msgList: [],
     oneCaseMsgs: [],
     msgListClick: false,
@@ -10,9 +10,12 @@ Page({
     caseIndex: -1
   },
   onLoad() {
-    my.showLoading()
+    // my.showLoading()
+    this.setData({
+      schduleList:[this.get_test_object()]
+    })
     this.getNewestMes()
-    this.getScheduleList()
+    // this.getScheduleList()
   },
   changeTab(e) {
     let index = e.currentTarget.dataset.i
@@ -175,5 +178,19 @@ Page({
         console.log('addMessage', res);
       }
     })
+  },
+
+  get_test_object(){
+    return {
+      _id:"6586a581e2a1c9ee460f68e7",
+      _openid:"081N9i_gPYAMzmxIwMx8I3936GkOFXEg9YWayBl9MH8Gpwa",
+      address:"华工",
+      caseId:1,
+      description:"测试1",
+      time:"2023-1-1",
+      title:"日程1",
+      type:"其他",
+      userIds:["658428204950fd82ff91e8d8"]
+    }
   }
 });

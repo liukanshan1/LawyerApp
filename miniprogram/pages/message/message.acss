@@ -118,6 +118,7 @@
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
   margin-top: 5vw;
   padding: 5vw;
+  padding-bottom: 1vw;
   overflow: hidden;
 }
 
@@ -144,12 +145,10 @@
   margin-left: 4vw;
 }
 
-.main .icon {
-  position: absolute;
-  left: 5vw;
-  bottom: 0;
-  height: 30px;
-
+.icon {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
 }
 
 .bottom {
@@ -176,4 +175,103 @@
   border-radius: 5px;
   background-color: rgb(211, 206, 206);
   margin-top: 2px;
+}
+
+.caseHint{
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.nameCircle{
+  background-color: #E0BF8C;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+  color:#012D58;
+}
+
+.timeHint{
+  font-size:12px;
+  color:#012D58;
+  font-weight: 200;
+}
+
+.hintFontBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40px;
+}
+
+.bigTimeHint{
+  margin-left: 20px;
+  font-size: large;
+  color:#012D58;
+  font-weight:bolder;
+}
+
+.messageBox{
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+.punishBar{
+  height: 70px;
+  width: 0px;
+  border: solid;
+  border-color: #E0BF8C;
+  border-radius: 5px;
+}
+
+.messageTextBox{
+  padding-left: 20px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500rpx;
+  font-size: 12px;
+  color:#515050
+}
+
+.separateBar{
+  width: 320px;
+  height: 2px;
+  background-color: #EDEDED;
+  border-radius: 5px;
+}
+
+.timeMessage{
+  display: flex;
+}
+
+.posMessage{
+  display: flex;
+}
+
+.posText{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35px;
+}
+
+.checkBar{
+  height: 40px;
+  color: #ABAAAA;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  line-height: 40px;
+}
+
+.chackArrow{
+  height: 20px;
+  width: 20px;
+  margin-top: 10px;
 }

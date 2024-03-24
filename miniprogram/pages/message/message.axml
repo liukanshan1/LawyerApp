@@ -47,14 +47,34 @@
   </view>
   <view a:if="{{ tab_index === 1 }}" class="list">
     <view a:for="{{ schduleList }}" class="scheduleMsg" a:key="index">
-      <view class="hint" style="font-size: 14px; color: #929292;">
-        {{item.description}}
+      <view class="caseHint">
+        <view class="nameCircle">XX</view>
+        <view class="hintFontBox">
+          <view>XXX人格纠纷</view>
+          <view class="timeHint">星期六 下午</view>
+        </view>
       </view>
-      <view class="main">
-        <view style="margin-bottom: 8px;">{{item.title}}</view>
-        <view class="text">{{item.time}}</view>
-        <view class="text">{{item.address}}</view>
-        <image mode="heightFix" src="/images/image 20.png" class="icon" />
+      <view class="bigTimeHint">客户预约会议还有半个小时开始</view>
+      <view class="messageBox">
+        <view class="punishBar"></view>
+        <view class="messageTextBox">
+          <view class="timeMessage">
+            <image mode="scaleToFill" src="/images/clock.png" class="icon"></image>
+            <view> 2023.11.22</view>
+          </view>
+          <view class="posMessage">
+            <image mode="scaleToFill" src="/images/position.png" class="icon"></image>
+            <view class="posText">
+              <view>线上会议号</view>
+              <view>备注:无</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="separateBar"></view>
+      <view class="checkBar">
+        <view class="checkText">查看详细</view>
+        <image mode="scaleToFill" src="/images/check_right.png" class="chackArrow"/>
       </view>
     </view>
   </view>
