@@ -16,7 +16,6 @@
       <view
         a:for="{{label}}"
         class="label {{label_index === index ? 'label_styleActive' : ''}}"
-        id="{{item.style}}"
         onTap="changeLabel"
         data-i={{index}}
       >{{item.name}}

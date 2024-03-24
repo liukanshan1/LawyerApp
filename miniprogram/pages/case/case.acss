@@ -62,7 +62,6 @@
 
 .info_detail_hint{
   color:#012D58;
-  /* margin-right: 30rpx; */
   font-size: 12px;
   align-self: flex-end;
 }
