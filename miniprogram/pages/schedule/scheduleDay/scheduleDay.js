@@ -20,17 +20,11 @@ Page({
     // let now = this.formatDate(new Date().getTime(), false)
     let year=new Date().getFullYear();
     let month=new Date().getMonth()+1;
-    let now=year+"-"+month;
+    let now=year+"/"+(month<10?'0'+month:month);
     this.setData({
       selectdate: now, // 正式使用
       selectdateTimestamp: new Date(now).getTime()
     })
-    // const context = await my.cloud.createCloudContext({
-    //   env: 'env-00jx4obkh2l9'
-    // });
-    // await context.init();
-    // my.cloudFunction = context;
-    // my.setStorageSync({key: '_id', data: '658428204950fd82ff91e8d8'})
   },
   onShow(){
     this.getList()
@@ -54,7 +48,7 @@ Page({
   dateChange(e){
     console.log(e.detail);
     this.setData({
-      selectdate: e.detail.value,
+      selectdate:  e.detail.value,
       selectdateTimestamp: new Date(e.detail.value).getTime()
     })
     this.getList()
