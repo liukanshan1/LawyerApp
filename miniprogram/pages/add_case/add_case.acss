@@ -90,6 +90,7 @@
 }
 
 .area_reason_area{
+  position: relative;
   width: 680rpx;
   display: flex;
   height: 70rpx;
@@ -184,8 +185,8 @@
   width:380rpx ;
   height: 300rpx;
   background-color: white;
-  right: 35rpx;
-  top:415rpx;
+  right: 0;
+  top: 70rpx;
   z-index: 300;
   /* font-size: xx-large; */
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
