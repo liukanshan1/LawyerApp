@@ -32,7 +32,7 @@
                 <view class="task_site">{{item.address}}</view>
                 <image
                   mode="heightFix"
-                  src="/images/image 20.png"
+                  src="/images/image20.png"
                   class="icon"
                 />
               </view>

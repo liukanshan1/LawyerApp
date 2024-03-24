@@ -13,21 +13,11 @@
     </view> -->
   </view>
   <view class="case_box">
-    <!-- <view class="case_item" a:for="{{case_item}}" a:key="name">
-      <view class="case_name">{{item.name}}</view>
-      <view class="case_detail_box" a:for="{{item.info_line}}">
-        <view class="info_line">
-          <view class="info_key">{{item.info_name}}</view>
-          <view class="info_value">{{item.value}}</view>
-        </view>
-      </view>
-      <view class="info_detail_hint">查看信息详情</view>
-    </view> -->
     <view class="case_item" a:for="{{caseList}}" a:key="name">
       <view class="case_name">{{item.title}}</view>
         <view class="info_line">
           <view class="info_key">案件进程</view>
-          <view class="info_value" style="color: #012D58;font-size: bold;">{{item.processIds.length>0?processLabels[item.processIds[item.processIds.length -1]-1]:"暂无进程"}}</view>
+          <view class="info_value" style="color: #012D58;font-size: bold;font-weight: bold;">{{item.processIds.length>0?processLabels[item.processIds[item.processIds.length -1]-1]:"暂无进程"}}</view>
           <!-- <view class="info_value">{{item.processIds[item.processIds.length -1]-1}}</view> -->
         </view>
         <view class="info_line">

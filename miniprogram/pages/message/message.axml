@@ -51,10 +51,10 @@
         {{item.description}}
       </view>
       <view class="main">
-        <view style="margin-bottom: 8px;">{{item.title}}</view>
+        <view style="margin-bottom: 8px; color: ;">{{item.title}}</view>
         <view class="text">{{item.time}}</view>
         <view class="text">{{item.address}}</view>
-        <image mode="heightFix" src="/images/image 20.png" class="icon" />
+        <image mode="heightFix" src="/images/image20.png" class="icon" />
       </view>
     </view>
   </view>
