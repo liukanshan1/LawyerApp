@@ -47,14 +47,14 @@
       },
       {
         "pagePath": "pages/schedule/scheduleDay/scheduleDay",
-        "icon": "images/Vector.png",
-        "activeIcon": "images/Vector_b.png",
+        "icon": "images/1Vector.png",
+        "activeIcon": "images/1Vector_b.png",
         "name": "日程"
       },
       {
         "pagePath": "pages/personal/personal",
-        "icon": "images/person1.png",
-        "activeIcon": "images/person1_b.png",
+        "icon": "images/1person1.png",
+        "activeIcon": "images/1person1_b.png",
         "name": "个人"
       }
     ]
