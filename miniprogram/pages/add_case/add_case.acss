@@ -47,6 +47,7 @@
   height: 80rpx;
   line-height: 80rpx;
   align-items: center;
+  margin: 10px auto;
 }
 
 .outer{
@@ -64,44 +65,32 @@
   flex-wrap: wrap;
 }
 
-#label_style1{
-  color: #1668E2;
-  background-color: #DAE9FB;
-}
-
-#label_style2{
-  color:#0E5B48;
-  background-color: #DBF4DE;
-}
-
-#label_style3{
-  color: #E2162E;
-  background-color: #FAE6ED;
-}
-
 .label{
-  /* width: 164rpx; */
-  height: 46rpx;
+  height: 24px;
   text-align: center;
   padding-left: 20rpx;
   padding-right: 20rpx;
-  border-radius: 46rpx;
+  border-radius: 24px;
   margin-right: 35rpx;
   margin-top: 20rpx;
-  box-sizing: border-box;
-  /* margin: 5rpx; */
-  border:1px;
+  font-size: 12px;
+  border: 1px solid #012D58;
+  color: #012D58;
+  background-color: #fff;
 }
 
 .label_styleActive {
-  border: solid rgb(15, 175, 234);
+  color: #fff;
+  background-color: #012D58;
 }
 
 .add_label_area{
   width: 680rpx;
+  margin-bottom: 10px;
 }
 
 .area_reason_area{
+  position: relative;
   width: 680rpx;
   display: flex;
   height: 70rpx;
@@ -139,13 +128,15 @@
   width: 680rpx;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: 10px;
+  padding: 0;
 }
 
 .custom_content_textarea{
   padding:20rpx;
   font-size: small;
-  width: 600rpx;
+  width: 94%;
   height: 200rpx;
 }
 
@@ -184,6 +175,7 @@
   background-color: white;
   border-radius: 10rpx;
   height: 0.6rem;
+  font-size: 14px;
   line-height: 0.6rem;
   text-align: center;
 }
@@ -193,8 +185,8 @@
   width:380rpx ;
   height: 300rpx;
   background-color: white;
-  right: 35rpx;
-  top:415rpx;
+  right: 0;
+  top: 70rpx;
   z-index: 300;
   /* font-size: xx-large; */
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
@@ -241,4 +233,6 @@
 
 .input_area{
   width: 360rpx;
+  text-align: center;
+  font-size: 14px;
 }

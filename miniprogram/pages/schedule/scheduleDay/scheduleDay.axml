@@ -2,7 +2,7 @@
 <top_tap title="日程"></top_tap>
 <view class="page">
   <picker mode="date" onChange="dateChange" fields="month">
-    <view class="selectDate">请选择日期：{{selectdate}}</view>
+    <view class="selectDate">请选择月份：{{selectdate}}</view>
   </picker>
   <view class="list">
     <view class="scheduleMsg" a:for="{{ list }}" a:key="index">
@@ -11,7 +11,7 @@
         <view style="margin-bottom: 8px;">{{item.title}}</view>
         <view class="text">{{item.time}}</view>
         <view class="text">{{item.address}}</view>
-        <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+        <image mode="heightFix" src="/images/image20.png" class="icon"/>
       </view>
     </view>
   </view>

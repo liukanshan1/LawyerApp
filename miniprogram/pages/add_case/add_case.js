@@ -280,6 +280,7 @@ Page({
       cancelButtonText:'取消',
       success:(res)=>{
         let temp=res.inputValue;
+        if(!temp) return
         if(temp.trim().length==0) return;
         let name_list=this.data.opposite_name
         name_list.push(temp)
@@ -310,7 +311,6 @@ Page({
         name_items:[],
         
       })
-
       return
     }
     this.setData({

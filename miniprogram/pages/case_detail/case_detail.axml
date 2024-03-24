@@ -47,7 +47,7 @@
     <view class="process_text">案件安排</view>
     <view class="today_agenda" catchTap="tap_today_agenda">
       <view class="today_agenda_text_line">
-        <view class="today_agenda_text">最近日程</view>
+        <view class="today_agenda_text">相关日程</view>
         <view class="arrow"></view>
       </view>
       <view class="task_box_wrapper">
@@ -58,7 +58,7 @@
             <view class="small_text">
               <view class="task_time">{{item.time}}</view>
               <view class="task_site">{{item.address}}</view>
-              <image mode="heightFix" src="/images/image 20.png" class="icon"/>
+              <image mode="heightFix" src="/images/image20.png" class="icon"/>
             </view>
           </view>
         </view>
@@ -66,7 +66,7 @@
     </view>
     <view class="process_map_box">
       <view class="process_map_text_line" catchTap="tap_process_trace">
-        <view class="process_map_text">进程追踪导图</view>
+        <view class="process_map_text">案件进程</view>
         <view class="arrow"></view>
       </view>
       <scroll-view scroll-x="{{true}}" class="top_scroll_new">

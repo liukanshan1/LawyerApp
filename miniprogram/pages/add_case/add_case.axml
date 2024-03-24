@@ -16,7 +16,6 @@
       <view
         a:for="{{label}}"
         class="label {{label_index === index ? 'label_styleActive' : ''}}"
-        id="{{item.style}}"
         onTap="changeLabel"
         data-i={{index}}
       >{{item.name}}
@@ -30,8 +29,18 @@
   <view class="area_reason_area">
     <view class="area_reason_title">当事人</view>
     <input class="input_area" onInput="name_input" onFocus="name_focus" value="{{query_content}}" placeholder="搜索用户"></input>
+    <view class="name_list" a:if="{{ name_focus }}">
+      <scroll-view scroll-y="{{true}}">
+        <view class="item_line" onTap="name_blur">关闭</view>
+        <view a:for="{{ name_items }}" a:if="{{ !exist_item[item.id]||!exist_item[item.id].exist }}" class="item_line" onTap="select_items" data-i="{{index}}">
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
   </view>
-  <view class="name_list" a:if="{{ name_focus }}">
+  <!-- <view class="name_list" a:if="{{ name_focus }}">
     <scroll-view scroll-y="{{true}}">
       <view class="item_line" onTap="name_blur">关闭</view>
       <view a:for="{{ name_items }}" a:if="{{ !exist_item[item.id]||!exist_item[item.id].exist }}" class="item_line" onTap="select_items" data-i="{{index}}">
@@ -40,7 +49,7 @@
         </view>
       </view>
     </scroll-view>
-  </view>
+  </view> -->
   <view class="area_reason_area">
     <scroll-view scroll-x="{{true}}" class="party_scroll">
       <view a:for="{{exist_item}}" a:if="{{ exist_item[item.id].exist }}" class="display_party" onTap="cancel_item" data-i="{{item}}">
