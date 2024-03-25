@@ -69,6 +69,8 @@ Page({
         children: []
       }
     ],
+    nextProcessIndex: 0,
+    nextProcessList: [],
     schduleList: [],
     caseId: ""
   },
@@ -79,7 +81,7 @@ Page({
       caseId: e.caseId
     })
     my.showLoading();
-    this.getCaseById(e.caseId)
+    // this.getCaseById(e.caseId)
   },
   onShow() {
     this.getCaseById(this.data.caseId)
@@ -134,6 +136,7 @@ Page({
           case: res.result.data
         })
         this.getScheduleList()
+        console.log("____________", this.data.case.processIds);
         my.cloudFunction.callFunction({
           name: "getProcessesByIds",
           data: {
@@ -147,6 +150,7 @@ Page({
             this.setData({
               tree_data: res.result.data
             })
+            this.getNextProcessById() // 待选取的下一级案件进程
             let promiseArr = []
             this.data.tree_data.forEach((item, i) => {
               promiseArr.push(this.getCusProcess(item.id, i))
@@ -166,12 +170,59 @@ Page({
       }
     })
   },
+  getNextProcessById() {
+    let fatherId = -1
+    // if(this.data.process_map_item.length !== 0) fatherId = this.data.process_map_item.at(-1).id
+    if (this.data.tree_data.length !== 0) fatherId = this.data.tree_data[this.data.tree_data.length - 1].id
+    console.log('fatherId', fatherId);
+    my.cloudFunction.callFunction({
+      name: "getNextProcessById",
+      data: {
+        fatherId: fatherId
+      },
+      success: (res) => {
+        console.log('getNextProcessById', res);
+        this.setData({
+          nextProcessList: res.result.data
+        })
+      },
+      fail: function (res) {
+        console.log('getNextProcessById', res);
+      }
+    })
+  },
+  nextChange(e) {
+    console.log(e);
+    let temp = this.data.tree_data
+    temp.push(this.data.nextProcessList[e.detail.value])
+    this.setData({
+      tree_data: temp,
+      nextProcessIndex: e.detail.value
+    })
+    this.updateProcessIdsByCaseId()
+    this.getNextProcessById()
+  },
+  updateProcessIdsByCaseId() {
+    my.cloudFunction.callFunction({
+      name: "updateProcessIdsByCaseId",
+      data: {
+        caseId: this.data.case._id,
+        processId: this.data.nextProcessList[this.data.nextProcessIndex].id,
+      },
+      success: (res) => {
+        console.log('updateProcessIdsByCaseId', res);
+      },
+      fail: function (res) {
+        console.log('updateProcessIdsByCaseId', res);
+      }
+    })
+  },
   getCusProcess(processId, i) {
     let id = my.getStorageSync({
       key: "_id"
     }).data
     let processIndex = i
-    console.log(id, this.data.case._id, processId);
+    // console.log(id, this.data.case._id, processId);
     my.cloudFunction.callFunction({
       name: "getCusProcess",
       data: {
@@ -180,7 +231,7 @@ Page({
         processId: processId
       },
       success: (res) => {
-        console.log('getCusProcess', res);
+        // console.log('getCusProcess', res);
         let result = res.result.data
         result.map(item => {
           item.show = false
@@ -211,10 +262,15 @@ Page({
       cancelButtonText: '取消',
       success: (res) => {
         let input = res.inputValue
-        if (input === "" || input === undefined) my.showModal({
-          title: "请填写进程名称"
-        });
-        let id = my.getStorageSync({key: "_id"}).data
+        if (input === "" || input === undefined) {
+          my.showModal({
+            title: "请填写进程名称"
+          });
+          return
+        }
+        let id = my.getStorageSync({
+          key: "_id"
+        }).data
         my.cloudFunction.callFunction({
           name: "addCusProcess",
           data: {
@@ -234,7 +290,7 @@ Page({
           }
         })
       },
-      fail: (err)=>{
+      fail: (err) => {
         console.log(err)
       }
     })
