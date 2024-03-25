@@ -1,4 +1,26 @@
 <view class="page">
+  <view class="process_map_box">
+    <view class="process_map_text_line" catchTap="tap_process_trace">
+      <view class="process_map_text">案件进程</view>
+      <view class="arrow"></view>
+    </view>
+    <scroll-view scroll-x="{{true}}" class="top_scroll_new" >
+      <view a:for="{{tree_data}}" class="map_item">
+        <view class="process_map_item {{index < tree_data.length - 1 ? '' : 'current'}}">{{item.processName}}</view>
+        <view class="next_arrow" a:if="{{ index < tree_data.length - 1 || nextProcessList.length !== 0 }}">——></view>
+        <!-- 灰色不可选的之前的进程 -->
+        <view class="noSelected" a:for="{{ item.unChooseList }}" a:for-index="idx" a:for-item="unChooseListItem" a:key="idx" style="top: {{(idx+1)*40}}px;">{{unChooseListItem.processName}}</view>
+      </view>
+      <view class="map_item" a:if="{{ nextProcessList.length !== 0 }}">
+        <!-- <view class="process_map_item">待定</view> -->
+        <picker class="process_map_item" onChange="nextChange" range="{{nextProcessList}}" range-key="processName" value="{{nextProcessIndex}}">
+          <view class="detail_picker">
+            <view class="process_map_item" style="background-color: transparent;color: #012D58;border: 1px solid #012D58;">待定</view>
+          </view>
+        </picker>
+      </view>
+    </scroll-view>
+  </view>
   <view class="top">
     <view class="head">
       <view class="tab">
