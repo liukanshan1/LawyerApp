@@ -23,12 +23,23 @@
 
 }
 
-.label {
-  width: 164rpx;
-  height: 46rpx;
+.label{
+  height: 24px;
   text-align: center;
-  border-radius: 46rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 24px;
   margin-right: 35rpx;
+  margin-top: 20rpx;
+  font-size: 12px;
+  border: 1px solid #012D58;
+  color: #012D58;
+  background-color: #fff;
+}
+
+.label_styleActive {
+  color: #fff;
+  background-color: #012D58;
 }
 
 .label_list {

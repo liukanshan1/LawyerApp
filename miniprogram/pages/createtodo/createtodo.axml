@@ -13,12 +13,11 @@
     <input placeholder="请输入地址" onInput="address_input" />
   </view>
   <view class="add_label_area">
-    <view class="add_label_title">添加标签</view>
+    <view class="add_label_title">日程类型</view>
     <view class="label_list">
       <view
         a:for="{{label}}"
         class="label {{label_index === index ? 'label_styleActive' : ''}}"
-        id="{{item.style}}"
         onTap="changeLabel"
         data-i={{index}}
       >{{item.name}}
@@ -42,7 +41,7 @@
   </view>
   <picker onChange="attendUserChange" range="{{attendUserList}}" range-key="name">
     <view class="detail_picker">
-      <view class="picker_title">日程参数人员</view>
+      <view class="picker_title">日程参与人员</view>
       <view class="select_content_box">
         <view class="picker_indicater">添加</view>
       </view>
