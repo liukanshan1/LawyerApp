@@ -10,10 +10,13 @@ Page({
     caseIndex: -1
   },
   onLoad() {
+    let id = my.getStorageSync({key: '_id'}).data;
+    let a=this.get_schedule_message(id)
+    console.log(a)
     // my.showLoading()
-    this.setData({
-      schduleList:[this.get_test_object()]
-    })
+    // this.setData({
+    //   schduleList:[this.get_test_object()]
+    // })
     this.getNewestMes()
     // this.getScheduleList()
   },
@@ -192,5 +195,68 @@ Page({
       type:"其他",
       userIds:["658428204950fd82ff91e8d8"]
     }
+  },
+  get_schedule_message(user_id){
+    let ans=[];
+    let that=this
+    my.cloudFunction.callFunction({
+      name:"getMessageByUserId1",
+      data:{
+        userId:user_id,
+        type:1
+
+      },
+      success:function(res){
+        let ans=[]
+        
+        console.log(res)
+        for(const a of res.result){
+          let t=that.get_time_str(a.time,0)
+          // t="1123"
+          let send_t=that.get_time_str(a.sendTime,1)
+          // send_t="456"
+          
+          ans.push({
+            circle_text:"案",
+            time:t,
+            sendTime:send_t,
+            title:a.title,
+            des:a.content,
+            bz:a.description,
+            site:a.address
+          })
+        }
+        console.log(ans)
+        that.setData({
+          schduleList:ans
+        })
+      },
+      fail:function(res){
+        return res
+      }
+    })
+  },
+
+  get_time_str(mili,type){
+    let t=new Date(mili)
+    let y=t.getFullYear(t)
+    let m=t.getMonth(t)
+    let d=t.getDate(t)
+    let h=t.getUTCHours(t)+8
+    let min=t.getUTCMinutes(t)
+    if (h<10){
+      h="0"+h
+    }
+    if(min<10){
+      min="0"+min
+    }
+    if (type==0){
+      let ans=y+"-"+m+"-"+d+"  "+h+":"+min
+      return ans
+    }else{
+      let ans=y+"."+m+"."+d+"   "+h+":"+min
+      return ans
+    }
+    
   }
 });

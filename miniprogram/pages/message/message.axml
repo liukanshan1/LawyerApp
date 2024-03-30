@@ -48,34 +48,34 @@
   <view a:if="{{ tab_index === 1 }}" class="list">
     <view a:for="{{ schduleList }}" class="scheduleMsg" a:key="index">
       <view class="caseHint">
-        <view class="nameCircle">XX</view>
+        <view class="nameCircle">{{item.circle_text}}</view>
         <view class="hintFontBox">
-          <view>XXX人格纠纷</view>
-          <view class="timeHint">星期六 下午</view>
+          <view>{{item.title}}</view>
+          <view class="timeHint">{{item.sendTime}}</view>
         </view>
       </view>
-      <view class="bigTimeHint">客户预约会议还有半个小时开始</view>
+      <view class="bigTimeHint">{{item.des}}</view>
       <view class="messageBox">
         <view class="punishBar"></view>
         <view class="messageTextBox">
           <view class="timeMessage">
             <image mode="scaleToFill" src="/images/clock.png" class="icon"></image>
-            <view> 2023.11.22</view>
+            <view> {{item.time}}</view>
           </view>
           <view class="posMessage">
             <image mode="scaleToFill" src="/images/position.png" class="icon"></image>
             <view class="posText">
-              <view>线上会议号</view>
-              <view>备注:无</view>
+              <view>{{item.site}}</view>
+              <view>备注:{{item.bz}}</view>
             </view>
           </view>
         </view>
       </view>
-      <view class="separateBar"></view>
+      <!-- <view class="separateBar"></view>
       <view class="checkBar">
         <view class="checkText">查看详细</view>
         <image mode="scaleToFill" src="/images/check_right.png" class="chackArrow"/>
-      </view>
+      </view> -->
     </view>
   </view>
   <view a:if="{{ tab_index === 0 && msgListClick }}" class="bottom">
