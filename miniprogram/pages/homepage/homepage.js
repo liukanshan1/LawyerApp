@@ -22,12 +22,16 @@ Page({
       backgroundColor: '#FFFFFF', // 想使用frontColor 这个字段必填
       frontColor: '#000000' // 设置文字及状态栏电量、日期等文字颜色
     })
-    my.showLoading()
     const context = await my.cloud.createCloudContext({
       env: 'env-00jx4obkh2l9'
     });
     await context.init();
     my.cloudFunction = context;
+    let isLawyer = my.getStorageSync({key:'isLawyer'}).data
+    console.log('isLawyer',isLawyer)
+    if(isLawyer===null){
+      my.setStorage({key:'isLawyer',data:false})
+    }
     this.createUser()
   },
   onShow(){
@@ -43,8 +47,9 @@ Page({
       this.getNewestMes()
       return
     }
+    my.showLoading({content:'获取授权信息...'})
     my.getAuthCode({
-      scopes: 'auth_base', 
+      scopes: 'auth_user', 
       success:(res) =>{
       	console.log('code',res);
         my.cloudFunction.callFunction({
@@ -58,6 +63,7 @@ Page({
             // my.setStorageSync({key:"_id", data: "658584160f8bdfbed7423e86"}) // 律师
             
             my.setStorageSync({key:"_id", data: res.result.data}) // 正式使用
+            
             this.getTaskList()
             this.getNewestMes()
           },

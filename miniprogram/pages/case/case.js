@@ -38,7 +38,8 @@ Page({
       console.log(e);
       //this.getProcesses()
       this.setData({
-        tab_index: e.currentTarget.dataset.i
+        tab_index: e.currentTarget.dataset.i,
+        caseList:[]
       })
       this.getCases()
     },
@@ -69,6 +70,7 @@ Page({
       })
     },
     getCases(){
+      my.showLoading()
       let id = my.getStorageSync({key: '_id'}).data
       my.cloudFunction.callFunction({
         name:"getCases",
@@ -77,6 +79,7 @@ Page({
           type: this.data.tab_index
         },
         success: (res) => {
+          my.hideLoading()
           console.log('案件', res);
           res.result.data.map(item => {
             item.time = this.formatDate(item.createTime)
@@ -97,8 +100,15 @@ Page({
       })
     },
     goAddCase(e){
-      my.navigateTo({
-        url:"/pages/add_case/add_case"
+      let isLawyer = my.getStorageSync({key:'isLawyer'}).data
+      if(isLawyer){
+        my.navigateTo({
+          url:"/pages/add_case/add_case"
+        })
+      }
+      else my.alert({
+        title:'您不是律师，无法添加案件',
+        content:'请前往“个人”切换角色'
       })
     }
   })

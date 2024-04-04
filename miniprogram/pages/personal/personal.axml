@@ -5,9 +5,9 @@
   <view class="card">
     <view class="info" onTap="editInfo">
       <view class="img">
-        <image mode="widthFix" src="{{info.avatar}}" />
+        <image a:else: mode="widthFix" src="{{info.avatar}}" />
       </view>
-      <view a:if="{{ info.isLawyer }}">
+      <view a:if="{{ isLawyer }}">
         <view class="detail">
           <view class="name">{{info.name===""?info.nickName:info.name}}</view>
           <view class="line">
@@ -31,7 +31,7 @@
         </view>
         <view class="time">活跃时间：  {{info.activeTime}}</view>
       </view>
-      <view a:if="{{ !info.isLawyer }}">
+      <view a:if="{{ !isLawyer }}">
         <view class="detail">
           <view class="name">{{info.name==""?info.nickName:info.name}}</view>
           <view class="line">
@@ -62,7 +62,7 @@
         </view>
         <view class="text">实名认证</view>
       </view>
-      <view class="item" a:if="{{ info.isLawyer }}">
+      <view class="item" a:if="{{ isLawyer }}">
         <view class="circle">
           <image mode="widthFix" style="width: 3.5vw !important;" src="/images/true.png" />
         </view>

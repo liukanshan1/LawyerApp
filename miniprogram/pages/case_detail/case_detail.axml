@@ -72,13 +72,15 @@
       <scroll-view scroll-x="{{true}}" class="top_scroll_new">
         <view a:for="{{process_map_item}}" class="map_item">
           <view class="process_map_item {{index < process_map_item.length - 1 ? '' : 'current'}}">{{item.processName}}</view>
-          <view class="next_arrow" a:if="{{ index < process_map_item.length - 1 || nextProcessList.length !== 0 }}">————></view>
+          <view class="next_arrow" a:if="{{ index < process_map_item.length - 1 || nextProcessList.length !== 0 }}">——></view>
         </view>
         <view class="map_item" a:if="{{ nextProcessList.length !== 0 }}">
           <!-- <view class="process_map_item">待定</view> -->
           <picker class="process_map_item" onChange="nextChange" range="{{nextProcessList}}" range-key="processName" value="{{nextProcessIndex}}">
             <view class="detail_picker">
-              <view class="process_map_item">待定</view>
+              <view class="process_map_item" style="background-color: transparent;color: #012D58;border: 1px solid #012D58;">
+                待定
+              </view>
             </view>
           </picker>
         </view>

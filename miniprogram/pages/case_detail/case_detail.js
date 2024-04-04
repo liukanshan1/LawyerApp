@@ -119,6 +119,14 @@ Page({
   },
   nextChange(e){
     console.log(e);
+    let isLawyer = my.getStorageSync({key:'isLawyer'}).data
+    if(!isLawyer){
+      my.alert({
+        title:'您不是律师，无法推进进程',
+        content:'请前往“个人”切换角色'
+      })
+      return
+    }
     let temp = this.data.process_map_item
     temp.push(this.data.nextProcessList[e.detail.value])
     this.setData({
